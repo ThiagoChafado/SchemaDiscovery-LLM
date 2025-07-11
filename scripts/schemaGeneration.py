@@ -2,11 +2,9 @@ import os
 import json
 from genson import SchemaBuilder
 
-#Path to folders
-rawJsonDir = "../datasets/rawJson"
-processedSchemasDir = "../datasets/processedSchemas"
 
-def generate_schema():
+
+def generate_schema(rawJsonDir, processedSchemasDir):
     
     """ Reads all the files in the rawJsonDir and 
         generates a schema for each file
@@ -46,6 +44,11 @@ def generate_schema():
         except Exception as e:
             print(f"An error occurred while processing {entryPath}: {e}")
     
+
+#Path to folders
+rawJsonDir = "../datasets/rawJson"
+processedSchemasDir = "../datasets/processedSchemas"
+
 if __name__ == "__main__":
-    generate_schema()
+    generate_schema(rawJsonDir, processedSchemasDir)
     print("Schema generation completed.")
