@@ -1,133 +1,151 @@
 import os
 import subprocess
-import zipfile
 import shutil
 import csv
 import io
+import re
 
 # --- Configuration ---
 DATASETS_DIR = '../datasets/'
 RAW_JSON_DIR = os.path.join(DATASETS_DIR, 'rawJson/')
-TEMP_DOWNLOADS_DIR = os.path.join(DATASETS_DIR, 'temp_downloads/')
-DOWNLOAD_LOG_PATH = os.path.join(DATASETS_DIR, 'download_log.txt')
+TEMP_DOWNLOADS_DIR = os.path.join(DATASETS_DIR, 'tempDowloads/')
+DOWNLOAD_LOG_PATH = os.path.join(DATASETS_DIR, 'dowloadLog.txt')
 
-SEARCH_TERM = "json dataset"  # Term to search for on Kaggle
-NUM_DATASETS_TO_DOWNLOAD = 10 # How many of the top datasets you want to download
+SEARCH_TERMS = [
+    "government json api",
+    "scientific data json",
+    "product catalog json",
+    "financial data json",
+    "nested json",
+    "geolocation json"
+]
+DATASETS_PER_TERM = 5
+MAX_DATASET_SIZE_MB = 200
 
-# --- Schema Generator Script ---
-# Import the function from the other script to call it at the end
+def parseSizeToMb(sizeStr):
+    """Converts Kaggle's size string (e.g., '100KB', '50MB', '2GB') to megabytes."""
+    if not sizeStr:
+        return 0
+    sizeStr = sizeStr.upper()
+    num_match = re.findall(r'[\d\.]+', sizeStr)
+    if not num_match:
+        return 0
+    num = float(num_match[0])
+    
+    if "G" in sizeStr:
+        return num * 1024
+    if "M" in sizeStr:
+        return num
+    if "K" in sizeStr:
+        return num / 1024
+    return num / (1024 * 1024)
 
-
-def load_processed_datasets_log():
+def loadProcessedDataLog():
     """Loads the set of already processed dataset references from the log file."""
     if not os.path.exists(DOWNLOAD_LOG_PATH):
         return set()
     with open(DOWNLOAD_LOG_PATH, 'r', encoding='utf-8') as f:
         return set(line.strip() for line in f)
 
-def log_processed_dataset(dataset_ref):
+def logProcessedData(datasetRef):
     """Appends a newly processed dataset reference to the log file."""
     with open(DOWNLOAD_LOG_PATH, 'a', encoding='utf-8') as f:
-        f.write(f"{dataset_ref}\n")
+        f.write(f"{datasetRef}\n")
 
-def search_kaggle_datasets(search_term, limit):
-    """Searches Kaggle for datasets and returns a list of references."""
-    print(f"Searching for the top {limit} relevant datasets for '{search_term}'...")
+def searchKaggleDatasets(searchTerm, sizeLimitMb):
+    """Searches Kaggle for small datasets and returns a list of references."""
+    print(f"\nSearching for datasets matching '{searchTerm}' (smaller than {sizeLimitMb}MB)...")
     
     command = [
         "kaggle", "datasets", "list",
-        "--search", search_term,
-        "--sort-by", "votes",
+        "--search", searchTerm,
         "--csv"
     ]
     
     try:
         result = subprocess.run(command, capture_output=True, text=True, check=True)
-        csv_file = io.StringIO(result.stdout)
-        reader = csv.reader(csv_file)
-        next(reader)  # Skip header
+        csvFile = io.StringIO(result.stdout)
+        reader = csv.reader(csvFile)
+        header = next(reader)
+        refIndex = header.index('ref')
+        sizeIndex = header.index('size')
         
-        refs = [row[0] for row in reader]
-        return refs[:limit]
+        filteredRefs = []
+        for row in reader:
+            ref = row[refIndex]
+            sizeStr = row[sizeIndex]
+            sizeMb = parseSizeToMb(sizeStr)
+            
+            if sizeMb <= sizeLimitMb:
+                filteredRefs.append(ref)
         
-    except subprocess.CalledProcessError as e:
-        print(f"Error searching Kaggle datasets: {e.stderr}")
-        return []
-    except FileNotFoundError:
-        print("Error: 'kaggle' command not found. Please ensure the Kaggle API is installed and in your system's PATH.")
+        print(f"  > Found {len(filteredRefs)} datasets under the size limit.")
+        return filteredRefs
+        
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError) as e:
+        print(f"  > Error during Kaggle search: {e}")
         return []
 
-def download_and_process_dataset(dataset_ref):
+def downloadAndProcessDataset(datasetRef):
     """Downloads a dataset, unzips it, and moves any new JSON files."""
-    print(f"\nProcessing dataset: {dataset_ref}...")
-    
-    if os.path.exists(TEMP_DOWNLOADS_DIR):
-        shutil.rmtree(TEMP_DOWNLOADS_DIR)
+    print(f"\nProcessing dataset: {datasetRef}...")
+    if os.path.exists(TEMP_DOWNLOADS_DIR): shutil.rmtree(TEMP_DOWNLOADS_DIR)
     os.makedirs(TEMP_DOWNLOADS_DIR)
-
-    download_command = [
-        "kaggle", "datasets", "download",
-        "-d", dataset_ref,
-        "-p", TEMP_DOWNLOADS_DIR,
-        "--unzip"
-    ]
-    
+    downloadCommand = ["kaggle", "datasets", "download", "-d", datasetRef, "-p", TEMP_DOWNLOADS_DIR, "--unzip"]
     try:
-        subprocess.run(download_command, check=True, capture_output=True, text=True)
-        print(f"  > Download and unzip successful for {dataset_ref}.")
-        
-        moved_files_count = 0
+        subprocess.run(downloadCommand, check=True, capture_output=True, text=True)
+        print(f"  > Download and unzip successful for {datasetRef}.")
+        movedFilesCount = 0
         for root, _, files in os.walk(TEMP_DOWNLOADS_DIR):
             for name in files:
                 if name.endswith('.json'):
-                    source_path = os.path.join(root, name)
-                    destination_path = os.path.join(RAW_JSON_DIR, name)
-                    
-                    # Check if the file already exists in the destination
-                    if not os.path.exists(destination_path):
-                        shutil.move(source_path, destination_path)
-                        moved_files_count += 1
+                    sourcePath = os.path.join(root, name)
+                    destinationPath = os.path.join(RAW_JSON_DIR, name)
+                    if not os.path.exists(destinationPath):
+                        shutil.move(sourcePath, destinationPath)
+                        movedFilesCount += 1
                     else:
                         print(f"  - File '{name}' already exists. Skipping.")
-        
-        if moved_files_count > 0:
-            print(f"  > Moved {moved_files_count} new .json file(s) to '{RAW_JSON_DIR}'.")
-            # Log only if new files were actually added
-            log_processed_dataset(dataset_ref)
+        if movedFilesCount > 0:
+            print(f"  > Moved {movedFilesCount} new .json file(s) to '{RAW_JSON_DIR}'.")
+            logProcessedData(datasetRef)
         else:
             print("  > No new JSON files found to move.")
-        
     except subprocess.CalledProcessError as e:
-        print(f"  > Error downloading dataset {dataset_ref}: {e.stderr}")
+        print(f"  > Error downloading dataset {datasetRef}: {e.stderr}")
     finally:
-        if os.path.exists(TEMP_DOWNLOADS_DIR):
-            shutil.rmtree(TEMP_DOWNLOADS_DIR)
+        if os.path.exists(TEMP_DOWNLOADS_DIR): shutil.rmtree(TEMP_DOWNLOADS_DIR)
 
 def main():
-    """Main function to orchestrate the entire pipeline."""
+    """Main function to orchestrate the refined acquisition pipeline."""
     os.makedirs(RAW_JSON_DIR, exist_ok=True)
     
-    # Load the log of datasets that have already been processed
-    processed_datasets = load_processed_datasets_log()
-    print(f"Found {len(processed_datasets)} previously processed datasets in the log.")
+    processedDatasets = loadProcessedDataLog()
+    print(f"Found {len(processedDatasets)} previously processed datasets in the log.")
     
-    # Search for datasets on Kaggle
-    dataset_refs = search_kaggle_datasets(SEARCH_TERM, NUM_DATASETS_TO_DOWNLOAD)
-    
-    if not dataset_refs:
-        print("No datasets found or an error occurred during search. Exiting.")
-        return
+    allNewDatasetsToProcess = []
+    for term in SEARCH_TERMS:
+        datasetRefs = searchKaggleDatasets(term, MAX_DATASET_SIZE_MB)
         
-    print(f"\nTop datasets found: {dataset_refs}")
+        newRefsForTerm = 0
+        for ref in datasetRefs:
+            if newRefsForTerm >= DATASETS_PER_TERM:
+                break
+            if ref not in processedDatasets and ref not in allNewDatasetsToProcess:
+                allNewDatasetsToProcess.append(ref)
+                newRefsForTerm += 1
+
+    if not allNewDatasetsToProcess:
+        print("\nNo new datasets to download based on the specified criteria. Exiting.")
+        return
+
+    print(f"\nFound a total of {len(allNewDatasetsToProcess)} new, unique datasets to process.")
     
-    # Download and process each dataset if it's not in the log
-    for ref in dataset_refs:
-        if ref not in processed_datasets:
-            download_and_process_dataset(ref)
-        else:
-            print(f"\nSkipping '{ref}' as it's marked as processed in the log.")
+    for ref in allNewDatasetsToProcess:
+        downloadAndProcessDataset(ref)
             
     print("\n----------------------------------------------------")
     print("Data acquisition phase complete.")
+
 if __name__ == '__main__':
     main()
