@@ -1,0 +1,21 @@
+# Arquivo .gitignore para o projeto TCC
+
+# Ignorar a pasta principal de datasets
+datasets/
+
+# Ignorar pastas de modelos e tokenizers gerados localmente
+# Essas pastas são criadas na raiz do projeto pelos scripts
+mini_gpt_tokenizer/
+mini_gpt_model/
+results/
+results_lora/
+fine_tuned_model/
+fine_tuned_model_t5/
+
+# Ignorar arquivos de ambiente Python, se houver
+venv/
+__pycache__/
+*.pyc
+
+# Ignorar arquivos de sistema
+.DS_Store
