@@ -3,8 +3,25 @@
 import os
 import json
 import csv
+import csv
 from genson import SchemaBuilder
 
+# --- Configuration ---
+DATASETS_DIR = '../datasets/'
+RAW_JSON_DIR = os.path.join(DATASETS_DIR, 'rawJson/')
+PROCESSED_SCHEMAS_DIR = os.path.join(DATASETS_DIR, 'processedSchemas/')
+MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest.csv')
+
+MAX_STANDARD_JSON_SIZE_MB = 500
+
+def updateManifestFile():
+    """
+    Scans the processed schemas directory and creates an up-to-date manifest file.
+    """
+    print("\n----------------------------------------------------")
+    print("Updating manifest.csv...")
+    
+    validPairs = []
 # --- Configuration ---
 DATASETS_DIR = 'datasets' # Nome base da pasta
 RAW_JSON_DIR = os.path.join(DATASETS_DIR, 'rawJson')
@@ -18,6 +35,8 @@ def updateManifestFile():
     
     validPairs = []
     
+    if not os.path.exists(PROCESSED_SCHEMAS_DIR):
+        print("Processed schemas directory not found. Manifest not created.")
     if not os.path.exists(PROCESSED_SCHEMAS_DIR):
         print("Processed schemas directory not found. Manifest not created.")
         return
