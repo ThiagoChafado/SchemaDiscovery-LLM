@@ -1,19 +1,18 @@
-# scripts/train_from_scratch.py
+
 import torch
 from torch.utils.data import Dataset, DataLoader
 from tokenizers import ByteLevelBPETokenizer
 from transformers import GPT2Config, GPT2LMHeadModel
 from torch.optim import AdamW
 import os
-import pandas as pd # <-- Adicionar import do pandas
-
+import pandas as pd 
 # --- Configuration ---
 TRAINING_FILE_PATH = 'datasets/subset_1GB/training_data.txt'
 TOKENIZER_PATH = './mini_gpt_tokenizer'
 MODEL_SAVE_PATH = './mini_gpt_model'
 MANIFEST_PATH = 'datasets/subset_1GB/manifest_subset.csv' 
 
-# --- Treinamento do Tokenizer (VERSÃO MODIFICADA) ---
+# --- Treinamento do Tokenizer -
 def train_tokenizer():
     """
     Trains a new BPE tokenizer directly from the individual JSON and schema
@@ -30,9 +29,8 @@ def train_tokenizer():
     except FileNotFoundError:
         print(f"Error: Manifest file not found at {MANIFEST_PATH}. Cannot train tokenizer.")
         # Se o manifesto não existe, o script não pode continuar.
-        # Peça para o usuário gerar o manifesto primeiro.
         print("Please run schemaGenerator.py to create the manifest file.")
-        exit() # Encerra o script se não puder treinar o tokenizer.
+        exit() 
 
     # Crie uma lista com TODOS os caminhos de arquivos (JSONs e Schemas)
     all_file_paths = []
@@ -54,7 +52,7 @@ def train_tokenizer():
     tokenizer.save_model(TOKENIZER_PATH)
     print(f"Tokenizer trained and saved to {TOKENIZER_PATH}")
 
-# --- PyTorch Dataset (sem alterações) ---
+# --- PyTorch Dataset ---
 class JSONSchemaDataset(Dataset):
     def __init__(self, tokenizer, file_path, block_size):
         self.tokenizer = tokenizer
@@ -76,7 +74,7 @@ class JSONSchemaDataset(Dataset):
     def __getitem__(self, i):
         return torch.tensor(self.examples[i], dtype=torch.long)
 
-# --- Função Principal de Treinamento (sem alterações) ---
+# --- Função Principal de Treinamento ---
 def train_mini_gpt():
     # 1. Treinar e carregar o tokenizer
     train_tokenizer()
@@ -100,7 +98,6 @@ def train_mini_gpt():
     model.resize_token_embeddings(len(tokenizer))
 
     # 4. Preparar o dataset e o DataLoader
-    # AVISO: O arquivo training_data.txt AINDA é necessário para esta parte!
     if not os.path.exists(TRAINING_FILE_PATH):
         print(f"Error: {TRAINING_FILE_PATH} not found.")
         print("Please run prepare_data.py before running the training script.")

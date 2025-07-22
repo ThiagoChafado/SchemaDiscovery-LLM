@@ -1,4 +1,4 @@
-# scripts/prepare_data.py
+
 
 import pandas as pd
 import json

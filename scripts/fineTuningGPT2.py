@@ -1,4 +1,3 @@
-# finetune_gpt2_lora.py (sugiro renomear o arquivo)
 import torch
 from transformers import (
     AutoTokenizer, # Usar AutoTokenizer para mais flexibilidade
@@ -33,7 +32,7 @@ def fineTuneModelWithLoRA(device):
     # 2. Load model com quantização em 8-bits para economizar memória
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
-        load_in_8bit=True, # NOVO: Carrega o modelo em 8-bits
+        load_in_8bit=True,
         device_map='auto', # Distribui o modelo automaticamente (útil para GPU)
     )
     model.resize_token_embeddings(len(tokenizer))
@@ -49,14 +48,13 @@ def fineTuneModelWithLoRA(device):
 
     # 4. Aplique o LoRA ao modelo
     model = get_peft_model(model, lora_config)
-    # Veja a mágica: imprima o número de parâmetros treináveis!
     model.print_trainable_parameters()
 
     # 5. Crie o dataset
     train_dataset = TextDataset(
         tokenizer=tokenizer,
         file_path=TRAINING_FILE_PATH,
-        block_size=32  # Mantenha o block_size baixo
+        block_size=32  #Diminuir o tamanho do bloco para reduzir o uso de memória
     )
     
     data_collator = DataCollatorForLanguageModeling(

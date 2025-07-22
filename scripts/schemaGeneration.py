@@ -6,8 +6,7 @@ import csv
 import csv
 from genson import SchemaBuilder
 
-# --- Configuration ---
-DATASETS_DIR = '../datasets/'
+DATASETS_DIR = 'datasets/'
 RAW_JSON_DIR = os.path.join(DATASETS_DIR, 'rawJson/')
 PROCESSED_SCHEMAS_DIR = os.path.join(DATASETS_DIR, 'processedSchemas/')
 MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest.csv')
@@ -22,8 +21,8 @@ def updateManifestFile():
     print("Updating manifest.csv...")
     
     validPairs = []
-# --- Configuration ---
-DATASETS_DIR = 'datasets' # Nome base da pasta
+
+DATASETS_DIR = 'datasets' 
 RAW_JSON_DIR = os.path.join(DATASETS_DIR, 'rawJson')
 PROCESSED_SCHEMAS_DIR = os.path.join(DATASETS_DIR, 'processedSchemas')
 MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest.csv')
@@ -47,7 +46,7 @@ def updateManifestFile():
             jsonFilePath = os.path.join(RAW_JSON_DIR, jsonFilename)
             
             if os.path.exists(jsonFilePath):
-                # --- ESTA É A CORREÇÃO CRÍTICA ---
+               
                 # Garante que o caminho completo seja salvo no manifesto
                 relativeJsonPath = os.path.join(RAW_JSON_DIR, jsonFilename)
                 relativeSchemaPath = os.path.join(PROCESSED_SCHEMAS_DIR, schemaFilename)
@@ -72,7 +71,6 @@ def updateManifestFile():
         print(f"Error writing to manifest.csv: {e}")
 
 def generateSchemasAutomatically():
-    # Esta função continua a mesma
     print("Generating schemas with improved memory management...")
     os.makedirs(PROCESSED_SCHEMAS_DIR, exist_ok=True)
     jsonFiles = [f for f in os.listdir(RAW_JSON_DIR) if f.endswith('.json')]

@@ -5,7 +5,6 @@ import shutil
 import random
 import csv
 
-# --- Configuration ---
 DATASETS_DIR = 'datasets'
 # Onde estão os dados originais
 MASTER_MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest.csv')

@@ -46,16 +46,16 @@ echo ""
 echo "[PASSO 4/5] Gerando esquemas e o manifesto principal (schemaGenerator.py)..."
 # Apaga o manifesto antigo para garantir que um novo e limpo seja criado
 rm -f datasets/manifest.csv
-python3 scripts/schemaGenerator.py
+python3 scripts/schemaGeneration.py
 echo "[SUCESSO] Geração de esquemas e manifesto concluída."
 echo ""
 
 # --- PASSO 5: Criar o Subconjunto de Dados e o Arquivo Final de Treinamento ---
 echo "[PASSO 5/5] Criando subconjunto de dados e arquivo final de treinamento..."
 # Cria o subconjunto de 1GB e seu respectivo manifesto
-python3 scripts/create_subset.py
+python3 scripts/createSubset.py
 # Cria o arquivo training_data.txt para o subconjunto
-python3 scripts/prepare_data.py
+python3 scripts/prepareData.py
 echo "[SUCESSO] Subconjunto de dados e arquivo de treinamento prontos."
 echo ""
 
