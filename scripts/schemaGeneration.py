@@ -1,4 +1,3 @@
-# scripts/schemaGenerator.py
 
 import os
 import json
@@ -29,6 +28,14 @@ MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest.csv')
 MAX_STANDARD_JSON_SIZE_MB = 500
 
 def updateManifestFile():
+    
+    # É chamada no final de generateSchemasAutomatically.
+    # 1. Varre a pasta `processedSchemas/`.
+    # 2. Para cada esquema, verifica se o JSON original correspondente existe em `rawJson/`.
+    # 3. Se o par existe, ele escreve os caminhos completos dos dois arquivos em uma nova
+    #    linha no `manifest.csv`, sobrescrevendo qualquer versão antiga do manifesto.
+    #    Isso garante que o manifesto esteja sempre 100% sincronizado com os arquivos existentes.
+
     print("\n----------------------------------------------------")
     print("Updating manifest.csv...")
     
@@ -71,6 +78,15 @@ def updateManifestFile():
         print(f"Error writing to manifest.csv: {e}")
 
 def generateSchemasAutomatically():
+    # 1. Itera sobre cada arquivo na pasta `rawJson/`.
+    # 2. **Verificação de Memória**: Primeiro, tenta ler o arquivo linha por linha,
+    #    o que é ideal para arquivos no formato JSON Lines e muito eficiente em memória.
+    # 3. Se falhar (porque é um JSON padrão), ele verifica o tamanho do arquivo.
+    #    Se for maior que MAX_STANDARD_JSON_SIZE_MB, ele pula o arquivo para evitar travar.
+    # 4. **Geração do Esquema**: Se o arquivo for seguro para processar, ele usa
+    #    a biblioteca `genson` para inferir a estrutura e criar o esquema.
+    # 5. Salva o esquema gerado na pasta `processedSchemas/`.
+    
     print("Generating schemas with improved memory management...")
     os.makedirs(PROCESSED_SCHEMAS_DIR, exist_ok=True)
     jsonFiles = [f for f in os.listdir(RAW_JSON_DIR) if f.endswith('.json')]

@@ -62,4 +62,7 @@ echo ""
 
 echo "--- SETUP E PRÉ-PROCESSAMENTO CONCLUÍDOS! ---"
 echo "Seu ambiente está pronto. Você já pode rodar o script de treinamento:"
-echo "python3 scripts/train_from_scratch.py"
+echo "Para fazer o fine-tuning do modelo GPT-2, use:"
+echo "python3 scripts/fineTuningGPT2.py"
+echo "Para treinar o modelo do zero, use:"
+echo "python3 scripts/myModel.py"

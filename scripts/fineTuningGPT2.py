@@ -1,4 +1,7 @@
 import torch
+# AutoTokenizer e AutoModelForCausalLM: Classes flexíveis que podem carregar
+# qualquer modelo compatível da família GPT, como o 'distilgpt2'.
+# LoraConfig, get_peft_model: As ferramentas da biblioteca PEFT para implementar o LoRA.
 from transformers import (
     AutoTokenizer, # Usar AutoTokenizer para mais flexibilidade
     AutoModelForCausalLM, # Usar AutoModel para carregar com bitsandbytes
@@ -10,7 +13,6 @@ from transformers import (
 from peft import LoraConfig, get_peft_model 
 import os
 
-# --- Configuration ---
 MODEL_NAME = "distilgpt2" 
 TRAINING_FILE_PATH = 'datasets/training_data.txt'
 OUTPUT_DIR = './results_lora'
@@ -18,6 +20,56 @@ FINE_TUNED_MODEL_PATH = './fine_tuned_model_lora'
 
 JSON_START_TOKEN = "<|json|>"
 SCHEMA_START_TOKEN = "<|schema|>"
+
+  # --- 1. Carregamento do Tokenizer ---
+    # `AutoTokenizer.from_pretrained(MODEL_NAME)`: Baixa o tokenizer que foi
+    # originalmente treinado com o distilgpt2. Ele já "entende" a língua inglesa.
+    # `tokenizer.add_special_tokens(...)`: Adicionamos nossos marcadores
+    # (<|json|>, <|schema|>) ao vocabulário existente para que o modelo aprenda nossa tarefa.
+
+    # --- 2. Carregamento e Otimização do Modelo ---
+    # `AutoModelForCausalLM.from_pretrained(...)`: Baixa o modelo distilgpt2
+    # com seus 82 milhões de parâmetros já treinados.
+    #
+    # Parâmetros Chave para Economia de Memória:
+    # `load_in_8bit=True`: Esta é a "Quantização". Ele carrega o modelo usando
+    # números de 8 bits em vez de 32 bits, reduzindo o uso de memória do modelo em ~75%.
+    # `device_map='auto'`: Ajuda a gerenciar a alocação de memória.
+
+    # `model.resize_token_embeddings(len(tokenizer))`: Atualiza a camada de entrada do
+    # modelo para que ele reconheça os novos tokens que adicionamos.
+
+    # --- 3. Configuração do LoRA ---
+    # `LoraConfig(...)`: Cria a "planta" do nosso "chip de performance".
+    # `r=8`: Define o quão complexo (e grande) será o nosso "chip". 8 é um valor
+    # pequeno e eficiente.
+    # `task_type="CAUSAL_LM"`: Informa ao LoRA que estamos adaptando um modelo
+    # de linguagem causal (que prevê a próxima palavra), como o GPT.
+
+    # --- 4. Aplicação do LoRA no Modelo ---
+    # `model = get_peft_model(model, lora_config)`: Este é o passo mágico.
+    # Ele "congela" todos os 82 milhões de parâmetros do distilgpt2 e injeta
+    # as pequenas camadas LoRA treináveis no modelo.
+    # `model.print_trainable_parameters()`: Mostra a prova do sucesso da técnica.
+    # Ele exibirá que, em vez de 82 milhões, estamos treinando apenas algumas
+    # centenas de milhares de parâmetros (~0.2% do total).
+
+    # --- 5. Preparação dos Dados e do Treinador ---
+    # `TextDataset(...)` e `DataCollatorForLanguageModeling(...)`: Carregam
+    # o mesmo arquivo `training_data.txt` e o preparam em lotes, da mesma
+    # forma que no script de treinamento do zero.
+    # `TrainingArguments(...)`: Configura os parâmetros do treinamento, como
+    # número de épocas, tamanho do lote e, crucialmente, a acumulação de gradientes
+    # para economizar memória.
+    # `Trainer(...)`: Inicializa o "treinador" da Hugging Face, que automatiza
+    # todo o loop de treinamento para nós.
+
+    # --- 6. Treinamento e Salvamento ---
+    # `trainer.train()`: Inicia o processo de fine-tuning. Durante este passo,
+    # apenas os pesos do "chip" LoRA são atualizados. O motor principal do GPT-2 permanece intocado.
+    # `trainer.save_model(...)`: Ao final, salva apenas os pesos do adaptador LoRA.
+    # O resultado é uma pasta de modelo muito pequena (poucos megabytes), em vez
+    # dos centenas de megabytes do modelo original completo.
 
 def fineTuneModelWithLoRA(device):
     print(f"Starting LoRA fine-tuning for model: {MODEL_NAME}")
