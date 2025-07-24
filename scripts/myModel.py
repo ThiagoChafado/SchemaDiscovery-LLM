@@ -113,9 +113,9 @@ def train_mini_gpt():
         config = GPT2Config(
             vocab_size=tokenizer.vocab_size,
             n_positions=512,
-            n_embd=256,
-            n_layer=4,
-            n_head=4,
+            n_embd=320,
+            n_layer=6,
+            n_head=5,
         )
         model = GPT2LMHeadModel(config)
         model.resize_token_embeddings(len(tokenizer))
@@ -136,7 +136,7 @@ def train_mini_gpt():
 
     print("Starting training loop...")
     model.train()
-    for epoch in range(start_epoch, 7): # Loop começa do 'start_epoch'
+    for epoch in range(start_epoch, 5): # Loop começa do 'start_epoch'
         print(f"--- Epoch {epoch + 1} ---")
         for i, batch in enumerate(data_loader):
             # Lógica para pular passos já feitos nesta época (caso a restauração seja no meio de uma época)
