@@ -158,7 +158,7 @@ def train_mini_gpt():
             if global_step % 100 == 0:
                 print(f"  Epoch {epoch + 1}, Step {global_step}, Loss: {loss.item()}")
 
-            # --- NOVO: Lógica para salvar o checkpoint ---
+            # --- Lógica para salvar o checkpoint ---
             if global_step % SAVE_EVERY_N_STEPS == 0:
                 print(f"--- Saving checkpoint at step {global_step} ---")
                 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
