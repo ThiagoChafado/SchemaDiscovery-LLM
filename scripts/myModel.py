@@ -38,7 +38,7 @@ def train_tokenizer():
         all_file_paths.append(row['schema_path'])
     tokenizer = ByteLevelBPETokenizer()
     tokenizer.train(files=all_file_paths, vocab_size=10_000, min_frequency=2,
-                    special_tokens=["<|endoftext|>", "<|pad|>", "<|json|>", "<|schema|>"])
+                special_tokens=["<|endoftext|>", "<|pad|>"]) # Manteve apenas os essenciais
     os.makedirs(TOKENIZER_PATH, exist_ok=True)
     tokenizer.save_model(TOKENIZER_PATH)
     print(f"Tokenizer trained and saved to {TOKENIZER_PATH}")
@@ -112,7 +112,7 @@ def train_mini_gpt():
         print("No checkpoint found. Starting training from scratch.")
         config = GPT2Config(
             vocab_size=tokenizer.vocab_size,
-            n_positions=128,
+            n_positions=512,
             n_embd=256,
             n_layer=4,
             n_head=4,
@@ -136,7 +136,7 @@ def train_mini_gpt():
 
     print("Starting training loop...")
     model.train()
-    for epoch in range(start_epoch, 3): # Loop começa do 'start_epoch'
+    for epoch in range(start_epoch, 7): # Loop começa do 'start_epoch'
         print(f"--- Epoch {epoch + 1} ---")
         for i, batch in enumerate(data_loader):
             # Lógica para pular passos já feitos nesta época (caso a restauração seja no meio de uma época)
