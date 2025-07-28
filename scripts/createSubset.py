@@ -7,7 +7,7 @@ import csv
 
 DATASETS_DIR = 'datasets'
 # Onde estão os dados originais
-MASTER_MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest.csv')
+MASTER_MANIFEST_PATH = os.path.join(DATASETS_DIR, 'manifest_cleaned.csv')
 # Onde o novo subconjunto será salvo
 SUBSET_DIR = os.path.join(DATASETS_DIR, 'subset_1GB')
 SUBSET_RAW_JSON_DIR = os.path.join(SUBSET_DIR, 'rawJson')
