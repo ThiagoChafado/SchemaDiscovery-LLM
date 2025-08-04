@@ -1,6 +1,0 @@
-
-# O * ignora tudo, e o !.gitignore cria uma exceção para si mesmo.
-*
-!.gitignore
-
-!README.md

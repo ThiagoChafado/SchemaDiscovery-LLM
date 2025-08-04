@@ -1,99 +1,64 @@
+# scripts/pipelineGen.py (VERSÃO FINAL com API do Kaggle)
 import os
-import subprocess
 import shutil
-import csv
-import io
-import re
+from kaggle.api.kaggle_api_extended import KaggleApi # <-- NOVO IMPORT
+import math
 
 # --- Configuration ---
+# ... (sem alterações nesta seção) ...
 DATASETS_DIR = '../datasets/'
 RAW_JSON_DIR = os.path.join(DATASETS_DIR, 'rawJson/')
 TEMP_DOWNLOADS_DIR = os.path.join(DATASETS_DIR, 'tempDowloads/')
 DOWNLOAD_LOG_PATH = os.path.join(DATASETS_DIR, 'dowloadLog.txt')
-
 SEARCH_TERMS = [
-    "government json api",
-    "scientific data json",
-    "product catalog json",
-    "financial data json",
-    "nested json",
-    "geolocation json"
+    "government json api", "scientific data json", "product catalog json",
+    "financial data json", "nested json", "geolocation json"
 ]
 DATASETS_PER_TERM = 5
 MAX_DATASET_SIZE_MB = 200
 
-def parseSizeToMb(sizeStr):
-    """Converts Kaggle's size string (e.g., '100KB', '50MB', '2GB') to megabytes."""
-    if not sizeStr:
-        return 0
-    sizeStr = sizeStr.upper()
-    num_match = re.findall(r'[\d\.]+', sizeStr)
-    if not num_match:
-        return 0
-    num = float(num_match[0])
-    
-    if "G" in sizeStr:
-        return num * 1024
-    if "M" in sizeStr:
-        return num
-    if "K" in sizeStr:
-        return num / 1024
-    return num / (1024 * 1024)
-
+# --- Funções (sem alterações aqui) ---
 def loadProcessedDataLog():
-    """Loads the set of already processed dataset references from the log file."""
-    if not os.path.exists(DOWNLOAD_LOG_PATH):
-        return set()
+    if not os.path.exists(DOWNLOAD_LOG_PATH): return set()
     with open(DOWNLOAD_LOG_PATH, 'r', encoding='utf-8') as f:
         return set(line.strip() for line in f)
 
 def logProcessedData(datasetRef):
-    """Appends a newly processed dataset reference to the log file."""
     with open(DOWNLOAD_LOG_PATH, 'a', encoding='utf-8') as f:
         f.write(f"{datasetRef}\n")
 
-def searchKaggleDatasets(searchTerm, sizeLimitMb):
-    """Searches Kaggle for small datasets and returns a list of references."""
+# --- FUNÇÕES REESCRITAS COM A API ---
+
+def searchKaggleDatasets(api, searchTerm, sizeLimitMb):
     print(f"\nSearching for datasets matching '{searchTerm}' (smaller than {sizeLimitMb}MB)...")
-    
-    command = [
-        "kaggle", "datasets", "list",
-        "--search", searchTerm,
-        "--csv"
-    ]
-    
     try:
-        result = subprocess.run(command, capture_output=True, text=True, check=True)
-        csvFile = io.StringIO(result.stdout)
-        reader = csv.reader(csvFile)
-        header = next(reader)
-        refIndex = header.index('ref')
-        sizeIndex = header.index('size')
+        # Usa a função da API para listar datasets
+        datasets_list = api.dataset_list(search=searchTerm)
         
         filteredRefs = []
-        for row in reader:
-            ref = row[refIndex]
-            sizeStr = row[sizeIndex]
-            sizeMb = parseSizeToMb(sizeStr)
-            
+        for dataset in datasets_list:
+            # A API retorna o tamanho em bytes. Convertemos para MB.
+            sizeMb = dataset.totalBytes / (1024 * 1024) if dataset.totalBytes else 0
             if sizeMb <= sizeLimitMb:
-                filteredRefs.append(ref)
+                # O atributo 'ref' contém a referência, como 'username/slug'
+                filteredRefs.append(dataset.ref)
         
         print(f"  > Found {len(filteredRefs)} datasets under the size limit.")
         return filteredRefs
         
-    except (subprocess.CalledProcessError, FileNotFoundError, ValueError) as e:
-        print(f"  > Error during Kaggle search: {e}")
+    except Exception as e:
+        print(f"  > Error during Kaggle API search: {e}")
         return []
 
-def downloadAndProcessDataset(datasetRef):
-    """Downloads a dataset, unzips it, and moves any new JSON files."""
+def downloadAndProcessDataset(api, datasetRef):
     print(f"\nProcessing dataset: {datasetRef}...")
     if os.path.exists(TEMP_DOWNLOADS_DIR): shutil.rmtree(TEMP_DOWNLOADS_DIR)
     os.makedirs(TEMP_DOWNLOADS_DIR)
-    downloadCommand = ["kaggle", "datasets", "download", "-d", datasetRef, "-p", TEMP_DOWNLOADS_DIR, "--unzip"]
+    
     try:
-        subprocess.run(downloadCommand, check=True, capture_output=True, text=True)
+        # Usa a função da API para baixar e descompactar os arquivos
+        api.dataset_download_files(datasetRef, path=TEMP_DOWNLOADS_DIR, unzip=True)
+        
         print(f"  > Download and unzip successful for {datasetRef}.")
         movedFilesCount = 0
         for root, _, files in os.walk(TEMP_DOWNLOADS_DIR):
@@ -111,39 +76,42 @@ def downloadAndProcessDataset(datasetRef):
             logProcessedData(datasetRef)
         else:
             print("  > No new JSON files found to move.")
-    except subprocess.CalledProcessError as e:
-        print(f"  > Error downloading dataset {datasetRef}: {e.stderr}")
+    except Exception as e:
+        print(f"  > Error downloading dataset {datasetRef}: {e}")
     finally:
         if os.path.exists(TEMP_DOWNLOADS_DIR): shutil.rmtree(TEMP_DOWNLOADS_DIR)
 
 def main():
-    """Main function to orchestrate the refined acquisition pipeline."""
+    # --- NOVO: Inicialização da API ---
+    print("Initializing Kaggle API...")
+    api = KaggleApi()
+    api.authenticate() # Autentica usando o arquivo ~/.kaggle/kaggle.json
+    print("Kaggle API authenticated successfully.")
+
     os.makedirs(RAW_JSON_DIR, exist_ok=True)
-    
     processedDatasets = loadProcessedDataLog()
     print(f"Found {len(processedDatasets)} previously processed datasets in the log.")
     
     allNewDatasetsToProcess = []
     for term in SEARCH_TERMS:
-        datasetRefs = searchKaggleDatasets(term, MAX_DATASET_SIZE_MB)
-        
+        # Passa o objeto 'api' para a função de busca
+        datasetRefs = searchKaggleDatasets(api, term, MAX_DATASET_SIZE_MB)
         newRefsForTerm = 0
         for ref in datasetRefs:
-            if newRefsForTerm >= DATASETS_PER_TERM:
-                break
+            if newRefsForTerm >= DATASETS_PER_TERM: break
             if ref not in processedDatasets and ref not in allNewDatasetsToProcess:
                 allNewDatasetsToProcess.append(ref)
                 newRefsForTerm += 1
-
+                
     if not allNewDatasetsToProcess:
         print("\nNo new datasets to download based on the specified criteria. Exiting.")
         return
-
+        
     print(f"\nFound a total of {len(allNewDatasetsToProcess)} new, unique datasets to process.")
-    
     for ref in allNewDatasetsToProcess:
-        downloadAndProcessDataset(ref)
-            
+        # Passa o objeto 'api' para a função de download
+        downloadAndProcessDataset(api, ref)
+        
     print("\n----------------------------------------------------")
     print("Data acquisition phase complete.")
 

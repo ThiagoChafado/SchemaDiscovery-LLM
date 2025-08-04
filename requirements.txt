@@ -1,0 +1,13 @@
+# requirements.txt
+pandas
+torch
+transformers
+datasets
+kaggle
+peft
+bitsandbytes
+tokenizers
+einops
+outlines
+genson
+huggingface_hub

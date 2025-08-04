@@ -12,6 +12,7 @@ results_lora/
 fine_tuned_model/
 fine_tuned_model_t5/
 training_checkpoints/
+tinyllama-local-model/
 
 
 # Ignorar arquivos de ambiente Python, se houver
