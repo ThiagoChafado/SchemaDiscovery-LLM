@@ -19,9 +19,9 @@ def testModel():
     model.eval()
 
     sampleJson = {
-        "userId": 123,
-        "product": "Caneta",
-        "inStock": True,
+        "ID": 12513,
+        "product": "pen",
+        "Test": False,
         "price": 3.59
     }
     sampleJsonString = json.dumps(sampleJson, indent=4)
@@ -44,8 +44,6 @@ def testModel():
         inputIds,
         max_length=512,
         num_beams=5,
-        repetition_penalty=1.5,
-        temperature=0.7,
         early_stopping=True,
         pad_token_id=tokenizer.eos_token_id
     )
