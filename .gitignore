@@ -15,10 +15,15 @@ training_checkpoints/
 tinyllama-local-model/
 
 
-# Ignorar arquivos de ambiente Python, se houver
+# Ignorar arquivos de ambiente Python e Javascript, se houver
+node_modules/
+.env
 venv/
 __pycache__/
 *.pyc
+
+#ignorar jsonObjects
+scripts/jsonObjects/
 
 # Ignorar arquivos de sistema
 .DS_Store
