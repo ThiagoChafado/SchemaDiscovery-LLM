@@ -33,7 +33,7 @@ function maybe(value) {
 function generatePerson() {
     return {
         type: "person",
-        id: faker.string.uuid(),
+        id: faker.string.numeric(),
         name: maybe(faker.person.fullName()),
         email: maybe(faker.internet.email()),
         phone: maybe(faker.phone.number()),

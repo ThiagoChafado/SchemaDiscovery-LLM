@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import json
 
 # --- Configuration ---
-MODEL_PATH = 'training_checkpoints' # O modelo final é o último checkpoint
+MODEL_PATH = 'training_checkpoints_22M/checkpoint-264000' # O modelo final é o último checkpoint
 
 def testModel():
     print(f"Carregando modelo e tokenizer de '{MODEL_PATH}'...")
