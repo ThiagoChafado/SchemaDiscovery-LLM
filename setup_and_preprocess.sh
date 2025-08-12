@@ -11,10 +11,10 @@ echo "--- INICIANDO SETUP E PRÉ-PROCESSAMENTO ---"
 
 # --- PASSO 1: Instalação das bibliotecas Python ---
 echo "[PASSO 1/5] Instalando dependências Python via pip..."
-pip install torch pandas transformers datasets kaggle peft bitsandbytes tokenizers
+pip install torch pandas transformers datasets kaggle peft bitsandbytes tokenizers genson
 echo "[SUCESSO] Dependências instaladas."
 echo ""
-
+export PATH="$HOME/.local/bin:$PATH"
 # --- PASSO 2: Verificação da API do Kaggle ---
 echo "[PASSO 2/5] Verificando a configuração da API do Kaggle..."
 if [ ! -f ~/.kaggle/kaggle.json ]; then

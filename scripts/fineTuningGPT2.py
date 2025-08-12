@@ -30,7 +30,7 @@ SCHEMA_START_TOKEN = "<|schema|>"
     # --- 2. Carregamento e Otimização do Modelo ---
     # `AutoModelForCausalLM.from_pretrained(...)`: Baixa o modelo distilgpt2
     # com seus 82 milhões de parâmetros já treinados.
-    #
+
     # Parâmetros Chave para Economia de Memória:
     # `load_in_8bit=True`: Esta é a "Quantização". Ele carrega o modelo usando
     # números de 8 bits em vez de 32 bits, reduzindo o uso de memória do modelo em ~75%.
