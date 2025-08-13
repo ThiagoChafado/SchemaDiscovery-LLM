@@ -1,0 +1,43 @@
+
+JSON:
+
+{
+  "id": 1,
+  "todo": "Do something nice for someone I care about",
+  "completed": true,
+  "userId": 26
+}
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TodoItem Object",
+  "description": "Schema for a single todo item.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the todo item."
+    },
+    "todo": {
+      "type": "string",
+      "description": "The description of the todo item."
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "Indicates whether the todo item is completed.",
+      "const": true  // Enforces that 'completed' must be true.
+    },
+    "userId": {
+      "type": "integer",
+      "description": "User ID associated with this todo item."
+    }
+  },
+  "required": [
+    "id",
+    "todo",
+    "completed",
+    "userId"
+  ]
+}

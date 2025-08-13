@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { faker } = require('@faker-js/faker');
+const { title } = require('process');
 
 /**
  * 
@@ -10,6 +11,25 @@ const { faker } = require('@faker-js/faker');
  */
 
 
+
+//Gera um objeto do tipo Post de rede social
+function generatePost() {
+    return {
+        type: "post",
+        id: faker.string.uuid(),
+        title: maybe(faker.lorem.sentence()),
+        content: maybe(faker.lorem.paragraph()),
+        tags: maybe([faker.word.adjective(), faker.word.noun()]),
+        author: maybe(faker.person.fullName()),
+        createdAt: maybe(faker.date.past().toISOString()),
+        updatedAt: maybe(faker.date.recent().toISOString()),
+        reactions: maybe({
+            likes: faker.number.int({ min: 0, max: 1000 }),
+            comments: faker.number.int({ min: 0, max: 500 }),
+            shares: faker.number.int({ min: 0, max: 300 })
+        })
+    };
+}
 
 // Gera um objeto do tipo pessoa
 function generatePerson() {

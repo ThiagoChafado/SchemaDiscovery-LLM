@@ -1,0 +1,156 @@
+JSON:
+{
+  "id": 1,
+  "name": "Classic Margherita Pizza",
+  "ingredients": [
+    "Pizza dough",
+    "Tomato sauce",
+    "Fresh mozzarella cheese",
+    "Fresh basil leaves",
+    "Olive oil",
+    "Salt and pepper to taste"
+  ],
+  "instructions": [
+    "Preheat the oven to 475°F (245°C).",
+    "Roll out the pizza dough and spread tomato sauce evenly.",
+    "Top with slices of fresh mozzarella and fresh basil leaves.",
+    "Drizzle with olive oil and season with salt and pepper.",
+    "Bake in the preheated oven for 12-15 minutes or until the crust is golden brown.",
+    "Slice and serve hot."
+  ],
+  "prepTimeMinutes": 20,
+  "cookTimeMinutes": 15,
+  "servings": 4,
+  "difficulty": "Easy",
+  "cuisine": "Italian",
+  "caloriesPerServing": 300,
+  "tags": [
+    "Pizza",
+    "Italian"
+  ],
+  "userId": 45,
+  "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+  "rating": 4.6,
+  "reviewCount": 3,
+  "mealType": [
+    "Dinner"
+  ]
+}
+
+Saída:
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Recipe Object",
+  "description": "Schema for a recipe object.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the recipe."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the recipe."
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Ingredient for the recipe."
+      },
+      "description": "List of ingredients required for the recipe."
+    },
+    "instructions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Step in the instructions."
+      },
+      "description": "List of instructions for preparing the recipe."
+    },
+    "prepTimeMinutes": {
+      "type": "integer",
+      "description": "Preparation time in minutes.",
+      "minimum": 0
+    },
+    "cookTimeMinutes": {
+      "type": "integer",
+      "description": "Cooking time in minutes.",
+      "minimum": 0
+    },
+    "servings": {
+      "type": "integer",
+      "description": "Number of servings the recipe makes.",
+      "minimum": 1
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["Easy", "Medium", "Hard"],
+      "description": "Difficulty level of the recipe."
+    },
+    "cuisine": {
+      "type": "string",
+      "description": "Cuisine type of the recipe."
+    },
+    "caloriesPerServing": {
+      "type": "integer",
+      "description": "Calories per serving.",
+      "minimum": 0
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Tag for the recipe."
+      },
+      "description": "List of tags associated with the recipe."
+    },
+    "userId": {
+      "type": "integer",
+      "description": "User ID who created or saved the recipe."
+    },
+    "image": {
+      "type": "string",
+      "format": "url",
+      "description": "URL of the recipe image."
+    },
+    "rating": {
+      "type": "number",
+      "format": "float",
+      "description": "Average rating for the recipe.",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "reviewCount": {
+      "type": "integer",
+      "description": "Number of reviews for the recipe.",
+      "minimum": 0
+    },
+    "mealType": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Breakfast", "Lunch", "Dinner", "Dessert"]
+      },
+      "description": "Meal type the recipe is suitable for."
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "ingredients",
+    "instructions",
+    "prepTimeMinutes",
+    "cookTimeMinutes",
+    "servings",
+    "difficulty",
+    "cuisine",
+    "caloriesPerServing",
+    "tags",
+    "userId",
+    "image",
+    "rating",
+    "reviewCount",
+    "mealType"
+  ]
+}

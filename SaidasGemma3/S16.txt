@@ -1,0 +1,71 @@
+JSON:
+
+{
+  "id": 1,
+  "body": "This is some awesome thinking!",
+  "postId": 242,
+  "likes": 3,
+  "user": {
+    "id": 105,
+    "username": "emmac",
+    "fullName": "Emma Wilson"
+  }
+}
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PostInteraction Object",
+  "description": "Schema for a post interaction object.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the interaction."
+    },
+    "body": {
+      "type": "string",
+      "description": "The content of the post being interacted with."
+    },
+    "postId": {
+      "type": "integer",
+      "description": "The ID of the original post.",
+      "minimum": 1
+    },
+    "likes": {
+      "type": "integer",
+      "description": "Number of likes on the interaction.",
+      "minimum": 0
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the user."
+        },
+        "username": {
+          "type": "string",
+          "description": "Username of the user."
+        },
+        "fullName": {
+          "type": "string",
+          "description": "Full name of the user."
+        }
+      },
+      "required": [
+        "id",
+        "username",
+        "fullName"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "body",
+    "postId",
+    "likes",
+    "user"
+  ]
+}

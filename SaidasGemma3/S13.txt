@@ -1,0 +1,123 @@
+JSON:
+{
+  "id": 1,
+  "products": [
+    {
+      "id": 144,
+      "title": "Cricket Helmet",
+      "price": 44.99,
+      "quantity": 4,
+      "total": 179.96,
+      "discountPercentage": 11.47,
+      "discountedTotal": 159.32,
+      "thumbnail": "https://cdn.dummyjson.com/products/images/sports-accessories/Cricket%20Helmet/thumbnail.png"
+    }
+  ],
+  "total": 4794.8,
+  "discountedTotal": 4288.95,
+  "userId": 142,
+  "totalProducts": 5,
+  "totalQuantity": 20
+}
+
+
+Saída:
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shopping Cart Summary",
+  "description": "Schema for a shopping cart summary object.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique identifier for the order."
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Product ID."
+          },
+          "title": {
+            "type": "string",
+            "description": "Product title."
+          },
+          "price": {
+            "type": "number",
+            "format": "float",
+            "description": "Product price."
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Quantity of the product."
+          },
+          "total": {
+            "type": "number",
+            "format": "float",
+            "description": "Total cost for this product."
+          },
+          "discountPercentage": {
+            "type": "number",
+            "format": "float",
+            "description": "Discount percentage applied to the product."
+          },
+          "discountedTotal": {
+            "type": "number",
+            "format": "float",
+            "description": "Total cost after discount."
+          },
+          "thumbnail": {
+            "type": "string",
+            "format": "url",
+            "description": "URL of the product thumbnail image."
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "price",
+          "quantity",
+          "total",
+          "discountPercentage",
+          "discountedTotal",
+          "thumbnail"
+        ]
+      },
+      "description": "Array of product objects."
+    },
+    "total": {
+      "type": "number",
+      "format": "float",
+      "description": "Total cost of all products."
+    },
+    "discountedTotal": {
+      "type": "number",
+      "format": "float",
+      "description": "Total cost after applying discounts."
+    },
+    "userId": {
+      "type": "integer",
+      "description": "User ID associated with the order."
+    },
+    "totalProducts": {
+      "type": "integer",
+      "description": "Total number of products in the cart."
+    },
+    "totalQuantity": {
+      "type": "integer",
+      "description": "Total quantity of all products in the cart."
+    }
+  },
+  "required": [
+    "id",
+    "products",
+    "total",
+    "discountedTotal",
+    "userId",
+    "totalProducts",
+    "totalQuantity"
+  ]
+}
