@@ -1,0 +1,76 @@
+JSON:
+
+{
+        "filters": [
+            {
+                "header": {
+                    "targets": {
+                        "platform1": {},
+                        "platform2": {}
+                    },
+                    "otherSetting": "value"
+                },
+                "terms": [
+                    {
+                        "name": "term1"
+                    },
+                    {
+                        "name": "term2"
+                    }
+                ]
+            }
+        ]
+    }
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FilterConfiguration",
+  "description": "Schema for a configuration object containing filter definitions.",
+  "type": "object",
+  "properties": {
+    "filters": {
+      "type": "array",
+      "description": "An array of filter configurations.",
+      "items": {
+        "$ref": "#/definitions/filter"
+      }
+    }
+  },
+  "required": [
+    "filters"
+  ],
+  "definitions": {
+    "filter": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "description": "Configuration for the filter header.",
+          "properties": {
+            "targets": {
+              "type": "object",
+              "description": "Targets for the filter.",
+              "patternProperties": {
+                "^\\w+$": {  // Matches any string starting with a letter (platform1, platform2)
+                  "type": {} // Empty object - allows customization within each target
+                }
+              }
+            },
+            "otherSetting": {
+              "type": "string",
+              "description": "An additional setting for the filter header."
+            }
+          },
+          "required": [
+            "targets"
+          ]
+        }
+      },
+      "required": [
+        "header"
+      ]
+    }
+  }
+}

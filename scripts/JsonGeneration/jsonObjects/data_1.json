@@ -1,0 +1,12 @@
+{
+  "type": "location",
+  "id": "df2fdad9-ca05-4f3c-a327-6256c4741053",
+  "name": "East Genoveva",
+  "latitude": -68.9238,
+  "longitude": 111.4436,
+  "address": {
+    "street": "33918 Monroe Street",
+    "country": "Czechia"
+  },
+  "phones": null
+}

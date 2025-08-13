@@ -1,0 +1,59 @@
+JSON:
+{
+            "id": "hook6",
+            "name": "Custom Script",
+            "entry": "bash my_script.sh",
+            "language": "script",
+            "args": [
+                "--force",
+                "--silent"
+            ],
+            "pass_filenames": false
+        }
+
+Saída:
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Script Configuration",
+  "description": "Schema for a script configuration object.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the script."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the script."
+    },
+    "entry": {
+      "type": "string",
+      "format": "command",
+      "description": "Command to execute."
+    },
+    "language": {
+      "type": "string",
+      "enum": ["script", "shell"],
+      "description": "Programming language of the script."
+    },
+    "args": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of arguments to pass to the script."
+    },
+    "pass_filenames": {
+      "type": "boolean",
+      "description": "Whether to pass filenames as arguments."
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "entry",
+    "language",
+    "args",
+    "pass_filenames"
+  ]
+}

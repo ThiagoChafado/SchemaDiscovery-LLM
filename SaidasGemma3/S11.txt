@@ -1,0 +1,76 @@
+ JSON:
+
+ {
+        "ui": {
+            "delay": {
+                "before_click": 100,
+                "before_mouse_move": 50,
+                "before_swipe": 300,
+                "before_tap": 200,
+                "before_typing": 150
+            },
+            "logging": {
+                "enable": true,
+                "exclude_logs": [
+                    "DEBUG_INFO",
+                    "ERROR_WARN"
+                ],
+                "path": "/logs/ui"
+            }
+        }
+    }
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UI Configuration",
+  "description": "Schema for UI configuration settings.",
+  "type": "object",
+  "properties": {
+    "ui": {
+      "type": "object",
+      "properties": {
+        "delay": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Delay in milliseconds before the action."
+          },
+          "description": "UI delay settings."
+        },
+        "logging": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean",
+              "description": "Whether logging is enabled."
+            },
+            "exclude_logs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of log levels to exclude."
+            },
+            "path": {
+              "type": "string",
+              "format": "uri",
+              "description": "Path to the logging directory."
+            }
+          },
+          "description": "UI logging settings."
+        }
+      },
+      "required": [
+        "delay",
+        "logging"
+      ]
+    }
+  },
+  "required": [
+    "ui"
+  ]
+}
+    

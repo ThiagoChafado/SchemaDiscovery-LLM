@@ -1,0 +1,12 @@
+{
+  "type": "product",
+  "sku": "f64ba94b-7a6b-4480-a941-92dd88aa707a",
+  "name": "Rustic Rubber Keyboard",
+  "category": "Tools",
+  "price": 170.49,
+  "available": true,
+  "tags": [
+    "Modern",
+    "Wooden"
+  ]
+}

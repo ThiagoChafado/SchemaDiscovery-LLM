@@ -1,0 +1,191 @@
+JSON:
+ {
+        "name": "AIConfig 1",
+        "description": "First example of AIConfig",
+        "schema_version": {
+            "major": 1,
+            "minor": 0
+        },
+        "metadata": {
+            "parameters": {},
+            "models": {},
+            "default_model": "model1",
+            "model_parsers": {}
+        },
+        "prompts": [
+            {
+                "name": "Prompt 1",
+                "input": "What is the weather like today?",
+                "metadata": {
+                    "parameters": {},
+                    "model": "model1",
+                    "tags": [
+                        "weather",
+                        "query"
+                    ]
+                },
+                "outputs": [
+                    {
+                        "output_type": "execute_result",
+                        "execution_count": 1,
+                        "data": "It's sunny with a high of 75°F.",
+                        "mime_type": "text/plain",
+                        "metadata": {}
+                    }
+                ]
+            }
+        ]
+    }
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AIConfig",
+  "description": "Schema for an AI Configuration object.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the AI configuration."
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the AI configuration."
+    },
+    "schema_version": {
+      "type": "object",
+      "description": "Version information for the schema.",
+      "properties": {
+        "major": {
+          "type": "integer",
+          "description": "The major version number."
+        },
+        "minor": {
+          "type": "integer",
+          "description": "The minor version number."
+        }
+      },
+      "required": [
+        "major",
+        "minor"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Metadata related to the configuration.",
+      "properties": {
+        "parameters": {
+          "type": "object",
+          "description": "Parameters associated with the configuration."
+        },
+        "models": {
+          "type": "object",
+          "description": "Models used in the configuration."
+        },
+        "default_model": {
+          "type": "string",
+          "description": "The default model to use."
+        },
+        "model_parsers": {
+          "type": "object",
+          "description": "Model parsers associated with the configuration."
+        }
+      }
+    },
+    "prompts": {
+      "type": "array",
+      "description": "An array of prompts.",
+      "items": {
+        "$ref": "#/definitions/prompt"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "schema_version",
+    "metadata",
+    "prompts"
+  ],
+  "definitions": {
+    "prompt": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the prompt."
+        },
+        "input": {
+          "type": "string",
+          "description": "The input text for the prompt."
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata associated with the prompt.",
+          "properties": {
+            "parameters": {
+              "type": "object",
+              "description": "Parameters specific to this prompt."
+            },
+            "model": {
+              "type": "string",
+              "description": "The model used for this prompt."
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Tags associated with the prompt."
+            }
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "description": "An array of possible outputs for the prompt.",
+          "items": {
+            "$ref": "#/definitions/output"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "input",
+        "metadata",
+        "outputs"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "output_type": {
+          "type": "string",
+          "description": "The type of output."
+        },
+        "execution_count": {
+          "type": "integer",
+          "description": "The execution count for the output."
+        },
+        "data": {
+          "type": "string",
+          "description": "The data contained in the output."
+        },
+        "mime_type": {
+          "type": "string",
+          "description": "The MIME type of the output."
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata associated with the output.",
+          "properties": {}
+        }
+      },
+      "required": [
+        "output_type",
+        "execution_count",
+        "data",
+        "mime_type"
+      ]
+    }
+  }
+}

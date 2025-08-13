@@ -1,0 +1,69 @@
+JSON:
+
+{
+  "type": "event",
+  "name": null,
+  "timestamp": "2024-12-18T05:54:35.426Z",
+  "participants": [
+    "Lynn Langosh",
+    "Luz Hauck"
+  ],
+  "location": "New Marlon",
+  "metadata": {
+    "source": "lovely-best-seller.net",
+    "ip": "132.249.159.74"
+  }
+}
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EventRecord",
+  "description": "Schema for an event record with details about the event and its participants.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of event (e.g., 'event').",
+      "enum": ["event"]
+    },
+    "name": {
+      "type": [ "null", "string"],
+      "description": "The name of the event."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp of the event in ISO 8601 format (e.g., '2024-12-18T05:54:35.426Z')."
+    },
+    "participants": {
+      "type": "array",
+      "description": "An array of participant names.",
+      "items": {
+        "type": "string",
+        "description": "The name of a participant."
+      }
+    },
+    "location": {
+      "type": "string",
+      "description": "The location where the event took place."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata about the event.",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "The source of the event data."
+        },
+        "ip": {
+          "type": "string",
+          "description": "The IP address associated with the event."
+        }
+      },
+      "required": ["source", "ip"]
+    }
+  },
+  "required": ["type", "timestamp", "participants", "location", "metadata"]
+}

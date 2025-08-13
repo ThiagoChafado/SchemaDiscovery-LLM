@@ -2,32 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const { faker } = require('@faker-js/faker');
 
-//Description
 /**
- * Este script gera 10.000 arquivos JSON variados e levemente "sujos" (com valores nulos ou campos omitidos)
- * usando a biblioteca Faker.js. Cada arquivo contém um objeto JSON representando diferentes tipos de dados
+ * 
+ * Este módulo exporta funções para gerar objetos JSON variados e levemente "sujos" (com valores nulos ou campos omitidos)
+ * usando a biblioteca Faker.js. Cada função gera um objeto representando diferentes tipos de dados
  * como pessoa, produto, local, transação e evento.
- * Os arquivos são salvos na pasta `jsonObjects` dentro do diretório do script.
- * Para executar o script, use o comando: `node scripts/getJson.js`
- * Certifique-se de ter a biblioteca Faker.js instalada: `npm install @faker-js/faker`
- * Cada objeto gerado pode conter campos com valores nulos ou campos omitidos para simular dados "sujos".
  */
 
-// Pasta de saída
-const outputDir = path.join(__dirname, 'jsonObjects');
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
-}
 
-let fileCounter = 1;
-
-// Função utilitária para aplicar valores nulos ou omissões
-function maybe(value) {
-    const r = Math.random();
-    if (r < 0.1) return null;      // 10% chance de null
-    if (r < 0.2) return undefined; // 10% chance de campo omitido
-    return value;
-}
 
 // Gera um objeto do tipo pessoa
 function generatePerson() {
@@ -110,32 +92,18 @@ function generateEvent() {
     };
 }
 
-// Lista de todos os geradores possíveis
-const generators = [
+// Função utilitária para aplicar valores nulos ou omissões
+function maybe(value) {
+    const r = Math.random();
+    if (r < 0.1) return null;      // 10% chance de null
+    if (r < 0.2) return undefined; // 10% chance de campo omitido
+    return value;
+}
+
+module.exports = {
     generatePerson,
     generateProduct,
     generateLocation,
     generateTransaction,
     generateEvent
-];
-
-// Gera N arquivos com dados variados
-async function generateRandomJsonFiles(quantity = 10000) {
-    for (let i = 0; i < quantity; i++) {
-        const generator = faker.helpers.arrayElement(generators);
-        const jsonObject = generator();
-
-        // Remove campos com `undefined`
-        Object.keys(jsonObject).forEach(k => {
-            if (jsonObject[k] === undefined) delete jsonObject[k];
-        });
-
-        const filePath = path.join(outputDir, `data_${fileCounter++}.json`);
-        await fs.promises.writeFile(filePath, JSON.stringify(jsonObject, null, 2));
-        if (i % 500 === 0) console.log(`Gerados ${i} arquivos...`);
-    }
-
-    console.log(`${quantity} arquivos JSON variados e levemente sujos foram gerados.`);
-}
-
-generateRandomJsonFiles(10000); 
+};

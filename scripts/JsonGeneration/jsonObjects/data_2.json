@@ -1,0 +1,15 @@
+{
+  "type": "location",
+  "id": "3e753cd0-0b93-45d9-bf02-494ddff7d715",
+  "name": "North Highlands",
+  "latitude": -83.7013,
+  "longitude": 39.8617,
+  "address": {
+    "street": "897 Toney Road",
+    "country": "Botswana"
+  },
+  "phones": [
+    "374.569.3927 x0106",
+    "608.651.6595"
+  ]
+}

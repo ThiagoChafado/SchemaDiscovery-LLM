@@ -1,0 +1,99 @@
+JSON:
+
+Give me the JSON Schema for this JSON Object
+{ "name"   : "John Smith",
+  "sku"    : "20223",
+  "price"  : 23.95,
+  "shipTo" : { "name" : "Jane Smith",
+               "address" : "123 Maple Street",
+               "city" : "Pretendville",
+               "state" : "NY",
+               "zip"   : "12345" },
+  "billTo" : { "name" : "John Smith",
+               "address" : "123 Maple Street",
+               "city" : "Pretendville",
+               "state" : "NY",
+               "zip"   : "12345" }
+}
+
+SAIDA:
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CustomerOrder",
+  "description": "Schema for a customer order with shipping and billing addresses.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The customer's full name."
+    },
+    "sku": {
+      "type": "string",
+      "description": "Stock Keeping Unit, a unique identifier for the product."
+    },
+    "price": {
+      "type": "number",
+      "format": "float",
+      "description": "The price of the item."
+    },
+    "shipTo": {
+      "type": "object",
+      "description": "Shipping address information.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Recipient's name for shipping."
+        },
+        "address": {
+          "type": "string",
+          "description": "Street Address."
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the shipping address."
+        },
+        "state": {
+          "type": "string",
+          "description": "State abbreviation (e.g., 'NY').",
+          "enum": ["NY", "CA", "TX", /* Add other valid state abbreviations here */]
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code.",
+          "pattern": "^\\d{5}$"  // Example: Matches 5-digit zip codes. Adjust as needed.
+        }
+      },
+      "required": ["name", "address", "city", "state", "zip"]
+    },
+    "billTo": {
+      "type": "object",
+      "description": "Billing address information.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Recipient's name for billing."
+        },
+        "address": {
+          "type": "string",
+          "description": "Street Address."
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the billing address."
+        },
+        "state": {
+          "type": "string",
+          "description": "State abbreviation (e.g., 'NY').",
+          "enum": ["NY", "CA", "TX", /* Add other valid state abbreviations here */]
+        },
+        "zip": {
+          "type": "string",
+          "description": "Zip code.",
+          "pattern": "^\\d{5}$"  // Example: Matches 5-digit zip codes. Adjust as needed.
+        }
+      },
+      "required": ["name", "address", "city", "state", "zip"]
+    }
+  },
+  "required": ["name", "sku", "price", "shipTo", "billTo"]
+}

@@ -1,0 +1,56 @@
+JSON:
+
+{
+  "type": "transaction",
+  "transactionId": "4a080214-203d-4d1c-abe8-04529d73ad09",
+  "amount": 609.24,
+  "currency": "AOA",
+  "date": "2025-08-11T23:36:08.337Z",
+  "description": "You made a deposit of CVE 675.33 at Fahey, Herman and Schroeder using card ending in ****8554 from account ***1010.",
+  "status": "completed"
+}
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TransactionRecord",
+  "description": "Schema for a transaction record.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of the transaction (e.g., 'transaction').",
+      "enum": ["transaction"]
+    },
+    "transactionId": {
+      "type": "string",
+      "description": "A unique identifier for the transaction."
+    },
+    "amount": {
+      "type": "number",
+      "format": "float",
+      "description": "The amount of the transaction."
+    },
+    "currency": {
+      "type": "string",
+      "description": "The currency used for the transaction (e.g., 'AOA')."
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time of the transaction in ISO 8601 format."
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the transaction."
+    },
+    "status": {
+      "type": "string",
+      "description": "The status of the transaction (e.g., 'completed').",
+      "enum": ["completed", "pending", "failed"]  // Added enum for possible statuses
+    }
+  },
+  "required": ["type", "transactionId", "amount", "currency", "date", "description", "status"]
+}
+

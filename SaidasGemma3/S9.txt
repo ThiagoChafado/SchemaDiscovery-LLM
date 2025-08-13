@@ -1,0 +1,77 @@
+JSON:
+
+{
+    "resources": {
+        "service1": {
+            "type": "dockerfile.v0",
+            "path": "Dockerfile",
+            "context": "./",
+            "env": {},
+            "bindings": {},
+            "buildArgs": {}
+        }
+    }
+}
+
+Saída:
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ResourceConfiguration",
+  "description": "Schema for a configuration object defining resources.",
+  "type": "object",
+  "properties": {
+    "resources": {
+      "type": "object",
+      "description": "A collection of resource definitions.",
+      "patternProperties": {
+        // Use patternProperties to allow keys like 'service1'
+        ".*": {
+          "$ref": "#/definitions/resource"
+        }
+      }
+    }
+  },
+  "required": [
+    "resources"
+  ],
+  "definitions": {
+    "resource": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of the resource."
+        },
+        "path": {
+          "type": "string",
+          "description": "The path to the resource."
+        },
+        "context": {
+          "type": "string",
+          "description": "The context for the resource."
+        },
+        "env": {
+          "type": "object",
+          "description": "Environment variables for the resource.",
+          "additionalProperties": true  // Allows arbitrary environment variable names
+        },
+        "bindings": {
+          "type": "object",
+          "description": "Bindings for the resource.",
+          "additionalProperties": true //Allows arbitrary binding definitions
+        },
+        "buildArgs": {
+          "type": "object",
+          "description": "Build arguments for the resource.",
+          "additionalProperties": true // Allows arbitrary build argument definitions
+        }
+      },
+      "required": [
+        "type",
+        "path",
+        "context"
+      ]
+    }
+  }
+}

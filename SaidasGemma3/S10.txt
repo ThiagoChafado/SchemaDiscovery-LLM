@@ -1,0 +1,118 @@
+JSON:
+
+{
+        "badges": [],
+        "baseUri": "http://example.com",
+        "categories": [
+            "Azure Repos"
+        ],
+        "description": "This is a sample extension 1.",
+        "id": "example.extension1",
+        "language": "en-US",
+        "manifestVersion": 1,
+        "name": "Sample Extension 1",
+        "publisher": "examplePublisher",
+        "targets": [
+            {
+                "id": "Microsoft.VisualStudio.Services"
+            }
+        ],
+        "version": "1.0.0"
+    }
+
+Saída:
+
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExtensionManifest",
+  "description": "Schema for an extension manifest.",
+  "type": "object",
+  "properties": {
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of badges to display."
+    },
+    "baseUri": {
+      "type": "string",
+      "format": "uri",
+      "description": "The base URI for the extension."
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of categories to associate with the extension."
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the extension."
+    },
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "The unique identifier for the extension."
+    },
+    "language": {
+      "type": "string",
+      "description": "The language of the extension."
+    },
+    "manifestVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The manifest version."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the extension."
+    },
+    "publisher": {
+      "type": "string",
+      "description": "The publisher of the extension."
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/target"
+      },
+      "description": "Array of targets for the extension."
+    },
+    "version": {
+      "type": "string",
+      "format": "uri",
+      "description": "The version of the extension."
+    }
+  },
+  "required": [
+    "badges",
+    "baseUri",
+    "categories",
+    "description",
+    "id",
+    "language",
+    "manifestVersion",
+    "name",
+    "publisher",
+    "targets",
+    "version"
+  ],
+  "definitions": {
+    "target": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri",
+          "description": "The identifier for the target."
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+}

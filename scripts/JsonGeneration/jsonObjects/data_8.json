@@ -1,0 +1,18 @@
+{
+  "type": "person",
+  "id": "1",
+  "name": "Lucy Emmerich",
+  "email": "Rickey_Fay23@gmail.com",
+  "phone": "960-654-8561 x1169",
+  "age": 90,
+  "tags": [
+    "mild",
+    "pile",
+    "stable"
+  ],
+  "address": {
+    "street": null,
+    "city": "Port Ethanside",
+    "zip": "83413-7033"
+  }
+}
