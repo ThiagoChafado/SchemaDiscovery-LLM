@@ -12,6 +12,7 @@ const { title } = require('process');
 
 
 
+
 //Gera um objeto do tipo Post de rede social
 function generatePost() {
     return {
