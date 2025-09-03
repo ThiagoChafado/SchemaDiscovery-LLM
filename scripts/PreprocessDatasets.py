@@ -84,6 +84,40 @@ def jsonlines_tojson(jsonline_file, json_file):
         print(f"Ocorreu um erro ao converter o arquivo: {e}")
 
 
+
+#Funçao para ler o arquivo json e separar em arquivos menores, um arquivo por documento json
+
+def split_json_file(input_file, output_dir):
+    """
+    Lê um arquivo JSON contendo uma lista de objetos e cria arquivos JSON separados,
+    um para cada objeto na lista.
+    """
+    try:
+        # Cria o diretório de saída se não existir
+        os.makedirs(output_dir, exist_ok=True)
+        
+        with open(input_file, 'r', encoding='utf-8') as f_in:
+            data = json.load(f_in)
+        
+        if not isinstance(data, list):
+            print("Erro: O arquivo JSON de entrada não contém uma lista de objetos.")
+            return
+        
+        for idx, item in enumerate(data):
+            output_file = os.path.join(output_dir, f'document_{idx + 1}.json')
+            with open(output_file, 'w', encoding='utf-8') as f_out:
+                json.dump(item, f_out, ensure_ascii=False, indent=4)
+        
+        print(f"Arquivos separados salvos em: '{output_dir}'")
+    
+    except FileNotFoundError:
+        print(f"Erro: O arquivo '{input_file}' não foi encontrado. Verifique o nome e o caminho.")
+    except json.JSONDecodeError:
+        print("Erro: O arquivo JSON de entrada está malformado.")
+    except Exception as e:
+        print(f"Ocorreu um erro inesperado: {e}")
+
 # Executa a função
+reduce_json_file(entry_file, output_file, size_target)
 jsonlines_tojson(output_file, 'datasets/twitter_reduzido.json')
-#reduce_json_file(entry_file, output_file, size_target)
+split_json_file('datasets/twitter_reduzido.json', 'datasets/twitter_documents')
