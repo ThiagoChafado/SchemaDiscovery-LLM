@@ -4,32 +4,58 @@ from openai import OpenAI
 import ijson
 import gc
 from decimal import Decimal
+import os
 
 # --- CONFIGURAÇÕES ---
-CLIENTE_OPENAI = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
 NOME_DO_MODELO = "gemma:2b" 
-ARQUIVO_ENTRADA = 'datasets/twitter_reduzido.json'
-ARQUIVO_SAIDA = 'datasets/esquemas_extraidos.txt'
 
-# --------------------
+#Diretorio de entrada com os jsons
+INPUT_DIR = 'datasets/twitter_documents/'
+#Diretorio de saída dos jsons extraidos
+OUTPUT_DIR = 'datasets/schema_documents/'
 
-# Função para extrair o esquema de um JSON
-def extrair_esquema_json():
-    with open(ARQUIVO_ENTRADA, 'r') as f_in, open(ARQUIVO_SAIDA, 'w') as f_out:
-        objetos = ijson.items(f_in, 'item')
-        for obj in objetos:
-            prompt = f"Extract the schema from the following JSON object:\n{json.dumps(obj, ensure_ascii=False, default=str)}"
-            resposta = CLIENTE_OPENAI.chat.completions.create(
+#Função para extrair os dados do Gemma3-4B
+def extract_json_schema_from_files(input_dir, output_dir):
+
+    for filename in os.listdir(input_dir):
+        if filename.endswith('.json'):
+            input_path = os.path.join(input_dir, filename)
+            output_path = os.path.join(output_dir, filename)
+
+            with open(input_path, 'r', encoding='utf-8') as infile:
+                data = json.load(infile)
+
+            # Start a new OpenAI client for each file to clear context
+            client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
+
+            prompt = (
+                "Extract only the JSON schema (in JSON Schema format) for the following JSON document:\n"
+                f"{json.dumps(data)}"
+            )
+
+            response = client.chat.completions.create(
                 model=NOME_DO_MODELO,
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=512,
+                messages=[
+                    {"role": "system", "content": "You are a helpful assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=4096,
                 temperature=0
             )
-            schema = resposta.choices[0].message.content.strip()
-            f_out.write(schema + '\n')
+
+            schema_text = response.choices[0].message.content.strip()
+            try:
+                schema_json = json.loads(schema_text)
+            except Exception:
+                schema_json = {"error": "Failed to parse schema", "raw": schema_text}
+
+            with open(output_path, 'w', encoding='utf-8') as outfile:
+                json.dump(schema_json, outfile, indent=2)
+
+            del client
             gc.collect()
-            time.sleep(0.5)
-            
-            
-# Executa a função
-extrair_esquema_json()
+            time.sleep(1)
+
+# Cria o diretório de saída se não existir
+os.makedirs(OUTPUT_DIR, exist_ok=True)  
+extract_json_schema_from_files(INPUT_DIR, OUTPUT_DIR)
