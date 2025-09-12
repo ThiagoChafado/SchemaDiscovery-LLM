@@ -2,7 +2,7 @@
 
 # Ignorar a pasta principal de datasets
 datasets/
-
+processed/
 # Ignorar pastas de modelos e tokenizers gerados localmente
 # Essas pastas são criadas na raiz do projeto pelos scripts
 mini_gpt_tokenizer/
