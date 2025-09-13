@@ -6,15 +6,15 @@ Projeto de **TCC** voltado para a **extração de esquemas de coleções JSON** 
 
 ## 📂 Estrutura de Diretórios
 
-├── datasets # Conjunto de dados originais
-├── processed # Dados processados
-│ ├── coleção_1
-│ ├── coleção_2
-│ └── ...
-├── SaidasGemma3 # Saídas geradas pelo modelo Gemma
-├── saidastreinamentos # Resultados de treinamentos
-├── schema_documents # Documentos de esquemas extraídos
-└── scripts # Scripts auxiliares do projeto
+    - datasets # Conjunto de dados originais
+    - processed # Dados processados
+        - coleção_1
+        - coleção_2
+        - ...
+    - SaidasGemma3 # Saídas geradas pelo modelo Gemma
+    - saidastreinamentos # Resultados de treinamentos
+    - schema_documents # Documentos de esquemas extraídos
+    - scripts # Scripts auxiliares do projeto
 
 ---
 
