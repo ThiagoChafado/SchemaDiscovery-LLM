@@ -1,12 +1,15 @@
+#!/usr/bin/env python3
 import os
 import json
 import random
+import argparse
+import sys
 from faker import Faker
+import time
 
 fake = Faker()
-# --- Configurações ---
-OUTPUT_DIR = "datasets/sintetic"
-# ---------------------
+
+OUTPUT_DIR = "datasets"
 
 def generate_person(person_id: int):
     return {
@@ -31,68 +34,106 @@ def generate_product(product_id: int):
         "created_at": fake.date_this_decade().isoformat()
     }
 
-def generate_transaction(transaction_id: int, persons, products):
-    person = random.choice(persons)
-    items = []
-    for _ in range(random.randint(1, 2)):  # máximo 2 itens pra não crescer demais
-        product = random.choice(products)
-        items.append({
-            "product_id": product["id"],
-            "quantity": random.randint(1, 3),
-            "price": product["price"]
-        })
-
+def generate_transaction(transaction_id: int, person, product):
     return {
         "id": transaction_id,
         "person_id": person["id"],
         "date": fake.date_this_decade().isoformat(),
         "status": random.choice(["pending", "completed", "canceled"]),
         "payment_method": random.choice(["credit_card", "debit_card", "cash", "paypal"]),
-        "items": items
+        "product_id": product["id"],
+        "quantity": random.randint(1, 3),
+        "price": product["price"]
     }
 
-def generate_database():
-    # controlamos o tamanho para dar ~100 linhas, fica melhor para nao extrapolar o contexto
-    num_persons = random.randint(5, 8)
-    num_products = random.randint(5, 8)
-    num_transactions = random.randint(5, 10)
-
-    persons = [generate_person(i) for i in range(1, num_persons + 1)]
-    products = [generate_product(i) for i in range(1, num_products + 1)]
-    transactions = [generate_transaction(i, persons, products) for i in range(1, num_transactions + 1)]
-
-    db = {
-        "persons": persons,
-        "products": products,
-        "transactions": transactions
-    }
-
-    # remover None pra dar "sujeira"
-    def clean_dict(d):
-        return {k: v for k, v in d.items() if v is not None}
-
-    db["persons"] = [clean_dict(p) for p in db["persons"]]
-    db["products"] = [clean_dict(p) for p in db["products"]]
-    db["transactions"] = [clean_dict(t) for t in db["transactions"]]
-
-    return db
-
-def generate_json_documents(size):
+def generate_documents_by_size(target_size_mb: int,
+                               output_filename: str,
+                               check_every: int = 50,
+                               jsonl: bool = False):
+    """
+    Gera um arquivo contendo um array JSON (ou JSONL se jsonl=True) até atingir
+    target_size_mb. check_every define a frequência (em docs) de verificar o tamanho em disco.
+    """
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    total_size = 0
-    i = 1
-    while total_size < size * 1024 * 1024:
-        db = generate_database()
-        file_path = os.path.join(OUTPUT_DIR, f"database_{i}.json")
+    target_bytes = target_size_mb * 1024 * 1024
+    file_path = os.path.join(OUTPUT_DIR, output_filename)
+
+    # Remove arquivo anterior se existir
+    if os.path.exists(file_path):
+        os.remove(file_path)
+
+    person_id = 1
+    product_id = 1
+    transaction_id = 1
+    written = 0
+    t0 = time.time()
+
+    # JSONL mode: um JSON por linha, começando por '{'
+    if jsonl:
         with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(db, f, ensure_ascii=False, indent=2)
-        file_size = os.path.getsize(file_path)
-        total_size += file_size
+            while True:
+                person = generate_person(person_id)
+                product = generate_product(product_id)
+                transaction = generate_transaction(transaction_id, person, product)
+                doc = {"person": person, "product": product, "transaction": transaction}
+                f.write(json.dumps(doc, ensure_ascii=False, separators=(',', ':'), default=str) + "\n")
 
-        print(f"Documento {i} salvo: {file_path} ({file_size} bytes)")
-        i += 1
+                person_id += 1; product_id += 1; transaction_id += 1
+                written += 1
 
-    print(f"\n{total_size // (1024 * 1024)} MB de documentos JSON foram salvos em '{OUTPUT_DIR}'.")
+                if written % check_every == 0:
+                    f.flush()
+                    os.fsync(f.fileno())
+                    size = os.path.getsize(file_path)
+                    print(f"[JSONL] docs={written} size={size/(1024*1024):.2f} MB")
+                    if size >= target_bytes:
+                        break
+    else:
+        # JSON array mode: write '[' then objects separated by ',' then ']'
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write("[")
+            first = True
+            while True:
+                person = generate_person(person_id)
+                product = generate_product(product_id)
+                transaction = generate_transaction(transaction_id, person, product)
+                doc = {"person": person, "product": product, "transaction": transaction}
+
+                dumped = json.dumps(doc, ensure_ascii=False, separators=(',', ':'), default=str)
+                if not first:
+                    f.write(",")
+                f.write(dumped)
+
+                person_id += 1; product_id += 1; transaction_id += 1
+                written += 1
+                first = False
+
+                if written % check_every == 0:
+                    f.flush()
+                    os.fsync(f.fileno())
+                    size = os.path.getsize(file_path)
+                    elapsed = time.time() - t0
+                    print(f"[ARRAY] docs={written} size={size/(1024*1024):.2f} MB elapsed={elapsed:.1f}s")
+                    if size >= target_bytes:
+                        break
+
+            f.write("]")  # fecha o array
+
+    final_size = os.path.getsize(file_path) / (1024*1024)
+    print(f"\n✔ Gerado: {file_path}")
+    print(f"  documentos: {written}")
+    print(f"  tamanho final: {final_size:.2f} MB")
+
+def parse_args():
+    p = argparse.ArgumentParser(description="Gerador sintético por tamanho (MB)")
+    p.add_argument("size_mb", type=int, help="tamanho alvo em MB do arquivo gerado")
+    p.add_argument("--out", "-o", default=None, help="nome do arquivo de saída (opcional)")
+    p.add_argument("--jsonl", action="store_true", help="gera JSONL (um objeto por linha) em vez de array")
+    p.add_argument("--check-every", type=int, default=50, help="verifica tamanho a cada N documentos (padrão=50)")
+    return p.parse_args()
 
 if __name__ == "__main__":
-    generate_json_documents(5)  # exemplo: 5 mb
+    args = parse_args()
+    size_mb = args.size_mb
+    filename = args.out if args.out else f"dataset_{size_mb}MB.jsonl" if args.jsonl else f"dataset_{size_mb}MB.json"
+    generate_documents_by_size(size_mb, filename, check_every=args.check_every, jsonl=args.jsonl)

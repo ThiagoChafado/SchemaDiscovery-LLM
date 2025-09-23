@@ -48,4 +48,4 @@ Comparar e avaliar a **eficácia de LLMs** frente a ferramentas tradicionais de 
 ## 👨‍💻 Autor
 
 Thiago Chafado Almeida  
-Curso de Ciência da Computação — UFFS Chapecó 
+Curso de Ciência da Computação — UFFS Chapecó

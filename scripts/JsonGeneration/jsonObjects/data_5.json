@@ -1,9 +1,0 @@
-{
-  "type": "transaction",
-  "transactionId": "4a080214-203d-4d1c-abe8-04529d73ad09",
-  "amount": 609.24,
-  "currency": "AOA",
-  "date": "2025-08-11T23:36:08.337Z",
-  "description": "You made a deposit of CVE 675.33 at Fahey, Herman and Schroeder using card ending in ****8554 from account ***1010.",
-  "status": "completed"
-}
