@@ -107,13 +107,13 @@ def generate_json_array_by_size(size_mb: int, check_every: int = 50):
                 os.fsync(f.fileno())
                 size = os.path.getsize(file_path)
                 elapsed = time.time() - t0
-                print(f"[ARRAY] docs={written} size={size/(1024*1024):.2f} MB elapsed={elapsed:.1f}s")
+                print(f"[ARRAY] docs={written} tamanho={size/(1024*1024):.2f} MB estimado={elapsed:.1f}s")
                 if size >= target_bytes:
                     break
         f.write("]")
 
     final_size = os.path.getsize(file_path) / (1024*1024)
-    print(f"\n✔ Gerado: {file_path}")
+    print(f"\n Gerado: {file_path}")
     print(f"  documentos: {written}")
     print(f"  tamanho final: {final_size:.2f} MB")
 
