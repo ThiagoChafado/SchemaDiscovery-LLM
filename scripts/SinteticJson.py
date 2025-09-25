@@ -24,27 +24,44 @@ def generate_product(product_id: int):
     return {
         "id": product_id,
         "name": fake.word().capitalize(),
-        "category": random.choice(["Eletronic", "Food", "Cloths", "Books", "Furniture"]),
+        "category": random.choice(["Electronic", "Food", "Clothes", "Books", "Furniture"]),
         "price": round(random.uniform(10, 2000), 2),
         "in_stock": random.choice([True, False]),
         "rating": round(random.uniform(1, 5), 1),
         "created_at": fake.date_this_decade().isoformat()
     }
 
-def generate_transaction(transaction_id: int, person, product):
-    return {
+def generate_transaction(transaction_id: int, person, products, max_items: int = 3):
+    transaction = {
         "id": transaction_id,
         "person_id": person["id"],
         "date": fake.date_this_decade().isoformat(),
         "status": random.choice(["pending", "completed", "canceled"]),
-        "payment_method": random.choice(["credit_card", "debit_card", "cash", "paypal"]),
-        "product_id": product["id"],
-        "quantity": random.randint(1, 3),
-        "price": product["price"]
+        "payment_method": random.choice(["credit_card", "debit_card", "cash", "paypal"])
     }
 
+    chosen_products = random.sample(products, k=random.randint(1, min(max_items, len(products))))
+
+    transaction_items = []
+    item_id = 1
+    for product in chosen_products:
+        quantity = random.randint(1, 5)
+        item = {
+            "id": item_id,
+            "transaction_id": transaction_id,
+            "product_id": product["id"],
+            "quantity": quantity,
+            "price": product["price"]
+        }
+        transaction_items.append(item)
+        item_id += 1
+
+    return transaction, transaction_items
+
 def generate_json_array_by_size(size_mb: int, check_every: int = 50):
-    """Gera um arquivo contendo um ARRAY JSON até atingir o tamanho em MB informado."""
+    """Gera um arquivo contendo um ARRAY JSON até atingir o tamanho em MB informado,
+    seguindo o modelo relacional com persons, products, transactions e transaction_items.
+    """
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     target_bytes = size_mb * 1024 * 1024
     file_path = os.path.join(OUTPUT_DIR, f"dataset_{size_mb}MB.json")
@@ -61,9 +78,19 @@ def generate_json_array_by_size(size_mb: int, check_every: int = 50):
         first = True
         while True:
             person = generate_person(person_id)
-            product = generate_product(product_id)
-            transaction = generate_transaction(transaction_id, person, product)
-            doc = {"person": person, "product": product, "transaction": transaction}
+
+            # Catálogo de produtos (cada transação escolhe os seus)
+            products = [generate_product(product_id + i) for i in range(random.randint(2, 6))]
+            product_id += len(products)
+
+            transaction, items = generate_transaction(transaction_id, person, products)
+
+            doc = {
+                "person": person,
+                "products": products,
+                "transaction": transaction,
+                "transaction_items": items
+            }
 
             dumped = json.dumps(doc, ensure_ascii=False, separators=(',', ':'))
             if not first:
@@ -72,7 +99,6 @@ def generate_json_array_by_size(size_mb: int, check_every: int = 50):
 
             first = False
             person_id += 1
-            product_id += 1
             transaction_id += 1
             written += 1
 
@@ -92,4 +118,4 @@ def generate_json_array_by_size(size_mb: int, check_every: int = 50):
     print(f"  tamanho final: {final_size:.2f} MB")
 
 # Exemplo de uso:
-# generate_json_array_by_size(5)  # gera um JSON de ~5MB
+generate_json_array_by_size(5)  # gera um JSON de ~5MB
