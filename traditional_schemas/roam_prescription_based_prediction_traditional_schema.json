@@ -1,0 +1,4161 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "cms_prescription_counts": {
+      "type": "object",
+      "properties": {
+        "CARVEDILOL": {
+          "type": "integer"
+        },
+        "METOPROLOL SUCCINATE": {
+          "type": "integer"
+        },
+        "ATORVASTATIN CALCIUM": {
+          "type": "integer"
+        },
+        "LISINOPRIL": {
+          "type": "integer"
+        },
+        "XARELTO": {
+          "type": "integer"
+        },
+        "AMOXICILLIN": {
+          "type": "integer"
+        },
+        "CLOPIDOGREL": {
+          "type": "integer"
+        },
+        "HYDROCODONE-ACETAMINOPHEN": {
+          "type": "integer"
+        },
+        "PREDNISONE": {
+          "type": "integer"
+        },
+        "OXYCODONE-ACETAMINOPHEN": {
+          "type": "integer"
+        },
+        "GABAPENTIN": {
+          "type": "integer"
+        },
+        "CIPROFLOXACIN HCL": {
+          "type": "integer"
+        },
+        "OMEPRAZOLE": {
+          "type": "integer"
+        },
+        "LEVOTHYROXINE SODIUM": {
+          "type": "integer"
+        },
+        "FUROSEMIDE": {
+          "type": "integer"
+        },
+        "AZITHROMYCIN": {
+          "type": "integer"
+        },
+        "TRAMADOL HCL": {
+          "type": "integer"
+        },
+        "IBUPROFEN": {
+          "type": "integer"
+        },
+        "RISPERIDONE": {
+          "type": "integer"
+        },
+        "PRAZOSIN HCL": {
+          "type": "integer"
+        },
+        "ZOLPIDEM TARTRATE ER": {
+          "type": "integer"
+        },
+        "TRIHEXYPHENIDYL HCL": {
+          "type": "integer"
+        },
+        "LATUDA": {
+          "type": "integer"
+        },
+        "FLUPHENAZINE DECANOATE": {
+          "type": "integer"
+        },
+        "FLUPHENAZINE HCL": {
+          "type": "integer"
+        },
+        "OLANZAPINE ODT": {
+          "type": "integer"
+        },
+        "HALOPERIDOL DECANOATE": {
+          "type": "integer"
+        },
+        "ZIPRASIDONE HCL": {
+          "type": "integer"
+        },
+        "NEFAZODONE HCL": {
+          "type": "integer"
+        },
+        "DIVALPROEX SODIUM": {
+          "type": "integer"
+        },
+        "CLONAZEPAM": {
+          "type": "integer"
+        },
+        "INVEGA": {
+          "type": "integer"
+        },
+        "FAZACLO": {
+          "type": "integer"
+        },
+        "FANAPT": {
+          "type": "integer"
+        },
+        "QUETIAPINE FUMARATE": {
+          "type": "integer"
+        },
+        "FLUVOXAMINE MALEATE": {
+          "type": "integer"
+        },
+        "OLANZAPINE": {
+          "type": "integer"
+        },
+        "BUPROPION HCL SR": {
+          "type": "integer"
+        },
+        "VIIBRYD": {
+          "type": "integer"
+        },
+        "NORTRIPTYLINE HCL": {
+          "type": "integer"
+        },
+        "LUNESTA": {
+          "type": "integer"
+        },
+        "LITHIUM CARBONATE": {
+          "type": "integer"
+        },
+        "ABILIFY": {
+          "type": "integer"
+        },
+        "PROPRANOLOL HCL": {
+          "type": "integer"
+        },
+        "VENLAFAXINE HCL": {
+          "type": "integer"
+        },
+        "BUSPIRONE HCL": {
+          "type": "integer"
+        },
+        "FLUOXETINE HCL": {
+          "type": "integer"
+        },
+        "RISPERIDONE ODT": {
+          "type": "integer"
+        },
+        "ABILIFY MAINTENA": {
+          "type": "integer"
+        },
+        "ADDERALL XR": {
+          "type": "integer"
+        },
+        "SEROQUEL XR": {
+          "type": "integer"
+        },
+        "PAROXETINE HCL": {
+          "type": "integer"
+        },
+        "DEXTROAMPHETAMINE-AMPHETAMINE": {
+          "type": "integer"
+        },
+        "MIRTAZAPINE": {
+          "type": "integer"
+        },
+        "THIOTHIXENE": {
+          "type": "integer"
+        },
+        "CYMBALTA": {
+          "type": "integer"
+        },
+        "RISPERDAL CONSTA": {
+          "type": "integer"
+        },
+        "LEXAPRO": {
+          "type": "integer"
+        },
+        "BENZTROPINE MESYLATE": {
+          "type": "integer"
+        },
+        "CITALOPRAM HBR": {
+          "type": "integer"
+        },
+        "TRAZODONE HCL": {
+          "type": "integer"
+        },
+        "ZOLPIDEM TARTRATE": {
+          "type": "integer"
+        },
+        "DIVALPROEX SODIUM ER": {
+          "type": "integer"
+        },
+        "TEMAZEPAM": {
+          "type": "integer"
+        },
+        "CLOZARIL": {
+          "type": "integer"
+        },
+        "CLOZAPINE": {
+          "type": "integer"
+        },
+        "SEROQUEL": {
+          "type": "integer"
+        },
+        "LORAZEPAM": {
+          "type": "integer"
+        },
+        "ESCITALOPRAM OXALATE": {
+          "type": "integer"
+        },
+        "OXCARBAZEPINE": {
+          "type": "integer"
+        },
+        "DONEPEZIL HCL": {
+          "type": "integer"
+        },
+        "SERTRALINE HCL": {
+          "type": "integer"
+        },
+        "BUPROPION XL": {
+          "type": "integer"
+        },
+        "HALOPERIDOL": {
+          "type": "integer"
+        },
+        "VENLAFAXINE HCL ER": {
+          "type": "integer"
+        },
+        "THIORIDAZINE HCL": {
+          "type": "integer"
+        },
+        "HYDROXYZINE HCL": {
+          "type": "integer"
+        },
+        "ALPRAZOLAM": {
+          "type": "integer"
+        },
+        "LAMOTRIGINE": {
+          "type": "integer"
+        },
+        "INVEGA SUSTENNA": {
+          "type": "integer"
+        },
+        "TOPIRAMATE": {
+          "type": "integer"
+        },
+        "CARBIDOPA-LEVODOPA": {
+          "type": "integer"
+        },
+        "NAMENDA": {
+          "type": "integer"
+        },
+        "GAMUNEX-C": {
+          "type": "integer"
+        },
+        "GRALISE": {
+          "type": "integer"
+        },
+        "PYRIDOSTIGMINE BROMIDE": {
+          "type": "integer"
+        },
+        "TEGRETOL XR": {
+          "type": "integer"
+        },
+        "ROPINIROLE HCL": {
+          "type": "integer"
+        },
+        "GAMMAGARD LIQUID": {
+          "type": "integer"
+        },
+        "AZATHIOPRINE": {
+          "type": "integer"
+        },
+        "PRIMIDONE": {
+          "type": "integer"
+        },
+        "MYCOPHENOLATE MOFETIL": {
+          "type": "integer"
+        },
+        "PRAMIPEXOLE DIHYDROCHLORIDE": {
+          "type": "integer"
+        },
+        "AMITRIPTYLINE HCL": {
+          "type": "integer"
+        },
+        "RELPAX": {
+          "type": "integer"
+        },
+        "FENTANYL": {
+          "type": "integer"
+        },
+        "ACETAMINOPHEN-CODEINE": {
+          "type": "integer"
+        },
+        "AMANTADINE": {
+          "type": "integer"
+        },
+        "DIAZEPAM": {
+          "type": "integer"
+        },
+        "GALANTAMINE HBR": {
+          "type": "integer"
+        },
+        "CALCIUM ACETATE": {
+          "type": "integer"
+        },
+        "ISOSORBIDE MONONITRATE ER": {
+          "type": "integer"
+        },
+        "CALCITRIOL": {
+          "type": "integer"
+        },
+        "AMLODIPINE BESYLATE": {
+          "type": "integer"
+        },
+        "HYDRALAZINE HCL": {
+          "type": "integer"
+        },
+        "SENSIPAR": {
+          "type": "integer"
+        },
+        "LOSARTAN POTASSIUM": {
+          "type": "integer"
+        },
+        "FLUDROCORTISONE ACETATE": {
+          "type": "integer"
+        },
+        "NIFEDICAL XL": {
+          "type": "integer"
+        },
+        "DOXAZOSIN MESYLATE": {
+          "type": "integer"
+        },
+        "TORSEMIDE": {
+          "type": "integer"
+        },
+        "METOPROLOL TARTRATE": {
+          "type": "integer"
+        },
+        "RENVELA": {
+          "type": "integer"
+        },
+        "AGGRENOX": {
+          "type": "integer"
+        },
+        "PRAVASTATIN SODIUM": {
+          "type": "integer"
+        },
+        "LEVETIRACETAM": {
+          "type": "integer"
+        },
+        "EXELON": {
+          "type": "integer"
+        },
+        "WARFARIN SODIUM": {
+          "type": "integer"
+        },
+        "SIMVASTATIN": {
+          "type": "integer"
+        },
+        "HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "FENOFIBRATE": {
+          "type": "integer"
+        },
+        "LISINOPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "PEG-3350 WITH FLAVOR PACKS": {
+          "type": "integer"
+        },
+        "CARAFATE": {
+          "type": "integer"
+        },
+        "GAVILYTE-N": {
+          "type": "integer"
+        },
+        "LANSOPRAZOLE": {
+          "type": "integer"
+        },
+        "NEXIUM": {
+          "type": "integer"
+        },
+        "MOVIPREP": {
+          "type": "integer"
+        },
+        "ZENPEP": {
+          "type": "integer"
+        },
+        "TRILYTE WITH FLAVOR PACKETS": {
+          "type": "integer"
+        },
+        "RANITIDINE HCL": {
+          "type": "integer"
+        },
+        "POLYETHYLENE GLYCOL 3350": {
+          "type": "integer"
+        },
+        "PANTOPRAZOLE SODIUM": {
+          "type": "integer"
+        },
+        "PEG 3350-ELECTROLYTE": {
+          "type": "integer"
+        },
+        "METRONIDAZOLE": {
+          "type": "integer"
+        },
+        "DICYCLOMINE HCL": {
+          "type": "integer"
+        },
+        "SUCRALFATE": {
+          "type": "integer"
+        },
+        "CARISOPRODOL": {
+          "type": "integer"
+        },
+        "MIDODRINE HCL": {
+          "type": "integer"
+        },
+        "MEGESTROL ACETATE": {
+          "type": "integer"
+        },
+        "DILTIAZEM 24HR ER": {
+          "type": "integer"
+        },
+        "FAMOTIDINE": {
+          "type": "integer"
+        },
+        "ENALAPRIL MALEATE": {
+          "type": "integer"
+        },
+        "JANTOVEN": {
+          "type": "integer"
+        },
+        "NIFEDIPINE ER": {
+          "type": "integer"
+        },
+        "LOSARTAN-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "DICLOFENAC POTASSIUM": {
+          "type": "integer"
+        },
+        "CILOSTAZOL": {
+          "type": "integer"
+        },
+        "VALSARTAN-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "MINOXIDIL": {
+          "type": "integer"
+        },
+        "HECTOROL": {
+          "type": "integer"
+        },
+        "ATENOLOL": {
+          "type": "integer"
+        },
+        "CRESTOR": {
+          "type": "integer"
+        },
+        "AMILORIDE HCL": {
+          "type": "integer"
+        },
+        "CHLORTHALIDONE": {
+          "type": "integer"
+        },
+        "IRBESARTAN": {
+          "type": "integer"
+        },
+        "LABETALOL HCL": {
+          "type": "integer"
+        },
+        "ZETIA": {
+          "type": "integer"
+        },
+        "DETROL LA": {
+          "type": "integer"
+        },
+        "TRIAMTERENE-HCTZ": {
+          "type": "integer"
+        },
+        "SPS": {
+          "type": "integer"
+        },
+        "CLONIDINE HCL": {
+          "type": "integer"
+        },
+        "RENAGEL": {
+          "type": "integer"
+        },
+        "LOVASTATIN": {
+          "type": "integer"
+        },
+        "BENICAR": {
+          "type": "integer"
+        },
+        "SPIRONOLACTONE": {
+          "type": "integer"
+        },
+        "FELODIPINE ER": {
+          "type": "integer"
+        },
+        "COLCRYS": {
+          "type": "integer"
+        },
+        "INDAPAMIDE": {
+          "type": "integer"
+        },
+        "TAMSULOSIN HCL": {
+          "type": "integer"
+        },
+        "DIOVAN": {
+          "type": "integer"
+        },
+        "BYSTOLIC": {
+          "type": "integer"
+        },
+        "GUANFACINE HCL": {
+          "type": "integer"
+        },
+        "DILTIAZEM 24HR CD": {
+          "type": "integer"
+        },
+        "ALLOPURINOL": {
+          "type": "integer"
+        },
+        "MICARDIS HCT": {
+          "type": "integer"
+        },
+        "POTASSIUM CHLORIDE": {
+          "type": "integer"
+        },
+        "VYTORIN": {
+          "type": "integer"
+        },
+        "GLIMEPIRIDE": {
+          "type": "integer"
+        },
+        "TERAZOSIN HCL": {
+          "type": "integer"
+        },
+        "FOSINOPRIL SODIUM": {
+          "type": "integer"
+        },
+        "KLOR-CON 10": {
+          "type": "integer"
+        },
+        "VITAMIN D2": {
+          "type": "integer"
+        },
+        "EVISTA": {
+          "type": "integer"
+        },
+        "ESTRADIOL": {
+          "type": "integer"
+        },
+        "PREMARIN": {
+          "type": "integer"
+        },
+        "RITALIN": {
+          "type": "integer"
+        },
+        "TESTIM": {
+          "type": "integer"
+        },
+        "AMPHETAMINE SALT COMBO": {
+          "type": "integer"
+        },
+        "OXYCODONE HCL": {
+          "type": "integer"
+        },
+        "NAPROXEN": {
+          "type": "integer"
+        },
+        "ALENDRONATE SODIUM": {
+          "type": "integer"
+        },
+        "ANASTROZOLE": {
+          "type": "integer"
+        },
+        "METFORMIN HCL": {
+          "type": "integer"
+        },
+        "MORPHINE SULFATE ER": {
+          "type": "integer"
+        },
+        "RAMIPRIL": {
+          "type": "integer"
+        },
+        "HYDROMORPHONE HCL": {
+          "type": "integer"
+        },
+        "PIOGLITAZONE HCL": {
+          "type": "integer"
+        },
+        "ERYTHROMYCIN": {
+          "type": "integer"
+        },
+        "MORPHINE SULFATE": {
+          "type": "integer"
+        },
+        "TOPROL XL": {
+          "type": "integer"
+        },
+        "AMMONIUM LACTATE": {
+          "type": "integer"
+        },
+        "LANTUS SOLOSTAR": {
+          "type": "integer"
+        },
+        "TRANSDERM-SCOP": {
+          "type": "integer"
+        },
+        "VESICARE": {
+          "type": "integer"
+        },
+        "DILTIAZEM HCL": {
+          "type": "integer"
+        },
+        "METOCLOPRAMIDE HCL": {
+          "type": "integer"
+        },
+        "METOLAZONE": {
+          "type": "integer"
+        },
+        "COMBIGAN": {
+          "type": "integer"
+        },
+        "ISONIAZID": {
+          "type": "integer"
+        },
+        "LANTUS": {
+          "type": "integer"
+        },
+        "NOVOLOG MIX 70-30": {
+          "type": "integer"
+        },
+        "AMITIZA": {
+          "type": "integer"
+        },
+        "IPRATROPIUM-ALBUTEROL": {
+          "type": "integer"
+        },
+        "NOVOFINE AUTOCOVER": {
+          "type": "integer"
+        },
+        "QUINAPRIL HCL": {
+          "type": "integer"
+        },
+        "CEPHALEXIN": {
+          "type": "integer"
+        },
+        "LEVOFLOXACIN": {
+          "type": "integer"
+        },
+        "NYSTOP": {
+          "type": "integer"
+        },
+        "MEDROXYPROGESTERONE ACETATE": {
+          "type": "integer"
+        },
+        "BUDESONIDE EC": {
+          "type": "integer"
+        },
+        "AVODART": {
+          "type": "integer"
+        },
+        "HYDROXYCHLOROQUINE SULFATE": {
+          "type": "integer"
+        },
+        "COUMADIN": {
+          "type": "integer"
+        },
+        "LUMIGAN": {
+          "type": "integer"
+        },
+        "SULFAMETHOXAZOLE-TRIMETHOPRIM": {
+          "type": "integer"
+        },
+        "DOXYCYCLINE HYCLATE": {
+          "type": "integer"
+        },
+        "LIDODERM": {
+          "type": "integer"
+        },
+        "AMIODARONE HCL": {
+          "type": "integer"
+        },
+        "ARICEPT": {
+          "type": "integer"
+        },
+        "LOPERAMIDE": {
+          "type": "integer"
+        },
+        "SPIRIVA": {
+          "type": "integer"
+        },
+        "NOVOLOG FLEXPEN": {
+          "type": "integer"
+        },
+        "DIGOXIN": {
+          "type": "integer"
+        },
+        "ENOXAPARIN SODIUM": {
+          "type": "integer"
+        },
+        "NUEDEXTA": {
+          "type": "integer"
+        },
+        "ASACOL HD": {
+          "type": "integer"
+        },
+        "SANTYL": {
+          "type": "integer"
+        },
+        "DEMECLOCYCLINE HCL": {
+          "type": "integer"
+        },
+        "DANTROLENE SODIUM": {
+          "type": "integer"
+        },
+        "CELEBREX": {
+          "type": "integer"
+        },
+        "NYAMYC": {
+          "type": "integer"
+        },
+        "OXYCONTIN": {
+          "type": "integer"
+        },
+        "FINASTERIDE": {
+          "type": "integer"
+        },
+        "TRAMADOL HCL-ACETAMINOPHEN": {
+          "type": "integer"
+        },
+        "TRIAMCINOLONE ACETONIDE": {
+          "type": "integer"
+        },
+        "RESTASIS": {
+          "type": "integer"
+        },
+        "ADVAIR DISKUS": {
+          "type": "integer"
+        },
+        "DILTIAZEM ER": {
+          "type": "integer"
+        },
+        "CARBIDOPA-LEVODOPA-ENTACAPONE": {
+          "type": "integer"
+        },
+        "HYDROCORTISONE": {
+          "type": "integer"
+        },
+        "TIZANIDINE HCL": {
+          "type": "integer"
+        },
+        "NOVOLIN 70-30": {
+          "type": "integer"
+        },
+        "GLUCAGON EMERGENCY KIT": {
+          "type": "integer"
+        },
+        "METHIMAZOLE": {
+          "type": "integer"
+        },
+        "OXYBUTYNIN CHLORIDE ER": {
+          "type": "integer"
+        },
+        "NAMENDA XR": {
+          "type": "integer"
+        },
+        "SOTALOL": {
+          "type": "integer"
+        },
+        "ACTONEL": {
+          "type": "integer"
+        },
+        "HUMULIN 70-30": {
+          "type": "integer"
+        },
+        "RAPAFLO": {
+          "type": "integer"
+        },
+        "NYSTATIN": {
+          "type": "integer"
+        },
+        "JANUVIA": {
+          "type": "integer"
+        },
+        "ASACOL": {
+          "type": "integer"
+        },
+        "DEXTROSE WITH SODIUM CHLORIDE": {
+          "type": "integer"
+        },
+        "METFORMIN HCL ER": {
+          "type": "integer"
+        },
+        "RIVASTIGMINE": {
+          "type": "integer"
+        },
+        "CYCLOBENZAPRINE HCL": {
+          "type": "integer"
+        },
+        "ALBUTEROL SULFATE": {
+          "type": "integer"
+        },
+        "REBIF": {
+          "type": "integer"
+        },
+        "SODIUM CHLORIDE": {
+          "type": "integer"
+        },
+        "FLUTICASONE PROPIONATE": {
+          "type": "integer"
+        },
+        "TAMIFLU": {
+          "type": "integer"
+        },
+        "MONTELUKAST SODIUM": {
+          "type": "integer"
+        },
+        "SUMATRIPTAN SUCCINATE": {
+          "type": "integer"
+        },
+        "VIAGRA": {
+          "type": "integer"
+        },
+        "BENICAR HCT": {
+          "type": "integer"
+        },
+        "BENAZEPRIL HCL": {
+          "type": "integer"
+        },
+        "MECLIZINE HCL": {
+          "type": "integer"
+        },
+        "NIACIN ER": {
+          "type": "integer"
+        },
+        "PROPAFENONE HCL": {
+          "type": "integer"
+        },
+        "GLYBURIDE": {
+          "type": "integer"
+        },
+        "NITROSTAT": {
+          "type": "integer"
+        },
+        "CLOBETASOL PROPIONATE": {
+          "type": "integer"
+        },
+        "RANEXA": {
+          "type": "integer"
+        },
+        "OXYBUTYNIN CHLORIDE": {
+          "type": "integer"
+        },
+        "TRIAMTERENE-HYDROCHLOROTHIAZID": {
+          "type": "integer"
+        },
+        "BD ULTRA-FINE PEN NEEDLE": {
+          "type": "integer"
+        },
+        "AMOX TR-POTASSIUM CLAVULANATE": {
+          "type": "integer"
+        },
+        "DIGOX": {
+          "type": "integer"
+        },
+        "MELOXICAM": {
+          "type": "integer"
+        },
+        "VERAPAMIL ER": {
+          "type": "integer"
+        },
+        "AMLODIPINE-ATORVASTATIN": {
+          "type": "integer"
+        },
+        "LEVEMIR": {
+          "type": "integer"
+        },
+        "INSULIN SYRINGE": {
+          "type": "integer"
+        },
+        "KLOR-CON M20": {
+          "type": "integer"
+        },
+        "LOVAZA": {
+          "type": "integer"
+        },
+        "PROAIR HFA": {
+          "type": "integer"
+        },
+        "BACLOFEN": {
+          "type": "integer"
+        },
+        "CARTIA XT": {
+          "type": "integer"
+        },
+        "GLIPIZIDE ER": {
+          "type": "integer"
+        },
+        "SYNTHROID": {
+          "type": "integer"
+        },
+        "GLIPIZIDE": {
+          "type": "integer"
+        },
+        "NIASPAN": {
+          "type": "integer"
+        },
+        "AMLODIPINE BESYLATE-BENAZEPRIL": {
+          "type": "integer"
+        },
+        "BENAZEPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "PRADAXA": {
+          "type": "integer"
+        },
+        "METHYLPREDNISOLONE": {
+          "type": "integer"
+        },
+        "TESTOSTERONE CYPIONATE": {
+          "type": "integer"
+        },
+        "LEVOCETIRIZINE DIHYDROCHLORIDE": {
+          "type": "integer"
+        },
+        "DEXAMETHASONE": {
+          "type": "integer"
+        },
+        "HYDROXYUREA": {
+          "type": "integer"
+        },
+        "OXYCODONE HCL-ACETAMINOPHEN": {
+          "type": "integer"
+        },
+        "ONDANSETRON HCL": {
+          "type": "integer"
+        },
+        "TARCEVA": {
+          "type": "integer"
+        },
+        "PROMETHAZINE HCL": {
+          "type": "integer"
+        },
+        "EXEMESTANE": {
+          "type": "integer"
+        },
+        "KLOR-CON 8": {
+          "type": "integer"
+        },
+        "ONDANSETRON ODT": {
+          "type": "integer"
+        },
+        "PROCHLORPERAZINE MALEATE": {
+          "type": "integer"
+        },
+        "DIPHENOXYLATE-ATROPINE": {
+          "type": "integer"
+        },
+        "VALACYCLOVIR": {
+          "type": "integer"
+        },
+        "ECONAZOLE NITRATE": {
+          "type": "integer"
+        },
+        "MUPIROCIN": {
+          "type": "integer"
+        },
+        "CICLOPIROX": {
+          "type": "integer"
+        },
+        "KETOPROFEN": {
+          "type": "integer"
+        },
+        "DESOXIMETASONE": {
+          "type": "integer"
+        },
+        "CLOTRIMAZOLE-BETAMETHASONE": {
+          "type": "integer"
+        },
+        "FLECTOR": {
+          "type": "integer"
+        },
+        "HUMIRA": {
+          "type": "integer"
+        },
+        "DEXILANT": {
+          "type": "integer"
+        },
+        "NADOLOL": {
+          "type": "integer"
+        },
+        "VIREAD": {
+          "type": "integer"
+        },
+        "ZEMPLAR": {
+          "type": "integer"
+        },
+        "CLINDAMYCIN HCL": {
+          "type": "integer"
+        },
+        "PENICILLIN V POTASSIUM": {
+          "type": "integer"
+        },
+        "CREON": {
+          "type": "integer"
+        },
+        "TACROLIMUS": {
+          "type": "integer"
+        },
+        "ISOSORBIDE DINITRATE": {
+          "type": "integer"
+        },
+        "XIFAXAN": {
+          "type": "integer"
+        },
+        "URSODIOL": {
+          "type": "integer"
+        },
+        "HUMALOG": {
+          "type": "integer"
+        },
+        "LYRICA": {
+          "type": "integer"
+        },
+        "VENTOLIN HFA": {
+          "type": "integer"
+        },
+        "COMBIVENT RESPIMAT": {
+          "type": "integer"
+        },
+        "FLUCONAZOLE": {
+          "type": "integer"
+        },
+        "GLIPIZIDE XL": {
+          "type": "integer"
+        },
+        "PHENYTOIN SODIUM EXTENDED": {
+          "type": "integer"
+        },
+        "SUBOXONE": {
+          "type": "integer"
+        },
+        "CHOLESTYRAMINE": {
+          "type": "integer"
+        },
+        "BALSALAZIDE DISODIUM": {
+          "type": "integer"
+        },
+        "CLARITHROMYCIN": {
+          "type": "integer"
+        },
+        "LACTULOSE": {
+          "type": "integer"
+        },
+        "PEG-3350 AND ELECTROLYTES": {
+          "type": "integer"
+        },
+        "ENDOCET": {
+          "type": "integer"
+        },
+        "PROCTOSOL-HC": {
+          "type": "integer"
+        },
+        "PROCTOZONE-HC": {
+          "type": "integer"
+        },
+        "VALTREX": {
+          "type": "integer"
+        },
+        "NUVARING": {
+          "type": "integer"
+        },
+        "METHADONE HCL": {
+          "type": "integer"
+        },
+        "ALPRAZOLAM ER": {
+          "type": "integer"
+        },
+        "DEXTROAMPHETAMINE SULFATE": {
+          "type": "integer"
+        },
+        "ACYCLOVIR": {
+          "type": "integer"
+        },
+        "SAPHRIS": {
+          "type": "integer"
+        },
+        "HYDROXYZINE PAMOATE": {
+          "type": "integer"
+        },
+        "IMIPRAMINE HCL": {
+          "type": "integer"
+        },
+        "CHLORPROMAZINE HCL": {
+          "type": "integer"
+        },
+        "METHYLPHENIDATE HCL": {
+          "type": "integer"
+        },
+        "PRISTIQ ER": {
+          "type": "integer"
+        },
+        "HALOPERIDOL DECANOATE 100": {
+          "type": "integer"
+        },
+        "BUPROPION HCL": {
+          "type": "integer"
+        },
+        "BUPRENORPHINE-NALOXONE": {
+          "type": "integer"
+        },
+        "METHYLPHENIDATE ER": {
+          "type": "integer"
+        },
+        "PROMETHAZINE-CODEINE": {
+          "type": "integer"
+        },
+        "PROPRANOLOL-HYDROCHLOROTHIAZID": {
+          "type": "integer"
+        },
+        "GEMFIBROZIL": {
+          "type": "integer"
+        },
+        "ENALAPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "GLYBURIDE-METFORMIN HCL": {
+          "type": "integer"
+        },
+        "MICARDIS": {
+          "type": "integer"
+        },
+        "KLOR-CON M10": {
+          "type": "integer"
+        },
+        "FLECAINIDE ACETATE": {
+          "type": "integer"
+        },
+        "TAZTIA XT": {
+          "type": "integer"
+        },
+        "PACERONE": {
+          "type": "integer"
+        },
+        "BUMETANIDE": {
+          "type": "integer"
+        },
+        "MULTAQ": {
+          "type": "integer"
+        },
+        "ATENOLOL-CHLORTHALIDONE": {
+          "type": "integer"
+        },
+        "CHLORHEXIDINE GLUCONATE": {
+          "type": "integer"
+        },
+        "LIDOCAINE-PRILOCAINE": {
+          "type": "integer"
+        },
+        "TERBINAFINE HCL": {
+          "type": "integer"
+        },
+        "ZONALON": {
+          "type": "integer"
+        },
+        "LETROZOLE": {
+          "type": "integer"
+        },
+        "NEUPOGEN": {
+          "type": "integer"
+        },
+        "DICLOFENAC SODIUM": {
+          "type": "integer"
+        },
+        "VAGIFEM": {
+          "type": "integer"
+        },
+        "NITROFURANTOIN MONO-MACRO": {
+          "type": "integer"
+        },
+        "NYSTATIN-TRIAMCINOLONE": {
+          "type": "integer"
+        },
+        "COREG CR": {
+          "type": "integer"
+        },
+        "BISOPROLOL FUMARATE": {
+          "type": "integer"
+        },
+        "AZOR": {
+          "type": "integer"
+        },
+        "EXFORGE": {
+          "type": "integer"
+        },
+        "TRAMADOL HCL ER": {
+          "type": "integer"
+        },
+        "PINDOLOL": {
+          "type": "integer"
+        },
+        "TEKTURNA": {
+          "type": "integer"
+        },
+        "ELIQUIS": {
+          "type": "integer"
+        },
+        "EFFIENT": {
+          "type": "integer"
+        },
+        "TRILIPIX": {
+          "type": "integer"
+        },
+        "WELCHOL": {
+          "type": "integer"
+        },
+        "CARBAMAZEPINE": {
+          "type": "integer"
+        },
+        "VICTOZA 3-PAK": {
+          "type": "integer"
+        },
+        "PRENATAL PLUS": {
+          "type": "integer"
+        },
+        "TOVIAZ": {
+          "type": "integer"
+        },
+        "NOVOFINE 32": {
+          "type": "integer"
+        },
+        "NABUMETONE": {
+          "type": "integer"
+        },
+        "ENABLEX": {
+          "type": "integer"
+        },
+        "HUMULIN N": {
+          "type": "integer"
+        },
+        "HUMULIN R": {
+          "type": "integer"
+        },
+        "SINGULAIR": {
+          "type": "integer"
+        },
+        "SYMBICORT": {
+          "type": "integer"
+        },
+        "BIDIL": {
+          "type": "integer"
+        },
+        "PHENYTEK": {
+          "type": "integer"
+        },
+        "CAPTOPRIL": {
+          "type": "integer"
+        },
+        "NOVOLOG": {
+          "type": "integer"
+        },
+        "UNIFINE PENTIPS": {
+          "type": "integer"
+        },
+        "LEVEMIR FLEXPEN": {
+          "type": "integer"
+        },
+        "NOVOLOG MIX 70-30 FLEXPEN": {
+          "type": "integer"
+        },
+        "TERCONAZOLE": {
+          "type": "integer"
+        },
+        "HYDROCORTISONE VALERATE": {
+          "type": "integer"
+        },
+        "VIVELLE-DOT": {
+          "type": "integer"
+        },
+        "PROGESTERONE": {
+          "type": "integer"
+        },
+        "EXFORGE HCT": {
+          "type": "integer"
+        },
+        "METHOCARBAMOL": {
+          "type": "integer"
+        },
+        "SPIRONOLACTONE-HCTZ": {
+          "type": "integer"
+        },
+        "BISOPROLOL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "TRANDOLAPRIL": {
+          "type": "integer"
+        },
+        "ISOSORBIDE MONONITRATE": {
+          "type": "integer"
+        },
+        "DISOPYRAMIDE PHOSPHATE": {
+          "type": "integer"
+        },
+        "NITROGLYCERIN PATCH": {
+          "type": "integer"
+        },
+        "DAPSONE": {
+          "type": "integer"
+        },
+        "ENBREL": {
+          "type": "integer"
+        },
+        "PENNSAID": {
+          "type": "integer"
+        },
+        "DIFLUNISAL": {
+          "type": "integer"
+        },
+        "XANAX": {
+          "type": "integer"
+        },
+        "VOLTAREN": {
+          "type": "integer"
+        },
+        "METAXALONE": {
+          "type": "integer"
+        },
+        "VIMOVO": {
+          "type": "integer"
+        },
+        "ULORIC": {
+          "type": "integer"
+        },
+        "ATELVIA": {
+          "type": "integer"
+        },
+        "FOLIC ACID": {
+          "type": "integer"
+        },
+        "SULINDAC": {
+          "type": "integer"
+        },
+        "EPLERENONE": {
+          "type": "integer"
+        },
+        "PERCOCET": {
+          "type": "integer"
+        },
+        "FORTEO": {
+          "type": "integer"
+        },
+        "METHOTREXATE": {
+          "type": "integer"
+        },
+        "SULFASALAZINE": {
+          "type": "integer"
+        },
+        "NALTREXONE HCL": {
+          "type": "integer"
+        },
+        "CEFDINIR": {
+          "type": "integer"
+        },
+        "GAVILYTE-C": {
+          "type": "integer"
+        },
+        "TRIBENZOR": {
+          "type": "integer"
+        },
+        "XOPENEX HFA": {
+          "type": "integer"
+        },
+        "DALIRESP": {
+          "type": "integer"
+        },
+        "HYDROCODONE BIT-IBUPROFEN": {
+          "type": "integer"
+        },
+        "GENERLAC": {
+          "type": "integer"
+        },
+        "GAVILYTE-G": {
+          "type": "integer"
+        },
+        "IBANDRONATE SODIUM": {
+          "type": "integer"
+        },
+        "TRIFLUOPERAZINE HCL": {
+          "type": "integer"
+        },
+        "PERPHENAZINE": {
+          "type": "integer"
+        },
+        "CYPROHEPTADINE HCL": {
+          "type": "integer"
+        },
+        "PERPHENAZINE-AMITRIPTYLINE": {
+          "type": "integer"
+        },
+        "LOXAPINE": {
+          "type": "integer"
+        },
+        "DOXEPIN HCL": {
+          "type": "integer"
+        },
+        "CLOMIPRAMINE HCL": {
+          "type": "integer"
+        },
+        "FLOVENT HFA": {
+          "type": "integer"
+        },
+        "CEFUROXIME": {
+          "type": "integer"
+        },
+        "BUTRANS": {
+          "type": "integer"
+        },
+        "OXYMORPHONE HCL": {
+          "type": "integer"
+        },
+        "OPANA ER": {
+          "type": "integer"
+        },
+        "MERCAPTOPURINE": {
+          "type": "integer"
+        },
+        "PROTONIX": {
+          "type": "integer"
+        },
+        "KEPPRA": {
+          "type": "integer"
+        },
+        "VALPROIC ACID": {
+          "type": "integer"
+        },
+        "WELLBUTRIN XL": {
+          "type": "integer"
+        },
+        "VYVANSE": {
+          "type": "integer"
+        },
+        "GEODON": {
+          "type": "integer"
+        },
+        "SANDOSTATIN LAR": {
+          "type": "integer"
+        },
+        "ANDROGEL": {
+          "type": "integer"
+        },
+        "SUTENT": {
+          "type": "integer"
+        },
+        "ERYTHROMYCIN ETHYLSUCCINATE": {
+          "type": "integer"
+        },
+        "NILANDRON": {
+          "type": "integer"
+        },
+        "ZYTIGA": {
+          "type": "integer"
+        },
+        "ACEBUTOLOL HCL": {
+          "type": "integer"
+        },
+        "PREMPRO": {
+          "type": "integer"
+        },
+        "DESIPRAMINE HCL": {
+          "type": "integer"
+        },
+        "CIMETIDINE": {
+          "type": "integer"
+        },
+        "TRIAZOLAM": {
+          "type": "integer"
+        },
+        "NUVIGIL": {
+          "type": "integer"
+        },
+        "ZYPREXA": {
+          "type": "integer"
+        },
+        "ZONISAMIDE": {
+          "type": "integer"
+        },
+        "AMOXAPINE": {
+          "type": "integer"
+        },
+        "MODAFINIL": {
+          "type": "integer"
+        },
+        "METHENAMINE HIPPURATE": {
+          "type": "integer"
+        },
+        "REMERON": {
+          "type": "integer"
+        },
+        "NEURONTIN": {
+          "type": "integer"
+        },
+        "EFFEXOR XR": {
+          "type": "integer"
+        },
+        "DIOVAN HCT": {
+          "type": "integer"
+        },
+        "PLAVIX": {
+          "type": "integer"
+        },
+        "PERIOGARD": {
+          "type": "integer"
+        },
+        "SF": {
+          "type": "integer"
+        },
+        "DULERA": {
+          "type": "integer"
+        },
+        "NASONEX": {
+          "type": "integer"
+        },
+        "LIALDA": {
+          "type": "integer"
+        },
+        "PEG-3350": {
+          "type": "integer"
+        },
+        "HALFLYTELY-BISACODYL": {
+          "type": "integer"
+        },
+        "PENTOXIFYLLINE": {
+          "type": "integer"
+        },
+        "ATROVENT HFA": {
+          "type": "integer"
+        },
+        "AZELASTINE HCL": {
+          "type": "integer"
+        },
+        "ASMANEX": {
+          "type": "integer"
+        },
+        "QVAR": {
+          "type": "integer"
+        },
+        "TAMOXIFEN CITRATE": {
+          "type": "integer"
+        },
+        "SANCUSO": {
+          "type": "integer"
+        },
+        "REVLIMID": {
+          "type": "integer"
+        },
+        "LATANOPROST": {
+          "type": "integer"
+        },
+        "PROVENTIL HFA": {
+          "type": "integer"
+        },
+        "CLOTRIMAZOLE": {
+          "type": "integer"
+        },
+        "LIDOCAINE": {
+          "type": "integer"
+        },
+        "IPRATROPIUM BROMIDE": {
+          "type": "integer"
+        },
+        "ALCLOMETASONE DIPROPIONATE": {
+          "type": "integer"
+        },
+        "DESONIDE": {
+          "type": "integer"
+        },
+        "TRETINOIN": {
+          "type": "integer"
+        },
+        "CLINDAMYCIN PHOSPHATE": {
+          "type": "integer"
+        },
+        "FLUOCINONIDE": {
+          "type": "integer"
+        },
+        "FLUOROURACIL": {
+          "type": "integer"
+        },
+        "KETOCONAZOLE": {
+          "type": "integer"
+        },
+        "STROMECTOL": {
+          "type": "integer"
+        },
+        "ELIDEL": {
+          "type": "integer"
+        },
+        "FLUOCINOLONE ACETONIDE": {
+          "type": "integer"
+        },
+        "BETAMETHASONE DIPROPIONATE": {
+          "type": "integer"
+        },
+        "PERMETHRIN": {
+          "type": "integer"
+        },
+        "CLORAZEPATE DIPOTASSIUM": {
+          "type": "integer"
+        },
+        "EPITOL": {
+          "type": "integer"
+        },
+        "STRATTERA": {
+          "type": "integer"
+        },
+        "PREPOPIK": {
+          "type": "integer"
+        },
+        "COLESTIPOL HCL": {
+          "type": "integer"
+        },
+        "APRISO": {
+          "type": "integer"
+        },
+        "BUPRENORPHINE HCL": {
+          "type": "integer"
+        },
+        "REYATAZ": {
+          "type": "integer"
+        },
+        "DISULFIRAM": {
+          "type": "integer"
+        },
+        "TRUVADA": {
+          "type": "integer"
+        },
+        "PREZISTA": {
+          "type": "integer"
+        },
+        "SUSTIVA": {
+          "type": "integer"
+        },
+        "ATRIPLA": {
+          "type": "integer"
+        },
+        "NEVIRAPINE": {
+          "type": "integer"
+        },
+        "ISENTRESS": {
+          "type": "integer"
+        },
+        "NORVIR": {
+          "type": "integer"
+        },
+        "EMTRIVA": {
+          "type": "integer"
+        },
+        "EPZICOM": {
+          "type": "integer"
+        },
+        "STRIBILD": {
+          "type": "integer"
+        },
+        "LIPITOR": {
+          "type": "integer"
+        },
+        "ACIPHEX": {
+          "type": "integer"
+        },
+        "ONGLYZA": {
+          "type": "integer"
+        },
+        "HEPARIN SODIUM": {
+          "type": "integer"
+        },
+        "BUDESONIDE": {
+          "type": "integer"
+        },
+        "VIGAMOX": {
+          "type": "integer"
+        },
+        "PHENOBARBITAL": {
+          "type": "integer"
+        },
+        "TOBRADEX": {
+          "type": "integer"
+        },
+        "PATADAY": {
+          "type": "integer"
+        },
+        "INVANZ": {
+          "type": "integer"
+        },
+        "CEFTRIAXONE": {
+          "type": "integer"
+        },
+        "JANUMET": {
+          "type": "integer"
+        },
+        "CLONIDINE": {
+          "type": "integer"
+        },
+        "VERAPAMIL HCL": {
+          "type": "integer"
+        },
+        "LEFLUNOMIDE": {
+          "type": "integer"
+        },
+        "NITRO-BID": {
+          "type": "integer"
+        },
+        "MISOPROSTOL": {
+          "type": "integer"
+        },
+        "ELIXOPHYLLIN": {
+          "type": "integer"
+        },
+        "BROVANA": {
+          "type": "integer"
+        },
+        "PROCRIT": {
+          "type": "integer"
+        },
+        "THEOPHYLLINE ANHYDROUS": {
+          "type": "integer"
+        },
+        "DESMOPRESSIN ACETATE": {
+          "type": "integer"
+        },
+        "GENTAMICIN SULFATE": {
+          "type": "integer"
+        },
+        "ENTACAPONE": {
+          "type": "integer"
+        },
+        "NATEGLINIDE": {
+          "type": "integer"
+        },
+        "SAVELLA": {
+          "type": "integer"
+        },
+        "ETODOLAC": {
+          "type": "integer"
+        },
+        "PROBENECID": {
+          "type": "integer"
+        },
+        "SODIUM CITRATE & CITRIC ACID": {
+          "type": "integer"
+        },
+        "ROCALTROL": {
+          "type": "integer"
+        },
+        "FLUOXETINE DR": {
+          "type": "integer"
+        },
+        "MOEXIPRIL HCL": {
+          "type": "integer"
+        },
+        "BACITRACIN": {
+          "type": "integer"
+        },
+        "BYETTA": {
+          "type": "integer"
+        },
+        "GLUCOPHAGE": {
+          "type": "integer"
+        },
+        "HUMALOG MIX 75-25": {
+          "type": "integer"
+        },
+        "LEVOXYL": {
+          "type": "integer"
+        },
+        "CYTOMEL": {
+          "type": "integer"
+        },
+        "PIOGLITAZONE-METFORMIN": {
+          "type": "integer"
+        },
+        "PROPYLTHIOURACIL": {
+          "type": "integer"
+        },
+        "PRANDIN": {
+          "type": "integer"
+        },
+        "REPAGLINIDE": {
+          "type": "integer"
+        },
+        "ACTOS": {
+          "type": "integer"
+        },
+        "BYDUREON": {
+          "type": "integer"
+        },
+        "LIOTHYRONINE SODIUM": {
+          "type": "integer"
+        },
+        "HUMALOG MIX 50-50": {
+          "type": "integer"
+        },
+        "AZILECT": {
+          "type": "integer"
+        },
+        "AVONEX": {
+          "type": "integer"
+        },
+        "COPAXONE": {
+          "type": "integer"
+        },
+        "SUPREP": {
+          "type": "integer"
+        },
+        "DRONABINOL": {
+          "type": "integer"
+        },
+        "LINZESS": {
+          "type": "integer"
+        },
+        "PROCTOFOAM-HC": {
+          "type": "integer"
+        },
+        "LIDOCAINE HCL VISCOUS": {
+          "type": "integer"
+        },
+        "PEGASYS PROCLICK": {
+          "type": "integer"
+        },
+        "RIBAVIRIN": {
+          "type": "integer"
+        },
+        "PREVIDENT": {
+          "type": "integer"
+        },
+        "DENTA 5000 PLUS": {
+          "type": "integer"
+        },
+        "SF 5000 PLUS": {
+          "type": "integer"
+        },
+        "KLOR-CON": {
+          "type": "integer"
+        },
+        "GLEEVEC": {
+          "type": "integer"
+        },
+        "CYCLOPHOSPHAMIDE": {
+          "type": "integer"
+        },
+        "OXYMORPHONE HCL ER": {
+          "type": "integer"
+        },
+        "OXAPROZIN": {
+          "type": "integer"
+        },
+        "NARATRIPTAN HCL": {
+          "type": "integer"
+        },
+        "RIZATRIPTAN": {
+          "type": "integer"
+        },
+        "CARBIDOPA-LEVODOPA ER": {
+          "type": "integer"
+        },
+        "TRADJENTA": {
+          "type": "integer"
+        },
+        "NUCYNTA": {
+          "type": "integer"
+        },
+        "NUCYNTA ER": {
+          "type": "integer"
+        },
+        "NAPROXEN SODIUM": {
+          "type": "integer"
+        },
+        "INTRALIPID": {
+          "type": "integer"
+        },
+        "FOSRENOL": {
+          "type": "integer"
+        },
+        "LACLOTION": {
+          "type": "integer"
+        },
+        "X-VIATE": {
+          "type": "integer"
+        },
+        "NAFTIN": {
+          "type": "integer"
+        },
+        "UREA": {
+          "type": "integer"
+        },
+        "TRAVATAN Z": {
+          "type": "integer"
+        },
+        "PEDI-DRI": {
+          "type": "integer"
+        },
+        "ABACAVIR": {
+          "type": "integer"
+        },
+        "KALETRA": {
+          "type": "integer"
+        },
+        "INTELENCE": {
+          "type": "integer"
+        },
+        "OSMOPREP": {
+          "type": "integer"
+        },
+        "XYREM": {
+          "type": "integer"
+        },
+        "COMBIVENT": {
+          "type": "integer"
+        },
+        "LETAIRIS": {
+          "type": "integer"
+        },
+        "BETHANECHOL CHLORIDE": {
+          "type": "integer"
+        },
+        "TRACLEER": {
+          "type": "integer"
+        },
+        "SOTALOL AF": {
+          "type": "integer"
+        },
+        "PEN NEEDLE": {
+          "type": "integer"
+        },
+        "LIDOCAINE HCL": {
+          "type": "integer"
+        },
+        "NOVOLIN R": {
+          "type": "integer"
+        },
+        "DILANTIN": {
+          "type": "integer"
+        },
+        "BUTALBITAL-ACETAMINOPHEN-CAFFE": {
+          "type": "integer"
+        },
+        "LEUCOVORIN CALCIUM": {
+          "type": "integer"
+        },
+        "PILOCARPINE HCL": {
+          "type": "integer"
+        },
+        "ORENCIA": {
+          "type": "integer"
+        },
+        "ORPHENADRINE CITRATE": {
+          "type": "integer"
+        },
+        "MEXILETINE HCL": {
+          "type": "integer"
+        },
+        "ENTOCORT EC": {
+          "type": "integer"
+        },
+        "PENTASA": {
+          "type": "integer"
+        },
+        "MESALAMINE": {
+          "type": "integer"
+        },
+        "OFLOXACIN": {
+          "type": "integer"
+        },
+        "ESTRACE": {
+          "type": "integer"
+        },
+        "DIVIGEL": {
+          "type": "integer"
+        },
+        "CLIMARA": {
+          "type": "integer"
+        },
+        "MENOSTAR": {
+          "type": "integer"
+        },
+        "DEPAKOTE ER": {
+          "type": "integer"
+        },
+        "LAMICTAL": {
+          "type": "integer"
+        },
+        "CARBAMAZEPINE XR": {
+          "type": "integer"
+        },
+        "GILENYA": {
+          "type": "integer"
+        },
+        "AVONEX PEN": {
+          "type": "integer"
+        },
+        "FORADIL": {
+          "type": "integer"
+        },
+        "PULMICORT FLEXHALER": {
+          "type": "integer"
+        },
+        "NOVOLIN N": {
+          "type": "integer"
+        },
+        "VICTOZA 2-PAK": {
+          "type": "integer"
+        },
+        "MYFORTIC": {
+          "type": "integer"
+        },
+        "BICALUTAMIDE": {
+          "type": "integer"
+        },
+        "TIAGABINE HCL": {
+          "type": "integer"
+        },
+        "MS CONTIN": {
+          "type": "integer"
+        },
+        "KETOROLAC TROMETHAMINE": {
+          "type": "integer"
+        },
+        "EXALGO": {
+          "type": "integer"
+        },
+        "VIMPAT": {
+          "type": "integer"
+        },
+        "CIMZIA": {
+          "type": "integer"
+        },
+        "DESLORATADINE": {
+          "type": "integer"
+        },
+        "BARACLUDE": {
+          "type": "integer"
+        },
+        "VANCOMYCIN HCL": {
+          "type": "integer"
+        },
+        "MONOJECT INSULIN SYRINGE": {
+          "type": "integer"
+        },
+        "GLYBURIDE MICRONIZED": {
+          "type": "integer"
+        },
+        "KOMBIGLYZE XR": {
+          "type": "integer"
+        },
+        "RILUZOLE": {
+          "type": "integer"
+        },
+        "GLYCOPYRROLATE": {
+          "type": "integer"
+        },
+        "RILUTEK": {
+          "type": "integer"
+        },
+        "CUBICIN": {
+          "type": "integer"
+        },
+        "TYPHIM VI": {
+          "type": "integer"
+        },
+        "ETHAMBUTOL HCL": {
+          "type": "integer"
+        },
+        "COMPLERA": {
+          "type": "integer"
+        },
+        "SELZENTRY": {
+          "type": "integer"
+        },
+        "LEXIVA": {
+          "type": "integer"
+        },
+        "RIFAMPIN": {
+          "type": "integer"
+        },
+        "TEKTURNA HCT": {
+          "type": "integer"
+        },
+        "JUNEL": {
+          "type": "integer"
+        },
+        "CIPRODEX": {
+          "type": "integer"
+        },
+        "ASTEPRO": {
+          "type": "integer"
+        },
+        "DYMISTA": {
+          "type": "integer"
+        },
+        "NORTREL": {
+          "type": "integer"
+        },
+        "LIVALO": {
+          "type": "integer"
+        },
+        "CEREFOLIN NAC": {
+          "type": "integer"
+        },
+        "METANX": {
+          "type": "integer"
+        },
+        "AVONEX ADMINISTRATION PACK": {
+          "type": "integer"
+        },
+        "ACETAZOLAMIDE": {
+          "type": "integer"
+        },
+        "ORAP": {
+          "type": "integer"
+        },
+        "MIRAPEX": {
+          "type": "integer"
+        },
+        "NEUPRO": {
+          "type": "integer"
+        },
+        "COMTAN": {
+          "type": "integer"
+        },
+        "AUBAGIO": {
+          "type": "integer"
+        },
+        "TEGRETOL": {
+          "type": "integer"
+        },
+        "LANOXIN": {
+          "type": "integer"
+        },
+        "CLARITHROMYCIN ER": {
+          "type": "integer"
+        },
+        "FLUOCINOLONE ACETONIDE OIL": {
+          "type": "integer"
+        },
+        "LEUKERAN": {
+          "type": "integer"
+        },
+        "ROXICET": {
+          "type": "integer"
+        },
+        "AVINZA": {
+          "type": "integer"
+        },
+        "MEPERIDINE HCL": {
+          "type": "integer"
+        },
+        "PREVACID": {
+          "type": "integer"
+        },
+        "TICLOPIDINE HCL": {
+          "type": "integer"
+        },
+        "NIFEDIAC CC": {
+          "type": "integer"
+        },
+        "AFEDITAB CR": {
+          "type": "integer"
+        },
+        "VORICONAZOLE": {
+          "type": "integer"
+        },
+        "CEFEPIME HCL": {
+          "type": "integer"
+        },
+        "DICLOXACILLIN SODIUM": {
+          "type": "integer"
+        },
+        "TIKOSYN": {
+          "type": "integer"
+        },
+        "MINOCYCLINE HCL": {
+          "type": "integer"
+        },
+        "HALOBETASOL PROPIONATE": {
+          "type": "integer"
+        },
+        "HYDROCORTISONE BUTYRATE": {
+          "type": "integer"
+        },
+        "CIALIS": {
+          "type": "integer"
+        },
+        "CEFPROZIL": {
+          "type": "integer"
+        },
+        "QUINAPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "CAPTOPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "TIROSINT": {
+          "type": "integer"
+        },
+        "POMALYST": {
+          "type": "integer"
+        },
+        "CLINISOL": {
+          "type": "integer"
+        },
+        "DORZOLAMIDE-TIMOLOL": {
+          "type": "integer"
+        },
+        "HALOPERIDOL LACTATE": {
+          "type": "integer"
+        },
+        "OXAZEPAM": {
+          "type": "integer"
+        },
+        "SILDENAFIL": {
+          "type": "integer"
+        },
+        "CARBAMAZEPINE ER": {
+          "type": "integer"
+        },
+        "TRILEPTAL": {
+          "type": "integer"
+        },
+        "POTIGA": {
+          "type": "integer"
+        },
+        "BUTORPHANOL TARTRATE": {
+          "type": "integer"
+        },
+        "CEFAZOLIN SODIUM": {
+          "type": "integer"
+        },
+        "CABERGOLINE": {
+          "type": "integer"
+        },
+        "ORACEA": {
+          "type": "integer"
+        },
+        "IMIQUIMOD": {
+          "type": "integer"
+        },
+        "DIPHENHYDRAMINE HCL": {
+          "type": "integer"
+        },
+        "MEGACE ES": {
+          "type": "integer"
+        },
+        "LOVENOX": {
+          "type": "integer"
+        },
+        "THALOMID": {
+          "type": "integer"
+        },
+        "ZELBORAF": {
+          "type": "integer"
+        },
+        "TECFIDERA": {
+          "type": "integer"
+        },
+        "ZANAFLEX": {
+          "type": "integer"
+        },
+        "AMPYRA": {
+          "type": "integer"
+        },
+        "TYSABRI": {
+          "type": "integer"
+        },
+        "IMIPRAMINE PAMOATE": {
+          "type": "integer"
+        },
+        "LUPRON DEPOT": {
+          "type": "integer"
+        },
+        "DURAGESIC": {
+          "type": "integer"
+        },
+        "LAMICTAL XR": {
+          "type": "integer"
+        },
+        "DEPAKOTE": {
+          "type": "integer"
+        },
+        "ADCIRCA": {
+          "type": "integer"
+        },
+        "PIROXICAM": {
+          "type": "integer"
+        },
+        "PENTAZOCINE-NALOXONE HCL": {
+          "type": "integer"
+        },
+        "ULTRA COMFORT": {
+          "type": "integer"
+        },
+        "DIPYRIDAMOLE": {
+          "type": "integer"
+        },
+        "HYOSCYAMINE SULFATE": {
+          "type": "integer"
+        },
+        "H.P. ACTHAR": {
+          "type": "integer"
+        },
+        "NITROFURANTOIN": {
+          "type": "integer"
+        },
+        "PROSOL": {
+          "type": "integer"
+        },
+        "ZIDOVUDINE": {
+          "type": "integer"
+        },
+        "NISOLDIPINE": {
+          "type": "integer"
+        },
+        "ISRADIPINE": {
+          "type": "integer"
+        },
+        "CALCITONIN-SALMON": {
+          "type": "integer"
+        },
+        "ENULOSE": {
+          "type": "integer"
+        },
+        "BETAMETHASONE VALERATE": {
+          "type": "integer"
+        },
+        "SOLARAZE": {
+          "type": "integer"
+        },
+        "FENTANYL CITRATE": {
+          "type": "integer"
+        },
+        "TRANYLCYPROMINE SULFATE": {
+          "type": "integer"
+        },
+        "MATZIM LA": {
+          "type": "integer"
+        },
+        "THEOPHYLLINE": {
+          "type": "integer"
+        },
+        "XOLAIR": {
+          "type": "integer"
+        },
+        "ADVAIR HFA": {
+          "type": "integer"
+        },
+        "THEO-24": {
+          "type": "integer"
+        },
+        "ROZEREM": {
+          "type": "integer"
+        },
+        "DELZICOL": {
+          "type": "integer"
+        },
+        "MENEST": {
+          "type": "integer"
+        },
+        "SODIUM POLYSTYRENE SULFONATE": {
+          "type": "integer"
+        },
+        "DEXTROSE IN WATER": {
+          "type": "integer"
+        },
+        "LIPOFEN": {
+          "type": "integer"
+        },
+        "SULFAZINE": {
+          "type": "integer"
+        },
+        "DOXYCYCLINE MONOHYDRATE": {
+          "type": "integer"
+        },
+        "VICOPROFEN": {
+          "type": "integer"
+        },
+        "COZAAR": {
+          "type": "integer"
+        },
+        "REVATIO": {
+          "type": "integer"
+        },
+        "CELLCEPT": {
+          "type": "integer"
+        },
+        "KRISTALOSE": {
+          "type": "integer"
+        },
+        "NEORAL": {
+          "type": "integer"
+        },
+        "RAPAMUNE": {
+          "type": "integer"
+        },
+        "GENGRAF": {
+          "type": "integer"
+        },
+        "ALFUZOSIN HCL": {
+          "type": "integer"
+        },
+        "EPIVIR HBV": {
+          "type": "integer"
+        },
+        "PROGRAF": {
+          "type": "integer"
+        },
+        "VERAPAMIL ER PM": {
+          "type": "integer"
+        },
+        "RITALIN LA": {
+          "type": "integer"
+        },
+        "DYRENIUM": {
+          "type": "integer"
+        },
+        "BRILINTA": {
+          "type": "integer"
+        },
+        "CARDIZEM CD": {
+          "type": "integer"
+        },
+        "SINGLE USE SWAB": {
+          "type": "integer"
+        },
+        "LORTAB": {
+          "type": "integer"
+        },
+        "METOPROLOL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "AFINITOR": {
+          "type": "integer"
+        },
+        "KEPPRA XR": {
+          "type": "integer"
+        },
+        "BETASERON": {
+          "type": "integer"
+        },
+        "PHENYTOIN": {
+          "type": "integer"
+        },
+        "ETHOSUXIMIDE": {
+          "type": "integer"
+        },
+        "VIRAMUNE XR": {
+          "type": "integer"
+        },
+        "TRIZIVIR": {
+          "type": "integer"
+        },
+        "VIRAMUNE": {
+          "type": "integer"
+        },
+        "LAMIVUDINE": {
+          "type": "integer"
+        },
+        "LAMIVUDINE-ZIDOVUDINE": {
+          "type": "integer"
+        },
+        "ITRACONAZOLE": {
+          "type": "integer"
+        },
+        "AMINOCAPROIC ACID": {
+          "type": "integer"
+        },
+        "COLISTIMETHATE SODIUM": {
+          "type": "integer"
+        },
+        "OCTREOTIDE ACETATE": {
+          "type": "integer"
+        },
+        "MESTINON": {
+          "type": "integer"
+        },
+        "SILVER SULFADIAZINE": {
+          "type": "integer"
+        },
+        "SSD": {
+          "type": "integer"
+        },
+        "SELEGILINE HCL": {
+          "type": "integer"
+        },
+        "SEREVENT DISKUS": {
+          "type": "integer"
+        },
+        "PATANASE": {
+          "type": "integer"
+        },
+        "ZETONNA": {
+          "type": "integer"
+        },
+        "MOMETASONE FUROATE": {
+          "type": "integer"
+        },
+        "OMEPRAZOLE-SODIUM BICARBONATE": {
+          "type": "integer"
+        },
+        "VERAMYST": {
+          "type": "integer"
+        },
+        "ERY-TAB": {
+          "type": "integer"
+        },
+        "PREVALITE": {
+          "type": "integer"
+        },
+        "BENZONATATE": {
+          "type": "integer"
+        },
+        "POTASSIUM CITRATE": {
+          "type": "integer"
+        },
+        "FLOVENT DISKUS": {
+          "type": "integer"
+        },
+        "AVELOX": {
+          "type": "integer"
+        },
+        "TUDORZA PRESSAIR": {
+          "type": "integer"
+        },
+        "EPIPEN 2-PAK": {
+          "type": "integer"
+        },
+        "DEPO-TESTOSTERONE": {
+          "type": "integer"
+        },
+        "AVAPRO": {
+          "type": "integer"
+        },
+        "TOLTERODINE TARTRATE": {
+          "type": "integer"
+        },
+        "ESTROPIPATE": {
+          "type": "integer"
+        },
+        "CHANTIX": {
+          "type": "integer"
+        },
+        "CYCLAFEM": {
+          "type": "integer"
+        },
+        "AMPICILLIN TRIHYDRATE": {
+          "type": "integer"
+        },
+        "COMPRO": {
+          "type": "integer"
+        },
+        "FOLBIC": {
+          "type": "integer"
+        },
+        "BUTALB-CAFF-ACETAMINOPH-CODEIN": {
+          "type": "integer"
+        },
+        "XENAZINE": {
+          "type": "integer"
+        },
+        "ZONEGRAN": {
+          "type": "integer"
+        },
+        "ZALEPLON": {
+          "type": "integer"
+        },
+        "ANAGRELIDE HCL": {
+          "type": "integer"
+        },
+        "SURE COMFORT": {
+          "type": "integer"
+        },
+        "DAYTRANA": {
+          "type": "integer"
+        },
+        "GIANVI": {
+          "type": "integer"
+        },
+        "TROSPIUM CHLORIDE ER": {
+          "type": "integer"
+        },
+        "DILT-XR": {
+          "type": "integer"
+        },
+        "ADVICOR": {
+          "type": "integer"
+        },
+        "XTANDI": {
+          "type": "integer"
+        },
+        "LEUKINE": {
+          "type": "integer"
+        },
+        "ERYTHROCIN STEARATE": {
+          "type": "integer"
+        },
+        "CYCLOSPORINE": {
+          "type": "integer"
+        },
+        "EMEND": {
+          "type": "integer"
+        },
+        "TRIMETHOPRIM": {
+          "type": "integer"
+        },
+        "PROMETHAZINE VC": {
+          "type": "integer"
+        },
+        "RIBASPHERE": {
+          "type": "integer"
+        },
+        "ALVESCO": {
+          "type": "integer"
+        },
+        "LAMOTRIGINE ER": {
+          "type": "integer"
+        },
+        "NOVOFINE": {
+          "type": "integer"
+        },
+        "SYMLINPEN 120": {
+          "type": "integer"
+        },
+        "APIDRA SOLOSTAR": {
+          "type": "integer"
+        },
+        "ARMOUR THYROID": {
+          "type": "integer"
+        },
+        "TASIGNA": {
+          "type": "integer"
+        },
+        "ARCAPTA NEOHALER": {
+          "type": "integer"
+        },
+        "BUDEPRION XL": {
+          "type": "integer"
+        },
+        "PREDNISOLONE ACETATE": {
+          "type": "integer"
+        },
+        "DILANTIN-125": {
+          "type": "integer"
+        },
+        "ATROPINE SULFATE": {
+          "type": "integer"
+        },
+        "ACETYLCYSTEINE": {
+          "type": "integer"
+        },
+        "SINEMET 25-100": {
+          "type": "integer"
+        },
+        "BROMOCRIPTINE MESYLATE": {
+          "type": "integer"
+        },
+        "BRIMONIDINE TARTRATE": {
+          "type": "integer"
+        },
+        "TIMOLOL MALEATE": {
+          "type": "integer"
+        },
+        "FELBATOL": {
+          "type": "integer"
+        },
+        "CARBATROL": {
+          "type": "integer"
+        },
+        "BANZEL": {
+          "type": "integer"
+        },
+        "DEPAKOTE SPRINKLE": {
+          "type": "integer"
+        },
+        "FELBAMATE": {
+          "type": "integer"
+        },
+        "GABITRIL": {
+          "type": "integer"
+        },
+        "JOLIVETTE": {
+          "type": "integer"
+        },
+        "INCIVEK": {
+          "type": "integer"
+        },
+        "RIBAPAK": {
+          "type": "integer"
+        },
+        "PEGASYS": {
+          "type": "integer"
+        },
+        "CHOLESTYRAMINE LIGHT": {
+          "type": "integer"
+        },
+        "TYGACIL": {
+          "type": "integer"
+        },
+        "PIPERACILLIN-TAZOBACTAM": {
+          "type": "integer"
+        },
+        "VALCYTE": {
+          "type": "integer"
+        },
+        "IRBESARTAN-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "NICARDIPINE HCL": {
+          "type": "integer"
+        },
+        "CARDENE SR": {
+          "type": "integer"
+        },
+        "CELEXA": {
+          "type": "integer"
+        },
+        "DULOXETINE HCL": {
+          "type": "integer"
+        },
+        "VALIUM": {
+          "type": "integer"
+        },
+        "KADIAN": {
+          "type": "integer"
+        },
+        "FENTORA": {
+          "type": "integer"
+        },
+        "PRILOSEC": {
+          "type": "integer"
+        },
+        "CEFPODOXIME PROXETIL": {
+          "type": "integer"
+        },
+        "LAMICTAL ODT": {
+          "type": "integer"
+        },
+        "BACTROBAN NASAL": {
+          "type": "integer"
+        },
+        "NEOMYCIN-POLYMYXIN-HYDROCORT": {
+          "type": "integer"
+        },
+        "VICTRELIS": {
+          "type": "integer"
+        },
+        "SULFASALAZINE DR": {
+          "type": "integer"
+        },
+        "SULFAZINE EC": {
+          "type": "integer"
+        },
+        "CANDESARTAN-HYDROCHLOROTHIAZID": {
+          "type": "integer"
+        },
+        "FEMARA": {
+          "type": "integer"
+        },
+        "INDOMETHACIN": {
+          "type": "integer"
+        },
+        "ALCOHOL PREP PADS": {
+          "type": "integer"
+        },
+        "OPIUM TINCTURE": {
+          "type": "integer"
+        },
+        "NEXAVAR": {
+          "type": "integer"
+        },
+        "FONDAPARINUX SODIUM": {
+          "type": "integer"
+        },
+        "ASCOMP WITH CODEINE": {
+          "type": "integer"
+        },
+        "CHLORZOXAZONE": {
+          "type": "integer"
+        },
+        "BUDEPRION SR": {
+          "type": "integer"
+        },
+        "CHLORDIAZEPOXIDE HCL": {
+          "type": "integer"
+        },
+        "OLANZAPINE-FLUOXETINE HCL": {
+          "type": "integer"
+        },
+        "CAMPRAL": {
+          "type": "integer"
+        },
+        "ARANESP": {
+          "type": "integer"
+        },
+        "AMBIEN": {
+          "type": "integer"
+        },
+        "FLURAZEPAM HCL": {
+          "type": "integer"
+        },
+        "ZYPREXA ZYDIS": {
+          "type": "integer"
+        },
+        "CYCLOSPORINE MODIFIED": {
+          "type": "integer"
+        },
+        "NORETHINDRONE ACETATE": {
+          "type": "integer"
+        },
+        "ESTRADIOL-NORETHINDRONE ACETAT": {
+          "type": "integer"
+        },
+        "CYSTADANE": {
+          "type": "integer"
+        },
+        "CRYSELLE": {
+          "type": "integer"
+        },
+        "RYTHMOL": {
+          "type": "integer"
+        },
+        "FENOFIBRIC ACID": {
+          "type": "integer"
+        },
+        "ULTRAM": {
+          "type": "integer"
+        },
+        "BUTALBITAL COMPOUND-CODEINE": {
+          "type": "integer"
+        },
+        "SPRYCEL": {
+          "type": "integer"
+        },
+        "JANUMET XR": {
+          "type": "integer"
+        },
+        "RYTHMOL SR": {
+          "type": "integer"
+        },
+        "NIACOR": {
+          "type": "integer"
+        },
+        "CARBOPLATIN": {
+          "type": "integer"
+        },
+        "DEXAMETHASONE SODIUM PHOSPHATE": {
+          "type": "integer"
+        },
+        "ALOXI": {
+          "type": "integer"
+        },
+        "VICODIN": {
+          "type": "integer"
+        },
+        "IMIPENEM-CILASTATIN SODIUM": {
+          "type": "integer"
+        },
+        "ONFI": {
+          "type": "integer"
+        },
+        "DIASTAT ACUDIAL": {
+          "type": "integer"
+        },
+        "TOPAMAX": {
+          "type": "integer"
+        },
+        "FAMCICLOVIR": {
+          "type": "integer"
+        },
+        "XELJANZ": {
+          "type": "integer"
+        },
+        "CANASA": {
+          "type": "integer"
+        },
+        "EXJADE": {
+          "type": "integer"
+        },
+        "ARIMIDEX": {
+          "type": "integer"
+        },
+        "DEPO-MEDROL": {
+          "type": "integer"
+        },
+        "ACTEMRA": {
+          "type": "integer"
+        },
+        "METHYLPREDNISOLONE ACETATE": {
+          "type": "integer"
+        },
+        "REMICADE": {
+          "type": "integer"
+        },
+        "PEGINTRON REDIPEN": {
+          "type": "integer"
+        },
+        "LODOSYN": {
+          "type": "integer"
+        },
+        "SPRINTEC": {
+          "type": "integer"
+        },
+        "ZYFLO CR": {
+          "type": "integer"
+        },
+        "MILRINONE LACTATE": {
+          "type": "integer"
+        },
+        "VOTRIENT": {
+          "type": "integer"
+        },
+        "XALKORI": {
+          "type": "integer"
+        },
+        "JAKAFI": {
+          "type": "integer"
+        },
+        "KIONEX": {
+          "type": "integer"
+        },
+        "SALSALATE": {
+          "type": "integer"
+        },
+        "GLUCOPHAGE XR": {
+          "type": "integer"
+        },
+        "FLURBIPROFEN": {
+          "type": "integer"
+        },
+        "DICLOFENAC SODIUM-MISOPROSTOL": {
+          "type": "integer"
+        },
+        "ZOSTAVAX": {
+          "type": "integer"
+        },
+        "EASY TOUCH": {
+          "type": "integer"
+        },
+        "DILAUDID": {
+          "type": "integer"
+        },
+        "CATAPRES-TTS 1": {
+          "type": "integer"
+        },
+        "SIMPONI": {
+          "type": "integer"
+        },
+        "PROSTIGMIN": {
+          "type": "integer"
+        },
+        "UCERIS": {
+          "type": "integer"
+        },
+        "CARDURA XL": {
+          "type": "integer"
+        },
+        "TOBRAMYCIN-DEXAMETHASONE": {
+          "type": "integer"
+        },
+        "ALPHAGAN P": {
+          "type": "integer"
+        },
+        "FLUVASTATIN SODIUM": {
+          "type": "integer"
+        },
+        "STALEVO 150": {
+          "type": "integer"
+        },
+        "CEFADROXIL": {
+          "type": "integer"
+        },
+        "ATACAND": {
+          "type": "integer"
+        },
+        "SODIUM FLUORIDE": {
+          "type": "integer"
+        },
+        "PROLIA": {
+          "type": "integer"
+        },
+        "REMODULIN": {
+          "type": "integer"
+        },
+        "STARLIX": {
+          "type": "integer"
+        },
+        "DERMA-SMOOTHE-FS": {
+          "type": "integer"
+        },
+        "METHYLPHENIDATE HCL CD": {
+          "type": "integer"
+        },
+        "LEVOCARNITINE": {
+          "type": "integer"
+        },
+        "PROMACTA": {
+          "type": "integer"
+        },
+        "JINTELI": {
+          "type": "integer"
+        },
+        "PROTRIPTYLINE HCL": {
+          "type": "integer"
+        },
+        "MIRAPEX ER": {
+          "type": "integer"
+        },
+        "STALEVO 75": {
+          "type": "integer"
+        },
+        "KORLYM": {
+          "type": "integer"
+        },
+        "LOTRONEX": {
+          "type": "integer"
+        },
+        "URSO FORTE": {
+          "type": "integer"
+        },
+        "AVIANE": {
+          "type": "integer"
+        },
+        "JUNEL FE": {
+          "type": "integer"
+        },
+        "ESTAZOLAM": {
+          "type": "integer"
+        },
+        "ORTHO TRI-CYCLEN LO": {
+          "type": "integer"
+        },
+        "STAVZOR": {
+          "type": "integer"
+        },
+        "COMBIPATCH": {
+          "type": "integer"
+        },
+        "PREVIDENT 5000": {
+          "type": "integer"
+        },
+        "APRI": {
+          "type": "integer"
+        },
+        "PARICALCITOL": {
+          "type": "integer"
+        },
+        "ZAFIRLUKAST": {
+          "type": "integer"
+        },
+        "VIRACEPT": {
+          "type": "integer"
+        },
+        "PREDNISOLONE SODIUM PHOSPHATE": {
+          "type": "integer"
+        },
+        "PREDNISOLONE": {
+          "type": "integer"
+        },
+        "NARDIL": {
+          "type": "integer"
+        },
+        "PREVIDENT 5000 PLUS": {
+          "type": "integer"
+        },
+        "GASTROCROM": {
+          "type": "integer"
+        },
+        "FORTAMET": {
+          "type": "integer"
+        },
+        "PERINDOPRIL ERBUMINE": {
+          "type": "integer"
+        },
+        "TRICOR": {
+          "type": "integer"
+        },
+        "MONOJECT INSULIN SAFETY SYRNG": {
+          "type": "integer"
+        },
+        "ABILIFY DISCMELT": {
+          "type": "integer"
+        },
+        "PATANOL": {
+          "type": "integer"
+        },
+        "HYDROCODONE-HOMATROPINE MBR": {
+          "type": "integer"
+        },
+        "RELISTOR": {
+          "type": "integer"
+        },
+        "GELNIQUE": {
+          "type": "integer"
+        },
+        "INSUPEN": {
+          "type": "integer"
+        },
+        "CEVIMELINE HCL": {
+          "type": "integer"
+        },
+        "EVOXAC": {
+          "type": "integer"
+        },
+        "DIPENTUM": {
+          "type": "integer"
+        },
+        "K-TAB ER": {
+          "type": "integer"
+        },
+        "INTUNIV": {
+          "type": "integer"
+        },
+        "GLASSIA": {
+          "type": "integer"
+        },
+        "ARALAST NP": {
+          "type": "integer"
+        },
+        "ZEMAIRA": {
+          "type": "integer"
+        },
+        "PANCREAZE": {
+          "type": "integer"
+        },
+        "METHAZOLAMIDE": {
+          "type": "integer"
+        },
+        "STALEVO 200": {
+          "type": "integer"
+        },
+        "REQUIP XL": {
+          "type": "integer"
+        },
+        "HORIZANT": {
+          "type": "integer"
+        },
+        "ALTOPREV": {
+          "type": "integer"
+        },
+        "CORTEF": {
+          "type": "integer"
+        },
+        "NEOMYCIN-POLYMYXIN-DEXAMETH": {
+          "type": "integer"
+        },
+        "ESTRING": {
+          "type": "integer"
+        },
+        "NIZATIDINE": {
+          "type": "integer"
+        },
+        "PHENAZOPYRIDINE HCL": {
+          "type": "integer"
+        },
+        "MARPLAN": {
+          "type": "integer"
+        },
+        "MEPRON": {
+          "type": "integer"
+        },
+        "NOXAFIL": {
+          "type": "integer"
+        },
+        "ACARBOSE": {
+          "type": "integer"
+        },
+        "ANDRODERM": {
+          "type": "integer"
+        },
+        "METHOTREXATE SODIUM": {
+          "type": "integer"
+        },
+        "JENTADUETO": {
+          "type": "integer"
+        },
+        "ACTOPLUS MET": {
+          "type": "integer"
+        },
+        "GLUMETZA": {
+          "type": "integer"
+        },
+        "FOLGARD OS": {
+          "type": "integer"
+        },
+        "TREXALL": {
+          "type": "integer"
+        },
+        "RISPERDAL": {
+          "type": "integer"
+        },
+        "METHYLDOPA": {
+          "type": "integer"
+        },
+        "FOSINOPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "ALCOHOL PADS": {
+          "type": "integer"
+        },
+        "MYCAMINE": {
+          "type": "integer"
+        },
+        "NORVASC": {
+          "type": "integer"
+        },
+        "PROVIGIL": {
+          "type": "integer"
+        },
+        "GOLYTELY": {
+          "type": "integer"
+        },
+        "DIDANOSINE": {
+          "type": "integer"
+        },
+        "COREG": {
+          "type": "integer"
+        },
+        "STAVUDINE": {
+          "type": "integer"
+        },
+        "BECONASE AQ": {
+          "type": "integer"
+        },
+        "INVIRASE": {
+          "type": "integer"
+        },
+        "FLUNISOLIDE": {
+          "type": "integer"
+        },
+        "EPIVIR": {
+          "type": "integer"
+        },
+        "ACETIC ACID": {
+          "type": "integer"
+        },
+        "COLYTE WITH FLAVOR PACKS": {
+          "type": "integer"
+        },
+        "COLYTE WITH FLAVOR PACKETS": {
+          "type": "integer"
+        },
+        "METHSCOPOLAMINE BROMIDE": {
+          "type": "integer"
+        },
+        "L-METHYLFOLATE CALCIUM": {
+          "type": "integer"
+        },
+        "ALPRAZOLAM XR": {
+          "type": "integer"
+        },
+        "PROZAC": {
+          "type": "integer"
+        },
+        "NEOMYCIN-POLYMYXIN-HC": {
+          "type": "integer"
+        },
+        "CYCLOSET": {
+          "type": "integer"
+        },
+        "MYRBETRIQ": {
+          "type": "integer"
+        },
+        "METHYCLOTHIAZIDE": {
+          "type": "integer"
+        },
+        "PHENELZINE SULFATE": {
+          "type": "integer"
+        },
+        "PHOSPHA 250 NEUTRAL": {
+          "type": "integer"
+        },
+        "AMILORIDE-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "FABB": {
+          "type": "integer"
+        },
+        "QUINIDINE SULFATE": {
+          "type": "integer"
+        },
+        "JUXTAPID": {
+          "type": "integer"
+        },
+        "LITHIUM": {
+          "type": "integer"
+        },
+        "VIVITROL": {
+          "type": "integer"
+        },
+        "SRONYX": {
+          "type": "integer"
+        },
+        "AZASAN": {
+          "type": "integer"
+        },
+        "SIMCOR": {
+          "type": "integer"
+        },
+        "ULTICARE": {
+          "type": "integer"
+        },
+        "WELLBUTRIN": {
+          "type": "integer"
+        },
+        "PERTZYE": {
+          "type": "integer"
+        },
+        "PANCRELIPASE 5,000": {
+          "type": "integer"
+        },
+        "PEN NEEDLES": {
+          "type": "integer"
+        },
+        "PAXIL CR": {
+          "type": "integer"
+        },
+        "AXIRON": {
+          "type": "integer"
+        },
+        "ZOLOFT": {
+          "type": "integer"
+        },
+        "NULYTELY WITH FLAVOR PACKS": {
+          "type": "integer"
+        },
+        "OXACILLIN SODIUM": {
+          "type": "integer"
+        },
+        "AMPICILLIN-SULBACTAM": {
+          "type": "integer"
+        },
+        "CETIRIZINE HCL": {
+          "type": "integer"
+        },
+        "EDARBI": {
+          "type": "integer"
+        },
+        "NITRO-DUR": {
+          "type": "integer"
+        },
+        "WELLBUTRIN SR": {
+          "type": "integer"
+        },
+        "CRIXIVAN": {
+          "type": "integer"
+        },
+        "INNOPRAN XL": {
+          "type": "integer"
+        },
+        "TROSPIUM CHLORIDE": {
+          "type": "integer"
+        },
+        "ELMIRON": {
+          "type": "integer"
+        },
+        "RHINOCORT AQUA": {
+          "type": "integer"
+        },
+        "QSYMIA": {
+          "type": "integer"
+        },
+        "NOVOTWIST": {
+          "type": "integer"
+        },
+        "CLICKFINE": {
+          "type": "integer"
+        },
+        "EDECRIN": {
+          "type": "integer"
+        },
+        "LUTERA": {
+          "type": "integer"
+        },
+        "CROMOLYN SODIUM": {
+          "type": "integer"
+        },
+        "ANTABUSE": {
+          "type": "integer"
+        },
+        "ZORTRESS": {
+          "type": "integer"
+        },
+        "SYMBYAX": {
+          "type": "integer"
+        },
+        "OXYTROL": {
+          "type": "integer"
+        },
+        "ALORA": {
+          "type": "integer"
+        },
+        "OMNITROPE": {
+          "type": "integer"
+        },
+        "FORTICAL": {
+          "type": "integer"
+        },
+        "GRANISETRON HCL": {
+          "type": "integer"
+        },
+        "GEMCITABINE HCL": {
+          "type": "integer"
+        },
+        "METIPRANOLOL": {
+          "type": "integer"
+        },
+        "ELESTRIN": {
+          "type": "integer"
+        },
+        "LOTREL": {
+          "type": "integer"
+        },
+        "IN CONTROL PEN NEEDLE": {
+          "type": "integer"
+        },
+        "ALINIA": {
+          "type": "integer"
+        },
+        "TEFLARO": {
+          "type": "integer"
+        },
+        "PROBENECID-COLCHICINE": {
+          "type": "integer"
+        },
+        "TERBUTALINE SULFATE": {
+          "type": "integer"
+        },
+        "DANAZOL": {
+          "type": "integer"
+        },
+        "REPREXAIN": {
+          "type": "integer"
+        },
+        "FUZEON": {
+          "type": "integer"
+        },
+        "SELENIUM SULFIDE": {
+          "type": "integer"
+        },
+        "CLEMASTINE FUMARATE": {
+          "type": "integer"
+        },
+        "TENORMIN": {
+          "type": "integer"
+        },
+        "ALCOHOL SWABS": {
+          "type": "integer"
+        },
+        "ULTRAM ER": {
+          "type": "integer"
+        },
+        "SUMATRIPTAN": {
+          "type": "integer"
+        },
+        "FOCALIN XR": {
+          "type": "integer"
+        },
+        "LORCET 10-650": {
+          "type": "integer"
+        },
+        "PHOSLYRA": {
+          "type": "integer"
+        },
+        "SYMLINPEN 60": {
+          "type": "integer"
+        },
+        "TARGRETIN": {
+          "type": "integer"
+        },
+        "QUESTRAN": {
+          "type": "integer"
+        },
+        "TRAVASOL": {
+          "type": "integer"
+        },
+        "FRAGMIN": {
+          "type": "integer"
+        },
+        "STALEVO 100": {
+          "type": "integer"
+        },
+        "VICODIN ES": {
+          "type": "integer"
+        },
+        "AMBIEN CR": {
+          "type": "integer"
+        },
+        "SUBSYS": {
+          "type": "integer"
+        },
+        "LORYNA": {
+          "type": "integer"
+        },
+        "ZESTRIL": {
+          "type": "integer"
+        },
+        "AZOPT": {
+          "type": "integer"
+        },
+        "GLUCAGEN": {
+          "type": "integer"
+        },
+        "ALPRAZOLAM ODT": {
+          "type": "integer"
+        },
+        "DONEPEZIL HCL ODT": {
+          "type": "integer"
+        },
+        "CODEINE SULFATE": {
+          "type": "integer"
+        },
+        "CLOZAPINE ODT": {
+          "type": "integer"
+        },
+        "INVOKANA": {
+          "type": "integer"
+        },
+        "PROLASTIN C": {
+          "type": "integer"
+        },
+        "MINIVELLE": {
+          "type": "integer"
+        },
+        "MYSOLINE": {
+          "type": "integer"
+        },
+        "PENTAZOCINE-ACETAMINOPHEN": {
+          "type": "integer"
+        },
+        "LEVALBUTEROL HCL": {
+          "type": "integer"
+        },
+        "DORZOLAMIDE HCL": {
+          "type": "integer"
+        },
+        "MEROPENEM": {
+          "type": "integer"
+        },
+        "TOBRAMYCIN SULFATE": {
+          "type": "integer"
+        },
+        "RENAL CAPS": {
+          "type": "integer"
+        },
+        "TRIPHROCAPS": {
+          "type": "integer"
+        },
+        "EQUETRO": {
+          "type": "integer"
+        },
+        "METHYLPHENIDATE SR": {
+          "type": "integer"
+        },
+        "POLYMYXIN B SUL-TRIMETHOPRIM": {
+          "type": "integer"
+        },
+        "L-METHYL-B6-B12": {
+          "type": "integer"
+        },
+        "DIAMOX SEQUELS": {
+          "type": "integer"
+        },
+        "NORGESTIMATE-ETHINYL ESTRADIOL": {
+          "type": "integer"
+        },
+        "OXANDROLONE": {
+          "type": "integer"
+        },
+        "VASCEPA": {
+          "type": "integer"
+        },
+        "ZYLET": {
+          "type": "integer"
+        },
+        "LORAZEPAM INTENSOL": {
+          "type": "integer"
+        },
+        "ALTACE": {
+          "type": "integer"
+        },
+        "NEVANAC": {
+          "type": "integer"
+        },
+        "LOESTRIN 24 FE": {
+          "type": "integer"
+        },
+        "MICROGESTIN FE": {
+          "type": "integer"
+        },
+        "HYDROCODONE-IBUPROFEN": {
+          "type": "integer"
+        },
+        "EXTAVIA": {
+          "type": "integer"
+        },
+        "PRIVIGEN": {
+          "type": "integer"
+        },
+        "LEVOBUNOLOL HCL": {
+          "type": "integer"
+        },
+        "TOBRAMYCIN": {
+          "type": "integer"
+        },
+        "ZARONTIN": {
+          "type": "integer"
+        },
+        "AZASITE": {
+          "type": "integer"
+        },
+        "APTIVUS": {
+          "type": "integer"
+        },
+        "RESCRIPTOR": {
+          "type": "integer"
+        },
+        "METHYLPHENIDATE LA": {
+          "type": "integer"
+        },
+        "MOEXIPRIL-HYDROCHLOROTHIAZIDE": {
+          "type": "integer"
+        },
+        "EDARBYCLOR": {
+          "type": "integer"
+        },
+        "KINERET": {
+          "type": "integer"
+        },
+        "LESCOL XL": {
+          "type": "integer"
+        },
+        "GILDESS FE": {
+          "type": "integer"
+        },
+        "MEPROBAMATE": {
+          "type": "integer"
+        },
+        "NITROLINGUAL": {
+          "type": "integer"
+        },
+        "NITROGLYCERIN": {
+          "type": "integer"
+        },
+        "FINACEA": {
+          "type": "integer"
+        },
+        "JALYN": {
+          "type": "integer"
+        },
+        "PICATO": {
+          "type": "integer"
+        },
+        "ATOVAQUONE-PROGUANIL HCL": {
+          "type": "integer"
+        },
+        "YF-VAX": {
+          "type": "integer"
+        },
+        "IPOL": {
+          "type": "integer"
+        },
+        "HAVRIX": {
+          "type": "integer"
+        },
+        "GLIPIZIDE-METFORMIN": {
+          "type": "integer"
+        },
+        "MILLIPRED": {
+          "type": "integer"
+        },
+        "ZYPREXA RELPREVV": {
+          "type": "integer"
+        },
+        "DARAPRIM": {
+          "type": "integer"
+        },
+        "HUMATROPE": {
+          "type": "integer"
+        },
+        "ZOCOR": {
+          "type": "integer"
+        },
+        "ZELAPAR": {
+          "type": "integer"
+        },
+        "SOLU-MEDROL": {
+          "type": "integer"
+        },
+        "BONIVA": {
+          "type": "integer"
+        },
+        "APIDRA": {
+          "type": "integer"
+        },
+        "GENOTROPIN": {
+          "type": "integer"
+        },
+        "FOSAMAX PLUS D": {
+          "type": "integer"
+        },
+        "ACTIGALL": {
+          "type": "integer"
+        },
+        "NORCO": {
+          "type": "integer"
+        },
+        "ABELCET": {
+          "type": "integer"
+        },
+        "MOBIC": {
+          "type": "integer"
+        },
+        "CUPRIMINE": {
+          "type": "integer"
+        },
+        "PLAQUENIL": {
+          "type": "integer"
+        },
+        "ADACEL TDAP": {
+          "type": "integer"
+        },
+        "PEXEVA": {
+          "type": "integer"
+        },
+        "QUINIDINE GLUCONATE": {
+          "type": "integer"
+        },
+        "NOROXIN": {
+          "type": "integer"
+        },
+        "PAXIL": {
+          "type": "integer"
+        },
+        "TRI-SPRINTEC": {
+          "type": "integer"
+        },
+        "KLONOPIN": {
+          "type": "integer"
+        },
+        "DEXMETHYLPHENIDATE HCL": {
+          "type": "integer"
+        },
+        "CYTRA-2": {
+          "type": "integer"
+        },
+        "CAMBIA": {
+          "type": "integer"
+        },
+        "MEPERITAB": {
+          "type": "integer"
+        },
+        "NATAZIA": {
+          "type": "integer"
+        },
+        "VIDAZA": {
+          "type": "integer"
+        },
+        "RITUXAN": {
+          "type": "integer"
+        },
+        "ALIMTA": {
+          "type": "integer"
+        },
+        "ZANTAC": {
+          "type": "integer"
+        },
+        "GAMMAPLEX": {
+          "type": "integer"
+        },
+        "SUMAVEL DOSEPRO": {
+          "type": "integer"
+        },
+        "FROVA": {
+          "type": "integer"
+        },
+        "ADDERALL": {
+          "type": "integer"
+        },
+        "MINITRAN": {
+          "type": "integer"
+        },
+        "PROZAC WEEKLY": {
+          "type": "integer"
+        },
+        "NIFEDIPINE": {
+          "type": "integer"
+        },
+        "SAMSCA": {
+          "type": "integer"
+        },
+        "ANTARA": {
+          "type": "integer"
+        },
+        "BEYAZ": {
+          "type": "integer"
+        },
+        "ZYVOX": {
+          "type": "integer"
+        },
+        "CALCIPOTRIENE": {
+          "type": "integer"
+        },
+        "PROVERA": {
+          "type": "integer"
+        },
+        "ZIPSOR": {
+          "type": "integer"
+        },
+        "ZOLEDRONIC ACID": {
+          "type": "integer"
+        },
+        "KRYSTEXXA": {
+          "type": "integer"
+        },
+        "ZOMIG": {
+          "type": "integer"
+        },
+        "TREXIMET": {
+          "type": "integer"
+        },
+        "PLETAL": {
+          "type": "integer"
+        },
+        "BETAPACE": {
+          "type": "integer"
+        },
+        "FLURBIPROFEN SODIUM": {
+          "type": "integer"
+        },
+        "FLUOROMETHOLONE": {
+          "type": "integer"
+        },
+        "TOLMETIN SODIUM": {
+          "type": "integer"
+        },
+        "OXACILLIN": {
+          "type": "integer"
+        },
+        "METHENAMINE MANDELATE": {
+          "type": "integer"
+        },
+        "DIHYDROERGOTAMINE MESYLATE": {
+          "type": "integer"
+        },
+        "NECON": {
+          "type": "integer"
+        },
+        "CHLORDIAZEPOXIDE-AMITRIPTYLINE": {
+          "type": "integer"
+        },
+        "NAFCILLIN SODIUM": {
+          "type": "integer"
+        },
+        "OMNARIS": {
+          "type": "integer"
+        },
+        "CEFTAZIDIME": {
+          "type": "integer"
+        },
+        "DIABETA": {
+          "type": "integer"
+        },
+        "CADUET": {
+          "type": "integer"
+        },
+        "EMSAM": {
+          "type": "integer"
+        },
+        "ULTILET INSULIN SYRINGE": {
+          "type": "integer"
+        },
+        "NORPACE CR": {
+          "type": "integer"
+        },
+        "DEXEDRINE": {
+          "type": "integer"
+        },
+        "PYLERA": {
+          "type": "integer"
+        },
+        "PREVPAC": {
+          "type": "integer"
+        },
+        "BUTALBITAL-ASPIRIN-CAFFEINE": {
+          "type": "integer"
+        },
+        "DEPLIN": {
+          "type": "integer"
+        },
+        "ACETAMINOPHEN-BUTALBITAL": {
+          "type": "integer"
+        },
+        "POTASSIUM CHL-NORMAL SALINE": {
+          "type": "integer"
+        },
+        "SORIATANE": {
+          "type": "integer"
+        },
+        "TACLONEX": {
+          "type": "integer"
+        },
+        "ACITRETIN": {
+          "type": "integer"
+        },
+        "NUTROPIN AQ NUSPIN": {
+          "type": "integer"
+        },
+        "FOLPLEX 2.2": {
+          "type": "integer"
+        },
+        "HYZAAR": {
+          "type": "integer"
+        },
+        "NEULASTA": {
+          "type": "integer"
+        },
+        "CLINDAMYCIN-BENZOYL PEROXIDE": {
+          "type": "integer"
+        },
+        "PAMIDRONATE DISODIUM": {
+          "type": "integer"
+        },
+        "FLUTAMIDE": {
+          "type": "integer"
+        },
+        "METADATE CD": {
+          "type": "integer"
+        },
+        "ACTIVELLA": {
+          "type": "integer"
+        },
+        "CAMILA": {
+          "type": "integer"
+        },
+        "RENO CAPS": {
+          "type": "integer"
+        },
+        "KLOR-CON-EF": {
+          "type": "integer"
+        },
+        "ERYPED 200": {
+          "type": "integer"
+        },
+        "E.E.S. 200": {
+          "type": "integer"
+        },
+        "DASETTA": {
+          "type": "integer"
+        },
+        "TOBI": {
+          "type": "integer"
+        },
+        "CALAN SR": {
+          "type": "integer"
+        },
+        "BETAXOLOL HCL": {
+          "type": "integer"
+        },
+        "AMOXICILLIN-CLAVULANATE ER": {
+          "type": "integer"
+        },
+        "LOTEMAX": {
+          "type": "integer"
+        },
+        "SAFETYGLIDE INSULIN SYRINGE": {
+          "type": "integer"
+        },
+        "BEPREVE": {
+          "type": "integer"
+        },
+        "NORDITROPIN FLEXPRO": {
+          "type": "integer"
+        },
+        "NUTROPIN AQ": {
+          "type": "integer"
+        },
+        "SOMAVERT": {
+          "type": "integer"
+        },
+        "ERGOLOID MESYLATES": {
+          "type": "integer"
+        },
+        "CONSTULOSE": {
+          "type": "integer"
+        },
+        "CONCERTA": {
+          "type": "integer"
+        },
+        "FOLBEE PLUS CZ": {
+          "type": "integer"
+        },
+        "AZTREONAM": {
+          "type": "integer"
+        },
+        "ATIVAN": {
+          "type": "integer"
+        },
+        "GLYSET": {
+          "type": "integer"
+        },
+        "FOSAMAX": {
+          "type": "integer"
+        },
+        "AZURETTE": {
+          "type": "integer"
+        },
+        "CLOBETASOL EMOLLIENT": {
+          "type": "integer"
+        },
+        "MIMVEY": {
+          "type": "integer"
+        },
+        "ENJUVIA": {
+          "type": "integer"
+        },
+        "RESTORIL": {
+          "type": "integer"
+        },
+        "AROMASIN": {
+          "type": "integer"
+        },
+        "MYCOBUTIN": {
+          "type": "integer"
+        },
+        "CATAPRES-TTS 3": {
+          "type": "integer"
+        },
+        "NEPHPLEX RX": {
+          "type": "integer"
+        },
+        "UROCIT-K": {
+          "type": "integer"
+        },
+        "CANDESARTAN CILEXETIL": {
+          "type": "integer"
+        },
+        "DDAVP": {
+          "type": "integer"
+        },
+        "LITHOBID": {
+          "type": "integer"
+        },
+        "CATAPRES-TTS 2": {
+          "type": "integer"
+        },
+        "CORTISPORIN-TC": {
+          "type": "integer"
+        },
+        "FEMCON FE": {
+          "type": "integer"
+        },
+        "EVAMIST": {
+          "type": "integer"
+        },
+        "ERRIN": {
+          "type": "integer"
+        },
+        "CARDIZEM LA": {
+          "type": "integer"
+        },
+        "KELNOR 1-35": {
+          "type": "integer"
+        },
+        "ALKERAN": {
+          "type": "integer"
+        },
+        "DOCETAXEL": {
+          "type": "integer"
+        },
+        "VELCADE": {
+          "type": "integer"
+        },
+        "CYANOCOBALAMIN INJECTION": {
+          "type": "integer"
+        },
+        "DAYPRO": {
+          "type": "integer"
+        },
+        "DEPAKENE": {
+          "type": "integer"
+        },
+        "VIORELE": {
+          "type": "integer"
+        },
+        "PRAVACHOL": {
+          "type": "integer"
+        },
+        "VASOTEC": {
+          "type": "integer"
+        },
+        "IMITREX": {
+          "type": "integer"
+        },
+        "AMCINONIDE": {
+          "type": "integer"
+        }
+      }
+    },
+    "provider_variables": {
+      "type": "object",
+      "properties": {
+        "settlement_type": {
+          "type": "string"
+        },
+        "generic_rx_count": {
+          "type": "integer"
+        },
+        "specialty": {
+          "type": "string"
+        },
+        "years_practicing": {
+          "type": "integer"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "brand_name_rx_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "brand_name_rx_count",
+        "gender",
+        "generic_rx_count",
+        "region",
+        "settlement_type",
+        "specialty",
+        "years_practicing"
+      ]
+    },
+    "npi": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "cms_prescription_counts",
+    "npi",
+    "provider_variables"
+  ]
+}

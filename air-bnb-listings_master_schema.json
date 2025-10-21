@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "host_id": {
+      "type": "integer"
+    },
+    "neighbourhood": {
+      "type": "string"
+    },
+    "room_type": {
+      "type": "string"
+    },
+    "column_10": {
+      "type": "integer"
+    },
+    "minimum_nights": {
+      "type": "integer"
+    },
+    "number_of_reviews": {
+      "type": "integer"
+    },
+    "last_review": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviews_per_month": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "calculated_host_listings_count": {
+      "type": "integer"
+    },
+    "availability_365": {
+      "type": "integer"
+    },
+    "updated_date": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "column_19": {
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lon": {
+          "type": "number"
+        },
+        "lat": {
+          "type": "number"
+        }
+      }
+    },
+    "column_20": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "city",
+    "coordinates",
+    "host_id",
+    "id",
+    "minimum_nights",
+    "name",
+    "neighbourhood",
+    "number_of_reviews",
+    "room_type",
+    "updated_date"
+  ]
+}

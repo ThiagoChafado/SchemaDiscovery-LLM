@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "properties": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "age": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "registered_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "age",
+        "id",
+        "name",
+        "registered_at"
+      ]
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "in_stock": {
+          "type": "boolean"
+        },
+        "rating": {
+          "type": "number"
+        },
+        "created_at": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "category",
+        "created_at",
+        "id",
+        "in_stock",
+        "name",
+        "price",
+        "rating"
+      ]
+    },
+    "transaction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "person_id": {
+          "type": "integer"
+        },
+        "date": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "payment_method": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "integer"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "price": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "date",
+        "id",
+        "payment_method",
+        "person_id",
+        "price",
+        "product_id",
+        "quantity",
+        "status"
+      ]
+    }
+  }
+}

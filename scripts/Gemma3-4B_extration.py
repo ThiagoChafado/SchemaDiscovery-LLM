@@ -15,7 +15,7 @@ MODEL_PATH_LOW = "/Users/thiagoalmeida/.lmstudio/models/mlx-community/gemma-3-4b
 MODEL_PATH_HIGH = "/Users/thiagoalmeida/.lmstudio/models/lmstudio-community/Qwen2.5-Coder-14B-Instruct-MLX-4bit/"
 MAX_TOKENS = 8192
 # Se um arquivo demorar mais que isso, provavelmente está em loop.
-GENERATION_TIMEOUT_SECONDS = 120
+GENERATION_TIMEOUT_SECONDS = 10000
 # ---------------------------------------------------------------
 
 # --- CLASSE E FUNÇÃO PARA CONTROLAR O TIMEOUT ---
@@ -84,7 +84,6 @@ def extract_schema_from_file(model, tokenizer, input_path, output_path):
         "You are a data schema extraction expert.\n"
         "Generate only the JSON Schema (in standard JSON Schema Draft 2020-12 format) for the following JSON document.\n\n"
         "- Include 'required' when it can be clearly inferred.\n"
-        "- If a field can be null, use 'type': ['string', 'null'] (or the appropriate type).\n"
         "- Do not include 'description' for any field.\n"
         "- Output only the schema, no explanations or extra text. End your response after the final '}'.\n\n"
         "Input JSON:\n"
@@ -169,12 +168,12 @@ def main():
         
         try:
             if complexity == "low":
+                continue
                 if model_low is None:
                     model_low, tokenizer_low = load_model(MODEL_PATH_LOW, "Gemma 3-4B (MLX)")
                 current_model, current_tokenizer = model_low, tokenizer_low
                 model_name = "Gemma 3-4B (MLX)"
             else:
-                continue
                 if model_high is None:
                     model_high, tokenizer_high = load_model(MODEL_PATH_HIGH, "Qwen 2.5-Coder 14B (MLX)")
                 current_model, current_tokenizer = model_high, tokenizer_high
@@ -187,6 +186,8 @@ def main():
             
             save_log_incremental(LOG_FILE, original_file_path, model_name, "success", f"Schema saved to {output_path}")
             print(f"Schema salvo com sucesso em: {output_path}")
+            # Atualiza o manifesto original para marcar como gerado 
+            entry["schema_generated"] = "true"
 
         except TimeoutError as e:
             save_log_incremental(LOG_FILE, original_file_path, model_name, "failed", f"Timeout: {e}")
