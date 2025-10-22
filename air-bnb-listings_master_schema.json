@@ -71,10 +71,12 @@
     }
   },
   "required": [
+    "calculated_host_listings_count",
     "city",
     "coordinates",
     "host_id",
     "id",
+    "last_review",
     "minimum_nights",
     "name",
     "neighbourhood",

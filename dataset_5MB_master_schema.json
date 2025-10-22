@@ -37,9 +37,12 @@
       },
       "required": [
         "age",
+        "city",
+        "email",
         "id",
         "name",
-        "registered_at"
+        "registered_at",
+        "state"
       ]
     },
     "product": {

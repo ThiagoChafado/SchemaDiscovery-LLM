@@ -11,7 +11,7 @@ SCHEMA_DOCUMENTS_DIR = "processed/schema_documents/"
 
 def update_manifest_from_schemas():
     """
-   ARRUMA A CAGADA QUE TINHA FEITO ANTES :P
+   ARRUMAR A CAGADA QUE TINHA FEITO ANTES :P
     """
     print(f"Iniciando a verificação do manifesto '{MANIFEST_PATH}'...")
     

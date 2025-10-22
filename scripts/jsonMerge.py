@@ -6,7 +6,7 @@ from collections import defaultdict
 # --- CONFIGURAÇÕES ---
 SCHEMA_SOURCE_DIR = "processed/schema_documents/"
 MASTER_SCHEMA_OUTPUT_DIR = "."
-REQUIRED_THRESHOLD = 0.80
+REQUIRED_THRESHOLD = 0.6
 TYPE_THRESHOLD = 0.75
 # ---------------------
 
