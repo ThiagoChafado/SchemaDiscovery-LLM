@@ -6,7 +6,7 @@ from collections import defaultdict
 # --- CONFIGURAÇÕES ---
 SCHEMA_SOURCE_DIR = "processed/schema_documents/"
 MASTER_SCHEMA_OUTPUT_DIR = "."
-REQUIRED_THRESHOLD = 0.6
+REQUIRED_THRESHOLD = 0.6 # Voltando para 0.6 como exemplo
 TYPE_THRESHOLD = 0.75
 # ---------------------
 
@@ -103,25 +103,25 @@ def repair_schema_structure(schema_node):
             for key, prop_node in schema_node["properties"].items():
                 repair_schema_structure(prop_node)
 
-
 def update_stats_tree(stats_node, schema_node):
     """
     Função recursiva para ler um schema e atualizar a árvore de estatísticas.
     """
-    # Esta função agora confia que o 'schema_node' já foi reparado estruturalmente
-    
-    # Garantir que schema_node.get("required") seja uma lista
     required_value = schema_node.get("required")
     required_fields = set(required_value) if isinstance(required_value, list) else set()
     
     for key, prop in schema_node.get("properties", {}).items():
         if not isinstance(prop, dict):
-            # Isso não deveria acontecer após repair_schema_structure, mas é uma defesa extra
             continue
 
         if key not in stats_node:
             stats_node[key] = {
-                "_stats": { "appearances": 0, "required_count": 0, "type_counts": defaultdict(int) },
+                "_stats": {
+                    "appearances": 0,
+                    "required_count": 0,
+                    "type_counts": defaultdict(int),
+                    "enum_values": set()  # Usamos um set para armazenar valores únicos de enum
+                },
                 "properties": {}
             }
         
@@ -133,17 +133,16 @@ def update_stats_tree(stats_node, schema_node):
         
         raw_type = prop.get("type")
         types = []
-        if isinstance(raw_type, str):
-            types = [raw_type]
-        elif isinstance(raw_type, list):
-            types = [str(t) for t in raw_type if t is not None]
-        elif raw_type is None:
-            types = ["null"]
-        # Outros tipos (bool, int, etc. para 'type') serão ignorados com um aviso do repair_schema_structure
+        if isinstance(raw_type, str): types = [raw_type]
+        elif isinstance(raw_type, list): types = [str(t) for t in raw_type if t is not None]
+        elif raw_type is None: types = ["null"]
         
         for t in types:
             prop_stats["type_counts"][t] += 1
             
+        if "enum" in prop and isinstance(prop["enum"], list):
+            prop_stats["enum_values"].update(prop["enum"])
+
         if "object" in types and "properties" in prop:
             update_stats_tree(stats_node[key]["properties"], prop)
 
@@ -158,13 +157,41 @@ def build_schema_from_stats(stats_node):
     for key, node_data in stats_node.items():
         stats = node_data["_stats"]
         
-        if stats["appearances"] == 0: # Evitar divisão por zero se o campo foi coletado mas nunca 'visto' de fato
+        if stats["appearances"] == 0:
             continue
 
+        # Lógica de 'required' permanece a mesma
         required_ratio = stats["required_count"] / stats["appearances"]
         if required_ratio >= REQUIRED_THRESHOLD:
             required_fields.append(key)
 
+        # Se encontramos qualquer valor de enum para este campo, tratamos como enum
+        if stats["enum_values"]:
+            prop = {}
+            # Define o tipo base (geralmente string, mas pode ser outro)
+            non_null_types = [t for t in stats["type_counts"].keys() if t != "null"]
+            base_type = non_null_types[0] if non_null_types else "string" # Pega o primeiro tipo não-nulo ou assume string
+            
+            # Adiciona 'null' ao tipo se foi observado
+            has_null = "null" in stats["type_counts"]
+            prop["type"] = [base_type, "null"] if has_null else base_type
+            
+            # Constrói a lista de enum final, lidando com None (para JSON null)
+            all_enum_vals = stats["enum_values"]
+            has_null_in_enum = None in all_enum_vals
+            # Ordena apenas os valores não-nulos para evitar erro de comparação
+            non_null_enum_vals = sorted([str(v) for v in all_enum_vals if v is not None])            
+            final_enum_list = non_null_enum_vals
+            if has_null_in_enum:
+                final_enum_list.append(None) # Adiciona o nulo no final
+            
+            prop["enum"] = final_enum_list
+            final_schema["properties"][key] = prop
+            
+            # Pula para a próxima propriedade, ignorando a lógica de TYPE_THRESHOLD
+            continue 
+
+        # A lógica original de TYPE_THRESHOLD só será executada se o campo não for um enum
         type_counts = stats["type_counts"]
         has_null = "null" in type_counts
         non_null_counts = {t: c for t, c in type_counts.items() if t != "null"}
@@ -174,8 +201,8 @@ def build_schema_from_stats(stats_node):
             final_type = "null"
         else:
             total_non_null = sum(non_null_counts.values())
-            if total_non_null == 0: # Caso todos os tipos não-nulos tenham sido inválidos
-                 final_type = "string" # Fallback para um tipo genérico
+            if total_non_null == 0:
+                 final_type = "string"
             else:
                 winner_type = max(non_null_counts, key=non_null_counts.get)
                 winner_ratio = non_null_counts[winner_type] / total_non_null
@@ -189,25 +216,19 @@ def build_schema_from_stats(stats_node):
         if has_null and final_type != "null":
             final_type = [final_type, "null"] if not isinstance(final_type, list) else sorted(final_type + ["null"])
         
-        # Se por algum motivo final_type ainda for None (nunca deveria acontecer, mas para robustez)
         if final_type is None:
-            final_type = "string" # Fallback
+            final_type = "string"
 
         final_schema["properties"][key] = {"type": final_type}
         
-        # Sub-schemas para objetos aninhados
         if "object" in str(final_type) and node_data["properties"]:
             nested_schema = build_schema_from_stats(node_data["properties"])
-            # Mescla as chaves do sub-schema no final_schema[properties][key]
-            # Isso inclui as chaves 'type', 'properties', 'required' do objeto aninhado
             final_schema["properties"][key].update(nested_schema)
-
 
     if required_fields:
         final_schema["required"] = sorted(required_fields)
         
     return final_schema
-
 
 def process_directory(dir_path):
     """
@@ -274,10 +295,10 @@ def main():
     try:
         subdirectories = [d.path for d in os.scandir(SCHEMA_SOURCE_DIR) if d.is_dir()]
     except FileNotFoundError:
-        print(f"❌ ERRO: O diretório fonte '{SCHEMA_SOURCE_DIR}' não foi encontrado."); return
+        print(f" ERRO: O diretório fonte '{SCHEMA_SOURCE_DIR}' não foi encontrado."); return
 
     if not subdirectories:
-        print("❌ Nenhum subdiretório encontrado para processar.")
+        print(" Nenhum subdiretório encontrado para processar.")
         return
         
     for dir_path in subdirectories:

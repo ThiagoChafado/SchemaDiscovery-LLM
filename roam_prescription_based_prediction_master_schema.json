@@ -8,24 +8,40 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "33",
+            "CARVEDILOL"
           ]
         },
         "METOPROLOL SUCCINATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "37",
+            "METOPROLOL SUCCINATE"
           ]
         },
         "ATORVASTATIN CALCIUM": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "110",
+            "ATORVASTATIN CALCIUM"
           ]
         },
         "LISINOPRIL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "152",
+            "LISINOPRIL"
           ]
         },
         "XARELTO": {
@@ -41,72 +57,116 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "19",
+            "CLOPIDOGREL"
           ]
         },
         "HYDROCODONE-ACETAMINOPHEN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "68",
+            "HYDROCODONE-ACETAMINOPHEN"
           ]
         },
         "PREDNISONE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "33",
+            "PREDNISONE"
           ]
         },
         "OXYCODONE-ACETAMINOPHEN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "OXYCODONE-ACETAMINOPHEN"
           ]
         },
         "GABAPENTIN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "GABAPENTIN"
           ]
         },
         "CIPROFLOXACIN HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CIPROFLOXACIN HCL"
           ]
         },
         "OMEPRAZOLE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "75",
+            "OMEPRAZOLE"
           ]
         },
         "LEVOTHYROXINE SODIUM": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "180",
+            "LEVOTHYROXINE SODIUM"
           ]
         },
         "FUROSEMIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "100",
+            "FUROSEMIDE"
           ]
         },
         "AZITHROMYCIN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "30",
+            "AZITHROMYCIN"
           ]
         },
         "TRAMADOL HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "86",
+            "TRAMADOL HCL"
           ]
         },
         "IBUPROFEN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "IBUPROFEN"
           ]
         },
         "RISPERIDONE": {
@@ -161,6 +221,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "40",
+            "CLONAZEPAM"
           ]
         },
         "INVEGA": {
@@ -176,6 +240,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "QUETIAPINE FUMARATE"
           ]
         },
         "FLUVOXAMINE MALEATE": {
@@ -185,6 +252,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "OLANZAPINE"
           ]
         },
         "BUPROPION HCL SR": {
@@ -197,6 +267,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "NORTRIPTYLINE HCL"
           ]
         },
         "LUNESTA": {
@@ -221,6 +294,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "PROPRANOLOL HCL"
           ]
         },
         "VENLAFAXINE HCL": {
@@ -230,12 +306,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "BUSPIRONE HCL"
           ]
         },
         "FLUOXETINE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "11",
+            "FLUOXETINE HCL"
           ]
         },
         "RISPERIDONE ODT": {
@@ -251,10 +334,16 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "SEROQUEL XR"
           ]
         },
         "PAROXETINE HCL": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "21"
+          ]
         },
         "DEXTROAMPHETAMINE-AMPHETAMINE": {
           "type": "integer"
@@ -263,6 +352,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "16",
+            "MIRTAZAPINE"
           ]
         },
         "THIOTHIXENE": {
@@ -272,6 +365,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CYMBALTA"
           ]
         },
         "RISPERDAL CONSTA": {
@@ -290,18 +386,30 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "54",
+            "CITALOPRAM HBR"
           ]
         },
         "TRAZODONE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "47",
+            "TRAZODONE HCL"
           ]
         },
         "ZOLPIDEM TARTRATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "56",
+            "ZOLPIDEM TARTRATE"
           ]
         },
         "DIVALPROEX SODIUM ER": {
@@ -314,6 +422,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "TEMAZEPAM"
           ]
         },
         "CLOZARIL": {
@@ -332,12 +443,20 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "46",
+            "LORAZEPAM"
           ]
         },
         "ESCITALOPRAM OXALATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "42",
+            "ESCITALOPRAM OXALATE"
           ]
         },
         "OXCARBAZEPINE": {
@@ -350,12 +469,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DONEPEZIL HCL"
           ]
         },
         "SERTRALINE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "50",
+            "SERTRALINE HCL"
           ]
         },
         "BUPROPION XL": {
@@ -371,6 +497,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "28",
+            "VENLAFAXINE HCL ER"
           ]
         },
         "THIORIDAZINE HCL": {
@@ -383,12 +513,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "32",
+            "ALPRAZOLAM"
           ]
         },
         "LAMOTRIGINE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "LAMOTRIGINE"
           ]
         },
         "INVEGA SUSTENNA": {
@@ -398,6 +535,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "TOPIRAMATE"
           ]
         },
         "CARBIDOPA-LEVODOPA": {
@@ -410,6 +550,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "23"
           ]
         },
         "GAMUNEX-C": {
@@ -436,6 +579,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "14",
+            "ROPINIROLE HCL"
           ]
         },
         "GAMMAGARD LIQUID": {
@@ -445,6 +592,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "AZATHIOPRINE"
           ]
         },
         "PRIMIDONE": {
@@ -460,12 +610,20 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "17",
+            "PRAMIPEXOLE DIHYDROCHLORIDE"
           ]
         },
         "AMITRIPTYLINE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "12",
+            "AMITRIPTYLINE HCL"
           ]
         },
         "RELPAX": {
@@ -475,12 +633,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "27",
+            "FENTANYL"
           ]
         },
         "ACETAMINOPHEN-CODEINE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "ACETAMINOPHEN-CODEINE"
           ]
         },
         "AMANTADINE": {
@@ -493,6 +658,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "14",
+            "DIAZEPAM"
           ]
         },
         "GALANTAMINE HBR": {
@@ -508,18 +677,28 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "ISOSORBIDE MONONITRATE ER"
           ]
         },
         "CALCITRIOL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CALCITRIOL"
           ]
         },
         "AMLODIPINE BESYLATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "172",
+            "AMLODIPINE BESYLATE"
           ]
         },
         "HYDRALAZINE HCL": {
@@ -538,6 +717,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "69",
+            "LOSARTAN POTASSIUM"
           ]
         },
         "FLUDROCORTISONE ACETATE": {
@@ -553,18 +736,28 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DOXAZOSIN MESYLATE"
           ]
         },
         "TORSEMIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "TORSEMIDE"
           ]
         },
         "METOPROLOL TARTRATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "69",
+            "METOPROLOL TARTRATE"
           ]
         },
         "RENVELA": {
@@ -574,16 +767,18 @@
           ]
         },
         "AGGRENOX": {
-          "type": [
-            "integer",
-            "number",
-            "string"
+          "type": "integer",
+          "enum": [
+            "11"
           ]
         },
         "PRAVASTATIN SODIUM": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "PRAVASTATIN SODIUM"
           ]
         },
         "LEVETIRACETAM": {
@@ -599,30 +794,50 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "63",
+            "WARFARIN SODIUM"
           ]
         },
         "SIMVASTATIN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "100",
+            "SIMVASTATIN"
           ]
         },
         "HYDROCHLOROTHIAZIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "39",
+            "HYDROCHLOROTHIAZIDE"
           ]
         },
         "FENOFIBRATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "11",
+            "FENOFIBRATE"
           ]
         },
         "LISINOPRIL-HYDROCHLOROTHIAZIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "46",
+            "LISINOPRIL-HYDROCHLOROTHIAZIDE"
           ]
         },
         "PEG-3350 WITH FLAVOR PACKS": {
@@ -632,6 +847,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CARAFATE"
           ]
         },
         "GAVILYTE-N": {
@@ -641,12 +859,18 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "LANSOPRAZOLE"
           ]
         },
         "NEXIUM": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "NEXIUM"
           ]
         },
         "MOVIPREP": {
@@ -656,6 +880,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "ZENPEP"
           ]
         },
         "TRILYTE WITH FLAVOR PACKETS": {
@@ -665,18 +892,29 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "26",
+            "RANITIDINE HCL"
           ]
         },
         "POLYETHYLENE GLYCOL 3350": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "POLYETHYLENE GLYCOL 3350"
           ]
         },
         "PANTOPRAZOLE SODIUM": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "25",
+            "PANTOPRAZOLE SODIUM"
           ]
         },
         "PEG 3350-ELECTROLYTE": {
@@ -692,18 +930,27 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DICYCLOMINE HCL"
           ]
         },
         "SUCRALFATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "SUCRALFATE"
           ]
         },
         "CARISOPRODOL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CARISOPRODOL"
           ]
         },
         "EVISTA": {
@@ -719,12 +966,18 @@
           ]
         },
         "ESTRADIOL": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "11"
+          ]
         },
         "PREMARIN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "PREMARIN"
           ]
         },
         "RITALIN": {
@@ -743,6 +996,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "32",
+            "OXYCODONE HCL"
           ]
         },
         "NAPROXEN": {
@@ -755,12 +1012,20 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "12",
+            "TAMSULOSIN HCL"
           ]
         },
         "ALENDRONATE SODIUM": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "13",
+            "ALENDRONATE SODIUM"
           ]
         },
         "ANASTROZOLE": {
@@ -770,27 +1035,43 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "69",
+            "METFORMIN HCL"
           ]
         },
         "MORPHINE SULFATE ER": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "23"
+          ]
         },
         "ATENOLOL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "ATENOLOL"
           ]
         },
         "RAMIPRIL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "RAMIPRIL"
           ]
         },
         "HYDROMORPHONE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "HYDROMORPHONE HCL"
           ]
         },
         "VALSARTAN-HYDROCHLOROTHIAZIDE": {
@@ -803,6 +1084,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "19",
+            "CELEBREX"
           ]
         },
         "DEXAMETHASONE": {
@@ -815,6 +1100,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "13"
           ]
         },
         "ONDANSETRON HCL": {
@@ -827,18 +1115,29 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "30",
+            "CRESTOR"
           ]
         },
         "LANTUS": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "LANTUS"
           ]
         },
         "POTASSIUM CHLORIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "21",
+            "POTASSIUM CHLORIDE"
           ]
         },
         "MORPHINE SULFATE": {
@@ -848,6 +1147,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "GLYBURIDE"
           ]
         },
         "TARCEVA": {
@@ -857,10 +1159,16 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "PROMETHAZINE HCL"
           ]
         },
         "LOVASTATIN": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "13"
+          ]
         },
         "EXEMESTANE": {
           "type": "integer"
@@ -878,12 +1186,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "25",
+            "SYNTHROID"
           ]
         },
         "DIPHENOXYLATE-ATROPINE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DIPHENOXYLATE-ATROPINE"
           ]
         },
         "ENOXAPARIN SODIUM": {
@@ -893,6 +1208,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "11",
+            "LEVOFLOXACIN"
           ]
         },
         "VALACYCLOVIR": {
@@ -902,6 +1221,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "48",
+            "ALLOPURINOL"
           ]
         },
         "OXYCONTIN": {
@@ -911,12 +1234,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "MELOXICAM"
           ]
         },
         "FLUTICASONE PROPIONATE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "60",
+            "FLUTICASONE PROPIONATE"
           ]
         },
         "ECONAZOLE NITRATE": {
@@ -953,12 +1283,18 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "METOCLOPRAMIDE HCL"
           ]
         },
         "HUMIRA": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "HUMIRA"
           ]
         },
         "ASACOL": {
@@ -968,12 +1304,18 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DEXILANT"
           ]
         },
         "NADOLOL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "NADOLOL"
           ]
         },
         "VIREAD": {
@@ -983,6 +1325,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "AMITIZA"
           ]
         },
         "MEGESTROL ACETATE": {
@@ -1003,6 +1348,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "BYSTOLIC"
           ]
         },
         "LABETALOL HCL": {
@@ -1030,6 +1378,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CREON"
           ]
         },
         "TACROLIMUS": {
@@ -1048,18 +1399,27 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "URSODIOL"
           ]
         },
         "HUMALOG": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "HUMALOG"
           ]
         },
         "INSULIN SYRINGE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "INSULIN SYRINGE"
           ]
         },
         "COLCRYS": {
@@ -1072,30 +1432,47 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "LANTUS SOLOSTAR"
           ]
         },
         "CYCLOBENZAPRINE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "22",
+            "CYCLOBENZAPRINE HCL"
           ]
         },
         "JANUVIA": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "JANUVIA"
           ]
         },
         "GLIPIZIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "GLIPIZIDE"
           ]
         },
         "LYRICA": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "18",
+            "LYRICA"
           ]
         },
         "GLIPIZIDE ER": {
@@ -1108,30 +1485,47 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "38",
+            "PROAIR HFA"
           ]
         },
         "CLONIDINE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CLONIDINE HCL"
           ]
         },
         "SPIRONOLACTONE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "SPIRONOLACTONE"
           ]
         },
         "ADVAIR DISKUS": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "25",
+            "ADVAIR DISKUS"
           ]
         },
         "VENTOLIN HFA": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "VENTOLIN HFA"
           ]
         },
         "BENAZEPRIL HCL": {
@@ -1152,57 +1546,83 @@
         "BENICAR HCT": {
           "type": [
             "integer",
-            "null",
-            "number",
-            "string"
+            "null"
+          ],
+          "enum": [
+            "BENICAR HCT"
           ]
         },
         "BD ULTRA-FINE PEN NEEDLE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "BD ULTRA-FINE PEN NEEDLE"
           ]
         },
         "FLUCONAZOLE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "FLUCONAZOLE"
           ]
         },
         "CEPHALEXIN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "14"
           ]
         },
         "TRIAMCINOLONE ACETONIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "14"
           ]
         },
         "OXYBUTYNIN CHLORIDE ER": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "16"
           ]
         },
         "DIOVAN": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "42",
+            "DIOVAN"
           ]
         },
         "KLOR-CON M20": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "KLOR-CON M20"
           ]
         },
         "AMLODIPINE BESYLATE-BENAZEPRIL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "AMLODIPINE BESYLATE-BENAZEPRIL"
           ]
         },
         "TIZANIDINE HCL": {
@@ -1212,18 +1632,28 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "31",
+            "SPIRIVA"
           ]
         },
         "GLIPIZIDE XL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "GLIPIZIDE XL"
           ]
         },
         "METFORMIN HCL ER": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "METFORMIN HCL ER"
           ]
         },
         "PHENYTOIN SODIUM EXTENDED": {
@@ -1236,6 +1666,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "MONTELUKAST SODIUM"
           ]
         },
         "SUBOXONE": {
@@ -1245,6 +1678,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "14"
           ]
         },
         "CHOLESTYRAMINE": {
@@ -1258,20 +1694,29 @@
         },
         "LACTULOSE": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "LACTULOSE"
           ]
         },
         "FAMOTIDINE": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "FAMOTIDINE"
           ]
         },
         "LOPERAMIDE": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "LOPERAMIDE"
           ]
         },
         "PEG-3350 AND ELECTROLYTES": {
@@ -1299,6 +1744,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "METHADONE HCL"
           ]
         },
         "ALPRAZOLAM ER": {
@@ -1311,6 +1759,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "12"
           ]
         },
         "BACLOFEN": {
@@ -1326,6 +1777,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "HYDROXYZINE PAMOATE"
           ]
         },
         "IMIPRAMINE HCL": {
@@ -1374,12 +1828,19 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "GEMFIBROZIL"
           ]
         },
         "LOSARTAN-HYDROCHLOROTHIAZIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "15",
+            "LOSARTAN-HYDROCHLOROTHIAZIDE"
           ]
         },
         "ENALAPRIL-HYDROCHLOROTHIAZIDE": {
@@ -1416,12 +1877,18 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DILTIAZEM 24HR ER"
           ]
         },
         "LOVAZA": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "LOVAZA"
           ]
         },
         "JANTOVEN": {
@@ -1437,6 +1904,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "19"
           ]
         },
         "NITROSTAT": {
@@ -1470,6 +1940,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "32"
           ]
         },
         "RANEXA": {
@@ -1509,18 +1982,28 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "KLOR-CON 10"
           ]
         },
         "BUMETANIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "BUMETANIDE"
           ]
         },
         "AMIODARONE HCL": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "13",
+            "AMIODARONE HCL"
           ]
         },
         "MULTAQ": {
@@ -1533,6 +2016,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DIGOX"
           ]
         },
         "ATENOLOL-CHLORTHALIDONE": {
@@ -1545,6 +2031,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DIGOXIN"
           ]
         },
         "CHLORHEXIDINE GLUCONATE": {
@@ -1575,6 +2064,10 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "21",
+            "SULFAMETHOXAZOLE-TRIMETHOPRIM"
           ]
         },
         "DICLOFENAC SODIUM": {
@@ -1590,6 +2083,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "11"
           ]
         },
         "NYSTATIN-TRIAMCINOLONE": {
@@ -1714,6 +2210,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "SYMBICORT"
           ]
         },
         "LEVOCETIRIZINE DIHYDROCHLORIDE": {
@@ -1754,7 +2253,10 @@
           "type": "integer"
         },
         "AVODART": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "13"
+          ]
         },
         "LEVEMIR": {
           "type": "integer"
@@ -1763,6 +2265,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "PIOGLITAZONE HCL"
           ]
         },
         "NOVOLOG": {
@@ -1784,6 +2289,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "NOVOLOG MIX 70-30"
           ]
         },
         "UNIFINE PENTIPS": {
@@ -1793,6 +2301,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "LEVEMIR FLEXPEN"
           ]
         },
         "NOVOLOG MIX 70-30 FLEXPEN": {
@@ -1834,6 +2345,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "GLIMEPIRIDE"
           ]
         },
         "METHYLPREDNISOLONE": {
@@ -1908,8 +2422,11 @@
         },
         "VOLTAREN": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "11"
           ]
         },
         "METAXALONE": {
@@ -1963,8 +2480,11 @@
         },
         "METHOTREXATE": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "METHOTREXATE"
           ]
         },
         "SULFASALAZINE": {
@@ -1984,26 +2504,38 @@
         },
         "TRIBENZOR": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "TRIBENZOR"
           ]
         },
         "XOPENEX HFA": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "XOPENEX HFA"
           ]
         },
         "DALIRESP": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "DALIRESP"
           ]
         },
         "HYDROCODONE BIT-IBUPROFEN": {
           "type": [
-            "integer",
+            "string",
             "null"
+          ],
+          "enum": [
+            "HYDROCODONE BIT-IBUPROFEN"
           ]
         },
         "GENERLAC": {
@@ -2025,6 +2557,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "CEFUROXIME"
           ]
         },
         "BUTRANS": {
@@ -2114,6 +2649,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "OXYBUTYNIN CHLORIDE"
           ]
         },
         "CLOBETASOL PROPIONATE": {
@@ -2173,9 +2711,10 @@
         "DIOVAN HCT": {
           "type": [
             "integer",
-            "null",
-            "number",
-            "string"
+            "null"
+          ],
+          "enum": [
+            "DIOVAN HCT"
           ]
         },
         "PLAVIX": {
@@ -2187,10 +2726,16 @@
         "SF": {
           "type": "integer"
         },
+        "additionalProperties": {
+          "type": "integer"
+        },
         "DULERA": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DULERA"
           ]
         },
         "NASONEX": {
@@ -2320,7 +2865,10 @@
           "type": "integer"
         },
         "FINASTERIDE": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "26"
+          ]
         },
         "ATRIPLA": {
           "type": "integer"
@@ -2358,13 +2906,13 @@
             "null"
           ]
         },
-        "additionalProperties": {
-          "type": "integer"
-        },
         "NATEGLINIDE": {
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "NATEGLINIDE"
           ]
         },
         "CHLORTHALIDONE": {
@@ -2509,7 +3057,10 @@
           "type": "integer"
         },
         "HYDROCORTISONE": {
-          "type": "integer"
+          "type": "integer",
+          "enum": [
+            "17"
+          ]
         },
         "NUCYNTA": {
           "type": "integer"
@@ -2731,10 +3282,12 @@
         },
         "VESICARE": {
           "type": [
-            "integer",
-            "null",
-            "number",
-            "string"
+            "string",
+            "null"
+          ],
+          "enum": [
+            "20",
+            "VESICARE"
           ]
         },
         "BICALUTAMIDE": {
@@ -2916,9 +3469,10 @@
         "LANOXIN": {
           "type": [
             "integer",
-            "null",
-            "number",
-            "string"
+            "null"
+          ],
+          "enum": [
+            "LANOXIN"
           ]
         },
         "NYSTATIN": {
@@ -2949,6 +3503,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "PREVACID"
           ]
         },
         "LIOTHYRONINE SODIUM": {
@@ -3084,6 +3641,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "MISOPROSTOL"
           ]
         },
         "TECFIDERA": {
@@ -3515,6 +4075,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "VIAGRA"
           ]
         },
         "ANAGRELIDE HCL": {
@@ -3549,6 +4112,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "DILT-XR"
           ]
         },
         "ADVICOR": {
@@ -3930,15 +4496,20 @@
         },
         "UCERIS": {
           "type": [
-            "integer",
-            "null",
-            "string"
+            "string",
+            "null"
+          ],
+          "enum": [
+            "UCERIS"
           ]
         },
         "CARDURA XL": {
           "type": [
             "string",
             "null"
+          ],
+          "enum": [
+            "CARDURA XL"
           ]
         },
         "PREDNISOLONE ACETATE": {
@@ -4328,6 +4899,9 @@
           "type": [
             "integer",
             "null"
+          ],
+          "enum": [
+            "ULTICARE"
           ]
         },
         "PIROXICAM": {
@@ -5414,6 +5988,11 @@
           "type": [
             "string",
             "null"
+          ],
+          "enum": [
+            "non-urban",
+            "rural",
+            "urban"
           ]
         },
         "generic_rx_count": {
@@ -5426,6 +6005,36 @@
           "type": [
             "string",
             "null"
+          ],
+          "enum": [
+            "Cardiology",
+            "Cardiovascular Disease",
+            "Dental",
+            "Dermatology",
+            "Endocrinology",
+            "Family Medicine",
+            "Gastroenterology",
+            "General Practice",
+            "Hematology",
+            "Internal Medicine",
+            "Medical",
+            "Neurology",
+            "Obstetrics and Gynecology",
+            "Oncology",
+            "Ophthalmology",
+            "Orthopedics",
+            "Other",
+            "Pediatric",
+            "Pediatrics",
+            "Psychiatric",
+            "Psychiatry",
+            "Radiology",
+            "Rehabilitation",
+            "Rehabilitation Medicine",
+            "Respiratory",
+            "Respiratory Medicine",
+            "Surgery",
+            "Urology"
           ]
         },
         "years_practicing": {
@@ -5438,12 +6047,28 @@
           "type": [
             "string",
             "null"
+          ],
+          "enum": [
+            "F",
+            "M",
+            "Other"
           ]
         },
         "region": {
           "type": [
             "string",
             "null"
+          ],
+          "enum": [
+            "East",
+            "Midwest",
+            "North",
+            "Northeast",
+            "Other",
+            "South",
+            "Southeast",
+            "Southwest",
+            "West"
           ]
         },
         "brand_name_rx_count": {

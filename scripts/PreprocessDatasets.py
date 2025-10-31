@@ -1,188 +1,137 @@
 import os
 import json
-import shutil
 import ijson
+from pathlib import Path
 
 # --- Configurações ---
-input_dir = "datasets"  # onde estão os arquivos originais
-output_base_dir = "processed"
-size_target = 80  # MB para cada arquivo reduzido
+# O diretório onde estão seus arquivos JSON/JSONL originais.
+INPUT_DIR = "datasets"
+
+# O diretório base onde as pastas processadas (com os documentos) serão salvas.
+OUTPUT_BASE_DIR = "processed"
+
+# --- Configurações de Amostragem Inteligente ---
+# 1. Defina o número máximo de documentos que você quer em sua subcoleção.
+MAX_DOCUMENTS_PER_COLLECTION = 1000
+
+# 2. Defina o tamanho máximo da subcoleção como uma PORCENTAGEM do tamanho do arquivo original.
+#    Exemplo: 0.05 para 5%. Use 0 para ignorar o limite de tamanho.
+MAX_SIZE_PERCENTAGE_PER_COLLECTION = 0.05
+
+# 3. MODO DE AMOSTRAGEM: Define como os limites acima interagem.
+#    'OR': Para quando o PRIMEIRO limite (documentos OU tamanho) for atingido. (Recomendado)
+#    'AND': Para somente quando AMBOS os limites forem atingidos.
+SAMPLING_MODE = 'OR'
+
+# 4. AMOSTRAGEM ALEATÓRIA: Defina uma taxa para pegar 1 a cada N itens.
+#    Use 1 para pegar todos os itens sequencialmente até atingir os limites.
+#    Use 10 para pegar 1 item a cada 10, e assim por diante.
+SAMPLING_RATE = 16
 # --------------------
 
-def cleanup_intermediate_files(directory):
+def sample_and_split_file(source_file, output_dir, max_docs, max_size_percentage, mode, rate):
     """
-    Limpa os arquivos intermediários (como os reduzidos e convertidos) de um diretório,
-    mantendo apenas as subpastas (ex: 'documents').
+    Lê um arquivo JSON (array ou lines), faz a amostragem e divide em documentos individuais
+    até que os limites configurados (número de docs, tamanho, modo) sejam satisfeitos.
     """
-    print(f"  Limpando arquivos intermediários em: {directory}")
+    # Calcula o tamanho alvo em bytes com base na porcentagem
+    original_size_bytes = os.path.getsize(source_file)
+    max_size_bytes = original_size_bytes * max_size_percentage if max_size_percentage > 0 else 0
+    max_size_mb = max_size_bytes / (1024*1024)
+
+    docs_output_dir = Path(output_dir) / "documents"
+    docs_output_dir.mkdir(parents=True, exist_ok=True)
+    
+    docs_written = 0
+    bytes_written = 0
+    item_counter = 0
+    
     try:
-        for item_name in os.listdir(directory):
-            item_path = os.path.join(directory, item_name)
-            # Verifica se é um arquivo (e não uma pasta)
-            if os.path.isfile(item_path):
-                os.remove(item_path)
-                print(f"   - Removido: {item_name}")
-        print("  ✔ Limpeza concluída.")
-        return True
-    except Exception as e:
-        print(f"  ERRO durante a limpeza: {e}")
-        return False
-
-
-def reduce_and_sample_file(entry_file, output_file, size_target):
-    """
-    Lê um arquivo JSON ou JSON Lines e cria uma versão menor, fazendo amostragem
-    dos elementos para atingir um tamanho de arquivo alvo aproximado.
-    Esta versão detecta o formato do arquivo pelo conteúdo, não pela extensão.
-    """
-    try:
-        original_size = os.path.getsize(entry_file)
-        if original_size == 0:
-            print(f"  Arquivo vazio: {entry_file}")
-            return False
-
-        size_target_bytes = size_target * 1024 * 1024
-
-        if original_size <= size_target_bytes:
-            print("  Arquivo já é menor que o alvo, copiando...")
-            shutil.copy(entry_file, output_file)
-            return True
-
-        sampling_rate = round(original_size / size_target_bytes)
-        if sampling_rate < 1:
-            sampling_rate = 1
-
-        print(
-            f"  {entry_file} - {original_size / (1024*1024):.2f} MB → alvo {size_target} MB | Amostragem: 1 a cada {sampling_rate}"
-        )
-
         file_format = None
-        with open(entry_file, 'r', encoding='utf-8') as f_peek:
+        with open(source_file, 'r', encoding='utf-8') as f_peek:
             chunk = f_peek.read(100).strip()
-            if chunk.startswith('['):
-                file_format = 'json_array'
-                print("  Formato detectado: JSON Array")
-            elif chunk.startswith('{'):
-                file_format = 'json_lines'
-                print("  Formato detectado: JSON Lines")
-            else:
-                print(f"  ERRO: Formato de arquivo desconhecido em {entry_file}. Não começa com '[' ou '{{'.")
-                return False
+            if chunk.startswith('['): file_format = 'json_array'
+            elif chunk.startswith('{'): file_format = 'json_lines'
+            else: print(f"  ERRO: Formato de arquivo desconhecido."); return
 
-        counter = 0
-        items_written = 0
+        source_iterator = None
+        if file_format == 'json_array':
+            f_in = open(source_file, "rb")
+            source_iterator = ijson.items(f_in, 'item')
+        elif file_format == 'json_lines':
+            f_in = open(source_file, "r", encoding="utf-8")
+            source_iterator = (json.loads(line) for line in f_in if line.strip())
 
-        with open(output_file, "w", encoding="utf-8") as f_out:
-            if file_format == 'json_lines':
-                with open(entry_file, "r", encoding="utf-8") as f_in:
-                    for line in f_in:
-                        if counter % sampling_rate == 0:
-                            f_out.write(line)
-                            items_written += 1
-                        counter += 1
-            elif file_format == 'json_array':
-                with open(entry_file, "rb") as f_in:
-                    f_out.write('[')
-                    first_item = True
-                    parser = ijson.items(f_in, 'item')
-                    for item in parser:
-                        if counter % sampling_rate == 0:
-                            if not first_item:
-                                f_out.write(',\n')
-                            json.dump(item, f_out, ensure_ascii=False, indent=2)
-                            first_item = False
-                            items_written += 1
-                        counter += 1
-                    f_out.write('\n]')
+        if not source_iterator: return
 
-        final_size_bytes = os.path.getsize(output_file)
-        print(
-            f"  Redução concluída: {final_size_bytes / (1024*1024):.2f} MB ({items_written} itens)"
-        )
-        return True
+        print(f"  Iniciando amostragem com Modo='{mode}', Taxa=1/{rate}, Limites=(Docs={max_docs}, Tamanho={max_size_mb:.2f} MB)")
+        
+        for item in source_iterator:
+            # Pula o item se não corresponder à taxa de amostragem
+            if item_counter % rate != 0:
+                item_counter += 1
+                continue
+            
+            # --- LÓGICA DE PARADA INTELIGENTE ---
+            docs_limit_reached = docs_written >= max_docs
+            size_limit_reached = max_size_bytes > 0 and bytes_written >= max_size_bytes
+
+            stop = False
+            if mode == 'OR':
+                if docs_limit_reached:
+                    print(f"\n  Limite de {max_docs} documentos atingido. Parando.")
+                    stop = True
+                elif size_limit_reached:
+                    print(f"\n  Limite de {max_size_mb:.2f} MB ({max_size_percentage * 100}%) atingido. Parando.")
+                    stop = True
+            elif mode == 'AND':
+                # No modo 'AND', se um limite for desativado (ex: max_size_bytes=0), ele é considerado 'atingido'
+                effective_size_limit = size_limit_reached if max_size_bytes > 0 else True
+                if docs_limit_reached and effective_size_limit:
+                    print(f"\n  Ambos os limites foram atingidos. Parando.")
+                    stop = True
+            
+            if stop: break
+            # --- FIM DA LÓGICA DE PARADA ---
+
+            output_file_path = docs_output_dir / f"document_{docs_written + 1}.json"
+            with open(output_file_path, "w", encoding="utf-8") as f_out:
+                json.dump(item, f_out, ensure_ascii=False, indent=2)
+            
+            bytes_written += os.path.getsize(output_file_path)
+            docs_written += 1
+            item_counter += 1
+            
+            print(f"      -> Docs: {docs_written}/{max_docs} | Tamanho: {bytes_written / (1024*1024):.2f}/{max_size_mb:.2f} MB", end='\r')
+
+        if 'f_in' in locals() and f_in:
+            f_in.close()
+
     except Exception as e:
-        print(f"  Erro ao reduzir {entry_file}: {e}")
-        return False
+        print(f"\n  Ocorreu um erro durante o processamento de {source_file}: {e}")
+    finally:
+        print(f"\n  Processamento concluído. Total de {docs_written} documentos gerados ({bytes_written / (1024*1024):.2f} MB).")
 
-
-def jsonlines_tojson(jsonline_file, json_file):
-    """Converte JSONL → JSON (array de objetos)."""
-    try:
-        data = []
-        with open(jsonline_file, "r", encoding="utf-8") as f_in:
-            for line in f_in:
-                if line.strip():
-                    data.append(json.loads(line))
-        with open(json_file, "w", encoding="utf-8") as f_out:
-            json.dump(data, f_out, ensure_ascii=False, indent=4)
-        print(f" ✔ Convertido JSONL → JSON: {json_file}")
-        return True
-    except Exception as e:
-        print(f"  Erro ao converter {jsonline_file}: {e}")
-        return False
-
-
-def split_json_file(input_file, output_dir):
-    """Divide JSON (lista de objetos) em arquivos individuais."""
-    try:
-        os.makedirs(output_dir, exist_ok=True)
-        with open(input_file, "r", encoding="utf-8") as f_in:
-            data = json.load(f_in)
-        if not isinstance(data, list):
-            print("  O arquivo não contém uma lista JSON:", input_file)
-            return False
-        for idx, item in enumerate(data):
-            output_file = os.path.join(output_dir, f"document_{idx+1}.json")
-            with open(output_file, "w", encoding="utf-8") as f_out:
-                json.dump(item, f_out, ensure_ascii=False, indent=4)
-        print(f"  {len(data)} documentos salvos em: {output_dir}")
-        return True
-    except Exception as e:
-        print(f"  Erro ao dividir {input_file}: {e}")
-        return False
-
-
-def process_all_files(input_dir, output_base_dir, size_target):
-    os.makedirs(output_base_dir, exist_ok=True)
+def process_all_files(input_dir, output_base_dir, max_docs, max_size_percentage, mode, rate):
+    Path(output_base_dir).mkdir(exist_ok=True)
 
     for file_name in os.listdir(input_dir):
-        if not (file_name.endswith(".json") or file_name.endswith(".jsonl")):
-            continue
+        if not (file_name.endswith(".json") or file_name.endswith(".jsonl")): continue
 
-        file_path = os.path.join(input_dir, file_name)
-        name, ext = os.path.splitext(file_name)
-        output_dir = os.path.join(output_base_dir, name)
-        os.makedirs(output_dir, exist_ok=True)
-
-        print(f"\n--- Processando: {file_name} ---")
-
-        reduced_file = os.path.join(output_dir, f"{name}_reduced{ext}")
-
-        if reduce_and_sample_file(file_path, reduced_file, size_target):
-            final_json_to_split = None
-            
-            # Após reduzir, precisamos ter um arquivo JSON Array para dividir.
-            with open(reduced_file, 'r', encoding='utf-8') as f_peek:
-                chunk = f_peek.read(100).strip()
-                if not chunk:
-                    print(f"  Arquivo reduzido está vazio. Pulando divisão e limpeza.")
-                    continue
-                
-                if chunk.startswith('['):
-                    final_json_to_split = reduced_file
-                elif chunk.startswith('{'):
-                    converted_json = os.path.join(output_dir, f"{name}_reduced_converted.json")
-                    if jsonlines_tojson(reduced_file, converted_json):
-                        final_json_to_split = converted_json
-
-            if final_json_to_split:
-                docs_dir = os.path.join(output_dir, "documents")
-                # Se a divisão for bem-sucedida, limpe os arquivos
-                if split_json_file(final_json_to_split, docs_dir):
-                    cleanup_intermediate_files(output_dir) # <<< CHAMADA DA FUNÇÃO DE LIMPEZA
-            else:
-                 print(f"  Não foi possível determinar o arquivo final para dividir para {file_name}")
-
+        source_file_path = Path(input_dir) / file_name
+        dataset_name = source_file_path.stem
+        output_dir = Path(output_base_dir) / dataset_name
+        
+        print(f"\n--- Processando Dataset: {dataset_name} ({os.path.getsize(source_file_path)/(1024*1024):.2f} MB) ---")
+        
+        sample_and_split_file(source_file_path, output_dir, max_docs, max_size_percentage, mode, rate)
 
 if __name__ == "__main__":
-    process_all_files(input_dir, output_base_dir, size_target)
+    process_all_files(
+        INPUT_DIR,
+        OUTPUT_BASE_DIR,
+        MAX_DOCUMENTS_PER_COLLECTION,
+        MAX_SIZE_PERCENTAGE_PER_COLLECTION,
+        SAMPLING_MODE,
+        SAMPLING_RATE
+    )
