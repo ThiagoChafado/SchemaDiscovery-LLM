@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json-schema.org/schema#",
   "type": "object",
   "properties": {
     "person": {
@@ -13,8 +12,8 @@
         },
         "email": {
           "type": [
-            "null",
-            "string"
+            "string",
+            "null"
           ]
         },
         "age": {
@@ -22,8 +21,8 @@
         },
         "phone": {
           "type": [
-            "null",
-            "string"
+            "string",
+            "null"
           ]
         },
         "city": {
@@ -37,14 +36,8 @@
         }
       },
       "required": [
-        "age",
-        "city",
-        "email",
         "id",
-        "name",
-        "phone",
-        "registered_at",
-        "state"
+        "name"
       ]
     },
     "product": {
@@ -73,13 +66,9 @@
         }
       },
       "required": [
-        "category",
-        "created_at",
         "id",
-        "in_stock",
         "name",
-        "price",
-        "rating"
+        "price"
       ]
     },
     "transaction": {
@@ -113,18 +102,10 @@
       "required": [
         "date",
         "id",
-        "payment_method",
         "person_id",
-        "price",
-        "product_id",
-        "quantity",
+
         "status"
       ]
     }
-  },
-  "required": [
-    "person",
-    "product",
-    "transaction"
-  ]
+  }
 }

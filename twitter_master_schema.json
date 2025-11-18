@@ -233,11 +233,8 @@
         "created_at",
         "default_profile",
         "default_profile_image",
-        "description",
         "favourites_count",
-        "follow_request_sent",
         "followers_count",
-        "following",
         "friends_count",
         "geo_enabled",
         "id",
@@ -246,12 +243,10 @@
         "lang",
         "listed_count",
         "name",
-        "notifications",
         "profile_background_color",
         "profile_background_image_url",
         "profile_background_image_url_https",
         "profile_background_tile",
-        "profile_banner_url",
         "profile_image_url",
         "profile_image_url_https",
         "profile_link_color",
@@ -267,7 +262,10 @@
       ]
     },
     "geo": {
-      "type": "object",
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
         "type": {
           "type": "string"
@@ -275,14 +273,13 @@
         "coordinates": {
           "type": "array"
         }
-      },
-      "required": [
-        "coordinates",
-        "type"
-      ]
+      }
     },
     "coordinates": {
-      "type": "object",
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
         "type": {
           "type": "string"
@@ -290,14 +287,13 @@
         "coordinates": {
           "type": "array"
         }
-      },
-      "required": [
-        "coordinates",
-        "type"
-      ]
+      }
     },
     "place": {
-      "type": "object",
+      "type": [
+        "object",
+        "null"
+      ],
       "properties": {
         "id": {
           "type": "string"
@@ -329,27 +325,12 @@
             "coordinates": {
               "type": "array"
             }
-          },
-          "required": [
-            "coordinates",
-            "type"
-          ]
+          }
         },
         "attributes": {
           "type": "object"
         }
-      },
-      "required": [
-        "attributes",
-        "bounding_box",
-        "country",
-        "country_code",
-        "full_name",
-        "id",
-        "name",
-        "place_type",
-        "url"
-      ]
+      }
     },
     "contributors": {
       "type": [
@@ -584,47 +565,7 @@
                 "null"
               ]
             }
-          },
-          "required": [
-            "contributors_enabled",
-            "created_at",
-            "default_profile",
-            "default_profile_image",
-            "description",
-            "favourites_count",
-            "follow_request_sent",
-            "followers_count",
-            "following",
-            "friends_count",
-            "geo_enabled",
-            "id",
-            "id_str",
-            "is_translator",
-            "lang",
-            "listed_count",
-            "location",
-            "name",
-            "notifications",
-            "profile_background_color",
-            "profile_background_image_url",
-            "profile_background_image_url_https",
-            "profile_background_tile",
-            "profile_banner_url",
-            "profile_image_url",
-            "profile_image_url_https",
-            "profile_link_color",
-            "profile_sidebar_border_color",
-            "profile_sidebar_fill_color",
-            "profile_text_color",
-            "profile_use_background_image",
-            "protected",
-            "screen_name",
-            "statuses_count",
-            "time_zone",
-            "translator_type",
-            "utc_offset",
-            "verified"
-          ]
+          }
         },
         "geo": {
           "type": [
@@ -642,7 +583,44 @@
           "type": [
             "object",
             "null"
-          ]
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "place_type": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "full_name": {
+              "type": "string"
+            },
+            "country_code": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "bounding_box": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "coordinates": {
+                  "type": "array"
+                }
+              }
+            },
+            "attributes": {
+              "type": "object"
+            }
+          }
         },
         "contributors": {
           "type": [
@@ -695,14 +673,7 @@
             "media": {
               "type": "array"
             }
-          },
-          "required": [
-            "hashtags",
-            "media",
-            "symbols",
-            "urls",
-            "user_mentions"
-          ]
+          }
         },
         "favorited": {
           "type": "boolean"
@@ -746,14 +717,7 @@
                 "media": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "hashtags",
-                "media",
-                "symbols",
-                "urls",
-                "user_mentions"
-              ]
+              }
             },
             "extended_entities": {
               "type": "object",
@@ -761,18 +725,9 @@
                 "media": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "media"
-              ]
+              }
             }
-          },
-          "required": [
-            "display_text_range",
-            "entities",
-            "extended_entities",
-            "full_text"
-          ]
+          }
         },
         "possibly_sensitive": {
           "type": "boolean"
@@ -783,10 +738,7 @@
             "media": {
               "type": "array"
             }
-          },
-          "required": [
-            "media"
-          ]
+          }
         },
         "quoted_status_id": {
           "type": "number"
@@ -794,41 +746,7 @@
         "quoted_status_id_str": {
           "type": "string"
         }
-      },
-      "required": [
-        "contributors",
-        "coordinates",
-        "created_at",
-        "display_text_range",
-        "entities",
-        "extended_entities",
-        "extended_tweet",
-        "favorite_count",
-        "favorited",
-        "filter_level",
-        "geo",
-        "id",
-        "id_str",
-        "in_reply_to_screen_name",
-        "in_reply_to_status_id",
-        "in_reply_to_status_id_str",
-        "in_reply_to_user_id",
-        "in_reply_to_user_id_str",
-        "is_quote_status",
-        "lang",
-        "place",
-        "possibly_sensitive",
-        "quote_count",
-        "quoted_status_id",
-        "quoted_status_id_str",
-        "reply_count",
-        "retweet_count",
-        "retweeted",
-        "source",
-        "text",
-        "truncated",
-        "user"
-      ]
+      }
     },
     "is_quote_status": {
       "type": "boolean"
@@ -875,14 +793,7 @@
         "media": {
           "type": "array"
         }
-      },
-      "required": [
-        "hashtags",
-        "media",
-        "symbols",
-        "urls",
-        "user_mentions"
-      ]
+      }
     },
     "favorited": {
       "type": "boolean"
@@ -920,22 +831,13 @@
         "zhirinovsky": {
           "type": "array"
         },
-        "yavlinsky": {
-          "type": "array"
-        },
         "titov": {
           "type": "array"
+        },
+        "yavlinsky": {
+          "type": "array"
         }
-      },
-      "required": [
-        "grudinin",
-        "navalny",
-        "putin",
-        "sobchak",
-        "titov",
-        "yavlinsky",
-        "zhirinovsky"
-      ]
+      }
     },
     "keywords": {
       "type": "array"
@@ -1155,44 +1057,7 @@
                 "null"
               ]
             }
-          },
-          "required": [
-            "contributors_enabled",
-            "created_at",
-            "default_profile",
-            "default_profile_image",
-            "description",
-            "favourites_count",
-            "follow_request_sent",
-            "followers_count",
-            "following",
-            "friends_count",
-            "geo_enabled",
-            "id",
-            "id_str",
-            "is_translator",
-            "lang",
-            "listed_count",
-            "name",
-            "notifications",
-            "profile_background_color",
-            "profile_background_image_url",
-            "profile_background_image_url_https",
-            "profile_background_tile",
-            "profile_banner_url",
-            "profile_image_url",
-            "profile_image_url_https",
-            "profile_link_color",
-            "profile_sidebar_border_color",
-            "profile_sidebar_fill_color",
-            "profile_text_color",
-            "profile_use_background_image",
-            "protected",
-            "screen_name",
-            "statuses_count",
-            "translator_type",
-            "verified"
-          ]
+          }
         },
         "geo": {
           "type": [
@@ -1207,7 +1072,10 @@
           ]
         },
         "place": {
-          "type": "object",
+          "type": [
+            "object",
+            "null"
+          ],
           "properties": {
             "id": {
               "type": "string"
@@ -1239,27 +1107,12 @@
                 "coordinates": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "coordinates",
-                "type"
-              ]
+              }
             },
             "attributes": {
               "type": "object"
             }
-          },
-          "required": [
-            "attributes",
-            "bounding_box",
-            "country",
-            "country_code",
-            "full_name",
-            "id",
-            "name",
-            "place_type",
-            "url"
-          ]
+          }
         },
         "contributors": {
           "type": [
@@ -1297,14 +1150,7 @@
                 "media": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "hashtags",
-                "media",
-                "symbols",
-                "urls",
-                "user_mentions"
-              ]
+              }
             },
             "extended_entities": {
               "type": "object",
@@ -1312,18 +1158,9 @@
                 "media": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "media"
-              ]
+              }
             }
-          },
-          "required": [
-            "display_text_range",
-            "entities",
-            "extended_entities",
-            "full_text"
-          ]
+          }
         },
         "quote_count": {
           "type": [
@@ -1367,14 +1204,7 @@
             "media": {
               "type": "array"
             }
-          },
-          "required": [
-            "hashtags",
-            "media",
-            "symbols",
-            "urls",
-            "user_mentions"
-          ]
+          }
         },
         "favorited": {
           "type": "boolean"
@@ -1397,10 +1227,7 @@
             "media": {
               "type": "array"
             }
-          },
-          "required": [
-            "media"
-          ]
+          }
         },
         "possibly_sensitive": {
           "type": "boolean"
@@ -1425,9 +1252,6 @@
             },
             "text": {
               "type": "string"
-            },
-            "display_text_range": {
-              "type": "array"
             },
             "source": {
               "type": "string"
@@ -1609,44 +1433,7 @@
                     "null"
                   ]
                 }
-              },
-              "required": [
-                "contributors_enabled",
-                "created_at",
-                "default_profile",
-                "default_profile_image",
-                "description",
-                "favourites_count",
-                "follow_request_sent",
-                "followers_count",
-                "following",
-                "friends_count",
-                "geo_enabled",
-                "id",
-                "id_str",
-                "is_translator",
-                "lang",
-                "listed_count",
-                "name",
-                "notifications",
-                "profile_background_color",
-                "profile_background_image_url",
-                "profile_background_image_url_https",
-                "profile_background_tile",
-                "profile_banner_url",
-                "profile_image_url",
-                "profile_image_url_https",
-                "profile_link_color",
-                "profile_sidebar_border_color",
-                "profile_sidebar_fill_color",
-                "profile_text_color",
-                "profile_use_background_image",
-                "protected",
-                "screen_name",
-                "statuses_count",
-                "translator_type",
-                "verified"
-              ]
+              }
             },
             "geo": {
               "type": [
@@ -1674,61 +1461,6 @@
             },
             "is_quote_status": {
               "type": "boolean"
-            },
-            "extended_tweet": {
-              "type": "object",
-              "properties": {
-                "full_text": {
-                  "type": "string"
-                },
-                "display_text_range": {
-                  "type": "array"
-                },
-                "entities": {
-                  "type": "object",
-                  "properties": {
-                    "hashtags": {
-                      "type": "array"
-                    },
-                    "urls": {
-                      "type": "array"
-                    },
-                    "user_mentions": {
-                      "type": "array"
-                    },
-                    "symbols": {
-                      "type": "array"
-                    },
-                    "media": {
-                      "type": "array"
-                    }
-                  },
-                  "required": [
-                    "hashtags",
-                    "media",
-                    "symbols",
-                    "urls",
-                    "user_mentions"
-                  ]
-                },
-                "extended_entities": {
-                  "type": "object",
-                  "properties": {
-                    "media": {
-                      "type": "array"
-                    }
-                  },
-                  "required": [
-                    "media"
-                  ]
-                }
-              },
-              "required": [
-                "display_text_range",
-                "entities",
-                "extended_entities",
-                "full_text"
-              ]
             },
             "quote_count": {
               "type": "number"
@@ -1760,14 +1492,7 @@
                 "media": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "hashtags",
-                "media",
-                "symbols",
-                "urls",
-                "user_mentions"
-              ]
+              }
             },
             "favorited": {
               "type": "boolean"
@@ -1784,16 +1509,55 @@
             "lang": {
               "type": "string"
             },
+            "display_text_range": {
+              "type": "array"
+            },
+            "extended_tweet": {
+              "type": "object",
+              "properties": {
+                "full_text": {
+                  "type": "string"
+                },
+                "display_text_range": {
+                  "type": "array"
+                },
+                "entities": {
+                  "type": "object",
+                  "properties": {
+                    "hashtags": {
+                      "type": "array"
+                    },
+                    "urls": {
+                      "type": "array"
+                    },
+                    "user_mentions": {
+                      "type": "array"
+                    },
+                    "symbols": {
+                      "type": "array"
+                    },
+                    "media": {
+                      "type": "array"
+                    }
+                  }
+                },
+                "extended_entities": {
+                  "type": "object",
+                  "properties": {
+                    "media": {
+                      "type": "array"
+                    }
+                  }
+                }
+              }
+            },
             "extended_entities": {
               "type": "object",
               "properties": {
                 "media": {
                   "type": "array"
                 }
-              },
-              "required": [
-                "media"
-              ]
+              }
             },
             "quoted_status_id": {
               "type": "number"
@@ -1801,78 +1565,9 @@
             "quoted_status_id_str": {
               "type": "string"
             }
-          },
-          "required": [
-            "contributors",
-            "coordinates",
-            "created_at",
-            "display_text_range",
-            "entities",
-            "extended_entities",
-            "extended_tweet",
-            "favorite_count",
-            "favorited",
-            "filter_level",
-            "geo",
-            "id",
-            "id_str",
-            "in_reply_to_screen_name",
-            "in_reply_to_status_id",
-            "in_reply_to_status_id_str",
-            "in_reply_to_user_id",
-            "in_reply_to_user_id_str",
-            "is_quote_status",
-            "lang",
-            "place",
-            "possibly_sensitive",
-            "quote_count",
-            "quoted_status_id",
-            "quoted_status_id_str",
-            "reply_count",
-            "retweet_count",
-            "retweeted",
-            "source",
-            "text",
-            "truncated",
-            "user"
-          ]
+          }
         }
-      },
-      "required": [
-        "contributors",
-        "coordinates",
-        "created_at",
-        "display_text_range",
-        "entities",
-        "extended_entities",
-        "extended_tweet",
-        "favorite_count",
-        "favorited",
-        "filter_level",
-        "geo",
-        "id",
-        "id_str",
-        "in_reply_to_screen_name",
-        "in_reply_to_status_id",
-        "in_reply_to_status_id_str",
-        "in_reply_to_user_id",
-        "in_reply_to_user_id_str",
-        "is_quote_status",
-        "lang",
-        "place",
-        "possibly_sensitive",
-        "quote_count",
-        "quoted_status",
-        "quoted_status_id",
-        "quoted_status_id_str",
-        "reply_count",
-        "retweet_count",
-        "retweeted",
-        "source",
-        "text",
-        "truncated",
-        "user"
-      ]
+      }
     },
     "extended_tweet": {
       "type": "object",
@@ -1901,14 +1596,7 @@
             "media": {
               "type": "array"
             }
-          },
-          "required": [
-            "hashtags",
-            "media",
-            "symbols",
-            "urls",
-            "user_mentions"
-          ]
+          }
         },
         "extended_entities": {
           "type": "object",
@@ -1916,18 +1604,9 @@
             "media": {
               "type": "array"
             }
-          },
-          "required": [
-            "media"
-          ]
+          }
         }
-      },
-      "required": [
-        "display_text_range",
-        "entities",
-        "extended_entities",
-        "full_text"
-      ]
+      }
     },
     "extended_entities": {
       "type": "object",
@@ -1935,32 +1614,20 @@
         "media": {
           "type": "array"
         }
-      },
-      "required": [
-        "media"
-      ]
+      }
     }
   },
   "required": [
     "_id",
     "channels",
     "created_at",
-    "display_text_range",
     "entities",
-    "extended_entities",
-    "extended_tweet",
-    "favorite_count",
     "favorited",
     "filter_level",
     "id",
     "id_str",
-    "is_quote_status",
     "keywords",
     "lang",
-    "possibly_sensitive",
-    "quote_count",
-    "reply_count",
-    "retweet_count",
     "retweeted",
     "source",
     "text",

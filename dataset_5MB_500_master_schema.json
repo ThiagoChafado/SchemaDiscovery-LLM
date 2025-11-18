@@ -103,6 +103,7 @@
         "date",
         "id",
         "person_id",
+
         "status"
       ]
     }

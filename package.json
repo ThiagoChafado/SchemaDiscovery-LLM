@@ -1,6 +1,27 @@
 {
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
-    "node-fetch": "^3.3.2"
-  }
+    "ajv": "^8.17.1",
+    "node-fetch": "^3.3.2",
+    "stream-json": "^1.9.1"
+  },
+  "name": "schemadiscovery-llm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Projeto de **TCC** voltado para a **extração de esquemas de coleções JSON** utilizando **LLMs (Large Language Models)**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoChafado/SchemaDiscovery-LLM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoChafado/SchemaDiscovery-LLM/issues"
+  },
+  "homepage": "https://github.com/ThiagoChafado/SchemaDiscovery-LLM#readme"
 }

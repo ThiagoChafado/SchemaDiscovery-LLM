@@ -1,0 +1,5 @@
+Dataset,Docs_Analyzed,Most_Used_Model,Average_Time_Sec,Total_Time_Hours,Total_Time_Minutes
+roam_prescription_based_prediction,500,Gemma 3-4B (MLX),57.44,7.9778,478.67
+air-bnb-listings,500,Gemma 3-4B (MLX),74.26,10.3133,618.8
+dataset_5MB,500,Gemma 3-4B (MLX),413.78,57.4701,3448.2
+twitter,500,Qwen 2.5-Coder 14B (MLX),596.32,82.8228,4969.37

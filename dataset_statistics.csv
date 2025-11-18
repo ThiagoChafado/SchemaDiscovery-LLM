@@ -1,0 +1,5 @@
+Dataset,Tamanho Original,Docs Originais,Docs na Amostra,Tamanho da Amostra,Min Chaves,Max Chaves,Média Chaves,Min Profundidade,Max Profundidade,Média Profundidade
+air-bnb-listings,42.45 MB,83711,1000,1.73 MB,47,62,61.0,6,6,6.0
+roam_prescription_based_prediction,156.39 MB,239930,1000,2.02 MB,9,328,56.6,3,7,6.8
+dataset_5MB,5.03 MB,5600,559,1.42 MB,66,87,80.2,6,7,6.3
+twitter,10.74 GB,1945365,1000,20.36 MB,172,838,418.2,7,19,13.0

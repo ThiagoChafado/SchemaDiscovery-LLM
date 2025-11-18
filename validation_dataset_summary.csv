@@ -1,0 +1,8 @@
+dataset,total_documentos,aprovados,reprovados,taxa_sucesso_percentual
+air-bnb-listings,83711,83686,25,99.97
+dataset_5MB_100,5600,5600,0,100.00
+dataset_5MB_300,5600,5600,0,100.00
+dataset_5MB_500,5600,5600,0,100.00
+dataset_5MB,5600,5600,0,100.00
+roam_prescription_based_prediction,239930,238507,1423,99.41
+twitter,1945365,1945365,0,100.00

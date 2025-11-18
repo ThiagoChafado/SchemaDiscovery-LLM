@@ -39,7 +39,6 @@ def update_manifest_from_schemas():
                 if row.get("schema_generated", "false").strip().lower() == "false":
                     original_file_path = row["file"]
                     
-                    # --- LÓGICA DE CAMINHO CORRIGIDA ---
                     # Reconstrói o caminho de saída exatamente como no script de geração
                     try:
                         p = Path(original_file_path)
@@ -52,7 +51,6 @@ def update_manifest_from_schemas():
                         print(f"\n Aviso: Linha com formato inesperado no manifesto. Pulando. Erro: {e}. Linha: {row}")
                         writer.writerow(row)
                         continue
-                    # --- FIM DA CORREÇÃO ---
                     
                     # Se o arquivo de schema correspondente existir, atualiza a linha
                     if schema_file_path.exists():
@@ -74,7 +72,6 @@ def update_manifest_from_schemas():
         return
 
     # Se tudo correu bem, substitui o arquivo original pelo temporário
-    # shutil.move é mais seguro para esta operação do que os.rename
     shutil.move(temp_filepath, MANIFEST_PATH)
     
     print("\n--- Relatório Final ---")
